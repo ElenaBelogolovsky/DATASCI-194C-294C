@@ -168,3 +168,23 @@ footer{
     color:var(--muted);
     font-size:.95rem
 }
+
+/* 🖼️ BACKGROUND IMAGE RULE FOR DESCRIPTION SECTION 🖼️ */
+/* This rule MUST come after the generic .hero rules to override the background property. */
+.description-hero {
+    /* Set the image file. Ensure "Untitled design-5.png" is in the same folder as styles.css */
+    background-image: url("Untitled design-5.png"); 
+    
+    /* Blends the image with the existing background gradient. */
+    /* This uses the image, and then the gradient defined in .hero */
+    background-blend-mode: multiply; /* You can try 'soft-light' or remove this line completely */
+
+    /* Prevents the image from repeating */
+    background-repeat: no-repeat; 
+    
+    /* Places the image in the bottom right corner of the box */
+    background-position: right bottom; 
+    
+    /* Makes the image scale down to fit without being cropped, using 25% of the box size */
+    background-size: 25%; /* Adjust this percentage to change the size of the watermark */
+}
