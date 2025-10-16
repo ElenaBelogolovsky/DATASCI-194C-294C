@@ -41,30 +41,38 @@ a:hover{text-decoration:underline}
 .container{
     max-width:1100px;
     margin:0 auto;
-    padding:0 16px /* This 16px padding dictates the alignment margin */
+    padding:0 16px
 }
+/* 🎯 FIX: Remove alignment padding on masthead container to allow title centering */
 .masthead{
     display:block; 
     padding:8px 0 18px; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    padding-left: 0;
+    padding-right: 0;
 }
 .title{
     display:flex;
     flex-direction:column;
     padding-bottom: 0; 
-    /* 🎯 FIX: Remove any indentation so it aligns perfectly with the 16px container padding */
-    padding-left: 0; 
+    /* 🎯 CRITICAL: Center all title text */
+    text-align: center; 
 }
 .title h1{
     margin:0;
     font-size:1.5rem;
     letter-spacing:0.2px;
-    /* Reduce line height for the multi-line title */
     line-height: 1.2; 
+}
+/* 🎯 NEW: Specific style for the course number line */
+.title h1 .course-number {
+    font-size: 1.25rem; /* Make it smaller than the main title text (1.5rem) */
+    font-weight: 600;
 }
 .title .subtitle{
     opacity:.9;
-    font-size:.95rem
+    font-size:.95rem;
+    margin-top: 5px; /* Add small space above subtitle */
 }
 
 /* --- Navigation Menu (Tabs) --- */
@@ -113,7 +121,6 @@ a:hover{text-decoration:underline}
     padding:40px 0; /* Increased padding */
 }
 .hero h2{
-    /* This heading will now perfectly align with the Title/Subtitle text in the masthead */
     margin:0 0 16px; 
     font-size:1.75rem;
     color: var(--brand); 
@@ -234,7 +241,10 @@ footer{
     
     /* 2. Shrink Title and Subtitle */
     .title h1 {
-        font-size: 1.2rem; 
+        font-size: 1.1rem; /* Smaller on phone */
+    }
+    .title h1 .course-number {
+        font-size: 1rem; /* Even smaller course number */
     }
     .title .subtitle {
         font-size: 0.85rem; 
