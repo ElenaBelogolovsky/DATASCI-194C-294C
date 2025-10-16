@@ -1,4 +1,149 @@
-:root{ --brand:#8c1515; /* Stanford cardinal-ish */ /* ... all your CSS code ... */ }
-/* ... */
-.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand-dark)}
-/* ... */
+/* --- CSS Variables: Defines Colors/Themes --- */
+:root{ 
+    --brand:#8c1515; /* Stanford cardinal-ish */ 
+    --brand-dark:#6b0f0f;
+    --bg:#ffffff; 
+    --text:#222222; 
+    --muted:#666666; 
+    --card:#f7f7f7; 
+    --border:#e5e5e5; 
+    --link:#0645ad; 
+} 
+
+/* --- Global Styles & Typography --- */
+*{box-sizing:border-box} 
+html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"
+} 
+a{color:var(--link);text-decoration:none} 
+a:hover{text-decoration:underline}
+
+/* --- Header / TOP BANNER --- */
+.topbar{
+    background:var(--brand); /* Cardinal background color */
+    color:#fff;
+    padding: 5px 0; /* Reduced padding for a tighter banner look */
+}
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 16px
+}
+.masthead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0
+}
+.title{
+    display:flex;
+    flex-direction:column
+}
+.title h1{
+    margin:0;
+    font-size:1.5rem;
+    letter-spacing:0.2px
+}
+.title .subtitle{
+    opacity:.9;
+    font-size:.95rem
+}
+
+/* --- Navigation Menu (Tabs) --- */
+.nav{
+    display:flex;
+    gap:18px;
+    font-weight:600
+}
+.nav a{
+    color:#fff;
+    opacity:.95
+}
+.nav a:hover{
+    opacity:1
+}
+
+/* --- Hero Section (Course Description) --- */
+.hero{
+    background:linear-gradient(0deg,#fafafa,#fff);
+    border-bottom:1px solid var(--border)
+}
+.hero .inner{
+    padding:28px 0
+}
+.hero h2{
+    margin:0 0 8px;
+    font-size:1.75rem
+}
+.meta{
+    color:var(--muted)
+}
+
+/* --- Grid Layout (Main Content + Sidebar) --- */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:22px;
+    padding:26px 0
+}
+@media (max-width: 900px){
+    .grid{
+        grid-template-columns:1fr
+    }
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px
+}
+.card h3{
+    margin-top:0
+}
+
+/* --- Utility Classes --- */
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    background:#f0f0f0;
+    border:1px solid var(--border);
+    font-size:.8rem;
+    color:var(--muted)
+}
+.btn{
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#fff;
+    font-weight:600;
+    margin-right: 10px; /* Space between buttons */
+}
+.btn:hover{
+    border-color:#d4d4d4
+}
+.btn.primary{
+    background:var(--brand);
+    color:#fff;
+    border-color:var(--brand-dark)
+}
+
+/* --- Anchor Offsets for fixed nav (makes links stop slightly below the banner) --- */
+.anchor{
+    scroll-margin-top:80px
+}
+
+/* --- Footer --- */
+footer{
+    border-top:1px solid var(--border);
+    padding:22px 0;
+    margin-top:28px;
+    color:var(--muted);
+    font-size:.95rem
+}
