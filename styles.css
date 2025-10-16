@@ -172,38 +172,46 @@ footer{
 /* 🖼️ UPDATED BACKGROUND IMAGE RULE FOR DESCRIPTION SECTION 🖼️ */
 /* This rule MUST come after the generic .hero rules to override the background property. */
 .description-hero {
-    /* Set the image file. Ensure "Untitled design-5.png" is in the same folder as styles.css */
-    background-image: url("Untitled design-5.png"); 
-    
-    /* Prevents the image from repeating */
-    background-repeat: no-repeat; 
-    
-    /* Places the image in the bottom right corner of the box */
-    background-position: right bottom; 
-    
-    /* Makes the image scale down to fit without being cropped, using 25% of the box size */
-    background-size: 25%; /* Adjust this percentage to change the size of the watermark */
+    /* Set the existing background gradient first */
+    background:linear-gradient(0deg,#fafafa,#fff); /* This was originally on .hero, keep it here */
+    border-bottom:1px solid var(--border); /* Keep this as well */
+    padding:28px 0; /* Keep the padding for the content */
 
-    /* Apply a blur filter to the background image */
-    filter: blur(2px); /* Adjust the '2px' value for more or less blur */
-    
-    /* Blends the image with the existing background gradient. */
-    /* 'lighten' or 'soft-light' can also work well for a subtle watermark effect. */
-    background-blend-mode: soft-light; /* You can try 'multiply', 'lighten', or 'overlay' */
-    
-    /* Ensure text has good contrast over the potentially blurry image */
-    position: relative; /* Needed for text to sit above the blurred background if using advanced techniques, but good practice here */
-    z-index: 1; /* Puts the content above the background */
+    position: relative; /* Crucial for positioning the pseudo-element */
+    overflow: hidden; /* Important if the blurred image extends beyond the content box */
 }
 
-/* To ensure the blurry background doesn't affect the text color/contrast directly,
-   we can also make sure the text container has its own background.
-   This is often done by adding a transparent white background on the text itself. */
-.description-hero p, .description-hero h2 {
+.description-hero::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Allows precise positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Your background image properties for the pseudo-element */
+    background-image: url("Untitled design-5.png"); 
+    background-repeat: no-repeat; 
+    background-position: center center; /* Centered for a larger background */
+    background-size: cover; /* Make the image cover the entire area, potentially cropping edges */
+    
+    /* Apply the blur filter ONLY to the pseudo-element (the image) */
+    filter: blur(5px); /* Adjust the '5px' value for more or less blur */
+    
+    /* Lower opacity for a more subtle watermark effect */
+    opacity: 0.3; /* Adjust between 0 (invisible) and 1 (fully opaque) */
+
+    /* Ensure the pseudo-element is behind the actual text content */
+    z-index: 0; 
+}
+
+/* Ensure the text content sits above the blurred background */
+.description-hero h2,
+.description-hero p,
+.description-hero .meta {
     position: relative;
-    z-index: 2; /* Ensures text is above the blurred background */
-    /* You might want to add a subtle text-shadow or a slightly opaque background here
-       if the blur makes the text hard to read on complex images */
-    /* background-color: rgba(255, 255, 255, 0.7); /* Example: semi-transparent white behind text */
-    /* padding: 2px 0; */ /* Adjust padding if you add a background to text */
+    z-index: 1; /* Puts the text content above the blurred pseudo-element */
+    /* You might want a slight background or shadow for text readability if the image is busy */
+    /* background-color: rgba(255, 255, 255, 0.5); */ /* Example: semi-transparent white behind text */
+    /* padding: 2px 5px; */ /* Adjust as needed */
 }
