@@ -1,8 +1,7 @@
 /* --- CSS Variables: Defines Colors/Themes --- */
 :root{ 
-    --brand:#8c1515; /* Stanford Cardinal Red */
+    --brand:#8c1515; /* <-- This is the Stanford Cardinal Red! */
     --brand-dark:#6b0f0f;
-    --accent:#fcd116; /* Stanford Gold/Yellow for highlights */
     --bg:#ffffff; 
     --text:#222222; 
     --muted:#666666; 
@@ -14,27 +13,18 @@
 /* --- Global Styles & Typography --- */
 *{box-sizing:border-box} 
 html,body{
-    margin:0; 
+    margin:0;
     padding:0;
     background:var(--bg);
     color:var(--text);
-    /* Set the new font: Inter */
-    font-family: 'Inter', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji", sans-serif;
-    font-size:16px;
-    line-height:1.6;
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"
 } 
 a{color:var(--link);text-decoration:none} 
 a:hover{text-decoration:underline}
 
-/* Added margin to paragraphs for better reading flow */
-.hero p {
-    margin-bottom: 1.2em; 
-}
-
-
 /* --- Header / TOP BANNER --- */
 .topbar{
-    background:var(--brand); 
+    background:var(--brand); /* Applies the Cardinal Red color */
     color:#fff;
     padding: 10px 0; 
 }
@@ -44,14 +34,15 @@ a:hover{text-decoration:underline}
     padding:0 16px
 }
 .masthead{
+    /* Changed to block to allow nav to be below */
     display:block; 
-    padding:8px 0 18px; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    padding:8px 0; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
 }
 .title{
     display:flex;
     flex-direction:column;
-    padding-bottom: 0; 
+    padding-bottom: 10px; /* Space above the nav menu */
 }
 .title h1{
     margin:0;
@@ -66,39 +57,18 @@ a:hover{text-decoration:underline}
 /* --- Navigation Menu (Tabs) --- */
 .nav{
     display:flex;
-    gap:22px; 
+    gap:18px;
     font-weight:600;
-    padding-top: 15px; 
-    padding-bottom: 10px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
 }
 .nav a{
     color:#fff;
-    opacity:.95;
-    transition: opacity 0.2s; 
+    opacity:.95
 }
 .nav a:hover{
-    opacity:1;
+    opacity:1
 }
-/* Highlight current page with the accent color */
-.nav a.active-page {
-    border-bottom: 3px solid var(--accent); 
-    padding-bottom: 5px; 
-    opacity: 1; 
-}
-
-
-/* --- Top Banner Image (The Thinner Banner) --- */
-.header-banner {
-    display: block; 
-    width: 100%; 
-    height: 150px; /* Thinner height */
-    object-fit: cover; 
-    object-position: center top; 
-    margin: 0; 
-    padding: 0;
-    border-bottom: 1px solid var(--border); 
-}
-
 
 /* --- Hero Section (Course Description) --- */
 .hero{
@@ -106,12 +76,11 @@ a:hover{text-decoration:underline}
     border-bottom:1px solid var(--border)
 }
 .hero .inner{
-    padding:40px 0; /* Increased padding */
+    padding:28px 0
 }
 .hero h2{
-    margin:0 0 16px; 
-    font-size:1.75rem;
-    color: var(--brand); 
+    margin:0 0 8px;
+    font-size:1.75rem
 }
 .meta{
     color:var(--muted)
@@ -121,8 +90,8 @@ a:hover{text-decoration:underline}
 .grid{
     display:grid;
     grid-template-columns:1fr 320px;
-    gap:30px; 
-    padding:30px 0; 
+    gap:22px;
+    padding:26px 0
 }
 @media (max-width: 900px){
     .grid{
@@ -130,16 +99,11 @@ a:hover{text-decoration:underline}
     }
 }
 
-/* CARD STYLING: Added subtle shadow/lift effect on hover */
 .card{
     background:var(--card);
     border:1px solid var(--border);
     border-radius:12px;
-    padding:18px;
-    transition: box-shadow 0.3s ease; 
-}
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle lift on hover */
+    padding:18px
 }
 .card h3{
     margin-top:0
@@ -186,28 +150,21 @@ tbody tr:hover{
     background:#fff;
     font-weight:600;
     margin-right: 10px;
-    transition: background 0.2s, transform 0.1s;
 }
 .btn:hover{
-    border-color:#d4d4d4;
-    text-decoration: none;
-    transform: translateY(-1px); /* Little lift effect */
+    border-color:#d4d4d4
 }
 .btn.primary{
-    background:var(--brand); 
+    background:var(--brand); /* Applies red to primary buttons */
     color:#fff;
-    border-color:var(--brand-dark);
-}
-.btn.primary:hover{
-    background:var(--brand-dark);
+    border-color:var(--brand-dark)
 }
 
 /* --- Footer --- */
 footer{
-    border-top: 1px solid var(--border); 
-    padding: 22px 0; 
+    border-top:1px solid var(--border);
+    padding:22px 0;
     margin-top:28px;
     color:var(--muted);
-    font-size:.95rem;
-    text-align: center; /* Ensures the copyright text is centered */
+    font-size:.95rem
 }
