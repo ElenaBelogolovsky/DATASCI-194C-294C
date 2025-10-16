@@ -1,228 +1,170 @@
-/* --- CSS Variables / Themes --- */
-:root {
-  --brand: #8c1515;
-  --brand-dark: #6b0f0f;
-  --bg-light: #ffffff;
-  --bg-dark: #1a1a2e;
-  --text-light: #222222;
-  --text-dark: #dddddd;
-  --muted-light: #666666;
-  --muted-dark: #aaaaaa;
-  --card-light: #f7f7f7;
-  --card-dark: #2a2a3f;
-  --border-light: #e5e5e5;
-  --border-dark: #444466;
-  --link: #0645ad;
+/* --- CSS Variables: Defines Colors/Themes --- */
+:root{ 
+    --brand:#8c1515; /* <-- This is the Stanford Cardinal Red! */
+    --brand-dark:#6b0f0f;
+    --bg:#ffffff; 
+    --text:#222222; 
+    --muted:#666666; 
+    --card:#f7f7f7; 
+    --border:#e5e5e5; 
+    --link:#0645ad; 
+} 
+
+/* --- Global Styles & Typography --- */
+*{box-sizing:border-box} 
+html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"
+} 
+a{color:var(--link);text-decoration:none} 
+a:hover{text-decoration:underline}
+
+/* --- Header / TOP BANNER --- */
+.topbar{
+    background:var(--brand); /* Applies the Cardinal Red color */
+    color:#fff;
+    padding: 10px 0; 
+}
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 16px
+}
+.masthead{
+    /* Changed to block to allow nav to be below */
+    display:block; 
+    padding:8px 0; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+}
+.title{
+    display:flex;
+    flex-direction:column;
+    padding-bottom: 10px; /* Space above the nav menu */
+}
+.title h1{
+    margin:0;
+    font-size:1.5rem;
+    letter-spacing:0.2px
+}
+.title .subtitle{
+    opacity:.9;
+    font-size:.95rem
 }
 
-/* Base resets */
-* {
-  box-sizing: border-box;
+/* --- Navigation Menu (Tabs) --- */
+.nav{
+    display:flex;
+    gap:18px;
+    font-weight:600;
+    padding-top: 5px; 
+    padding-bottom: 5px;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg-light);
-  color: var(--text-light);
-  line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
+.nav a{
+    color:#fff;
+    opacity:.95
 }
-a {
-  color: var(--link);
-}
-a:hover {
-  text-decoration: underline;
+.nav a:hover{
+    opacity:1
 }
 
-/* Dark mode */
-html.dark-mode {
-  background: var(--bg-dark);
-  color: var(--text-dark);
+/* --- Hero Section (Course Description) --- */
+.hero{
+    background:linear-gradient(0deg,#fafafa,#fff);
+    border-bottom:1px solid var(--border)
 }
-html.dark-mode .card {
-  background: var(--card-dark);
-  border-color: var(--border-dark);
+.hero .inner{
+    padding:28px 0
 }
-html.dark-mode .hero {
-  background: none;
+.hero h2{
+    margin:0 0 8px;
+    font-size:1.75rem
 }
-html.dark-mode .hero .inner {
-  background: none;
-}
-/* adjust borders, muted, etc. */
-html.dark-mode .meta {
-  color: var(--muted-dark);
-}
-html.dark-mode .badge {
-  background: var(--card-dark);
-  color: var(--muted-dark);
-  border-color: var(--border-dark);
+.meta{
+    color:var(--muted)
 }
 
-/* Top bar & header */
-.topbar {
-  background: var(--brand);
-  color: white;
-  padding: 10px 0;
-  position: relative;
-  z-index: 100;
+/* --- Grid Layout (Main Content + Sidebar) --- */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:22px;
+    padding:26px 0
 }
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-.masthead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 0;
-}
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.title h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-.subtitle {
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-.dark-mode-toggle {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
+@media (max-width: 900px){
+    .grid{
+        grid-template-columns:1fr
+    }
 }
 
-/* Navigation */
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-weight: 600;
-  padding: 6px 0;
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px
 }
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  background: var(--brand);
-  z-index: 90;
+.card h3{
+    margin-top:0
 }
 
-/* Orb image section */
-.orb-section {
-  position: relative;
-  margin-top: -40px;
-  z-index: 0;
-  overflow: hidden;
+/* --- Tables (For the Schedule Page) --- */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden
 }
-.orb-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to top, rgba(10,10,10,0) 0%, var(--brand) 100%);
-  z-index: 1;
-  pointer-events: none;
+th,td{
+    padding:12px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+    vertical-align:top
 }
-.header-banner {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-  border: none;
+thead th{
+    background:#fafafa;
+    font-weight:700
+}
+tbody tr:hover{
+    background:#fff8f8
 }
 
-/* Hero / main content section */
-.hero {
-  background: linear-gradient(0deg, #fafafa, #fff);
-  border-bottom: 1px solid var(--border-light);
+/* --- Utility Classes --- */
+.badge{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:999px;
+    background:#f0f0f0;
+    border:1px solid var(--border);
+    font-size:.8rem;
+    color:var(--muted)
 }
-.hero .inner {
-  padding: 28px 0;
+.btn{
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#fff;
+    font-weight:600;
+    margin-right: 10px;
 }
-.hero h2 {
-  margin: 0 0 8px;
-  font-size: 1.75rem;
+.btn:hover{
+    border-color:#d4d4d4
 }
-.meta {
-  color: var(--muted-light);
-}
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: var(--card-light);
-  border: 1px solid var(--border-light);
-  font-size: 0.8rem;
-  color: var(--muted-light);
-}
-
-/* Grid / layout */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 22px;
-  padding: 26px 0;
-}
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.btn.primary{
+    background:var(--brand); /* Applies red to primary buttons */
+    color:#fff;
+    border-color:var(--brand-dark)
 }
 
-/* Cards */
-.card {
-  background: var(--card-light);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 18px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-.card h3 {
-  margin-top: 0;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--border-light);
-  background: white;
-  font-weight: 600;
-  margin-right: 10px;
-  transition: background 0.2s, border-color 0.2s;
-}
-.btn:hover {
-  border-color: #d4d4d4;
-}
-.btn.primary {
-  background: var(--brand);
-  color: white;
-  border-color: var(--brand-dark);
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-light);
-  padding: 22px 0;
-  margin-top: 28px;
-  color: var(--muted-light);
-  font-size: 0.95rem;
-  text-align: center;
-  transition: color 0.3s;
+/* --- Footer --- */
+footer{
+    border-top:1px solid var(--border);
+    padding:22px 0;
+    margin-top:28px;
+    color:var(--muted);
+    font-size:.95rem
 }
