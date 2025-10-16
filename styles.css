@@ -195,7 +195,7 @@ footer{
     width: 100%; /* Stretches the image to the full width of the header */
     
     /* 🎯 CRUCIAL CHANGE: Set a fixed height to make the banner thinner */
-    height: 100px; /* Adjust this value (e.g., 100px for thinner, 200px for thicker) */
+    height: 150px; /* Adjust this value (e.g., 100px for thinner, 200px for thicker) */
     
     object-fit: cover; /* This ensures the image covers the 150px height without being squished */
     margin: 0; 
