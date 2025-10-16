@@ -41,7 +41,7 @@ a:hover{text-decoration:underline}
 .container{
     max-width:1100px;
     margin:0 auto;
-    padding:0 16px
+    padding:0 16px /* This 16px padding dictates the alignment margin */
 }
 .masthead{
     display:block; 
@@ -52,13 +52,15 @@ a:hover{text-decoration:underline}
     display:flex;
     flex-direction:column;
     padding-bottom: 0; 
-    /* Title Indentation */
-    padding-left: 20px; 
+    /* 🎯 FIX: Remove any indentation so it aligns perfectly with the 16px container padding */
+    padding-left: 0; 
 }
 .title h1{
     margin:0;
     font-size:1.5rem;
-    letter-spacing:0.2px
+    letter-spacing:0.2px;
+    /* Reduce line height for the multi-line title */
+    line-height: 1.2; 
 }
 .title .subtitle{
     opacity:.9;
@@ -111,6 +113,7 @@ a:hover{text-decoration:underline}
     padding:40px 0; /* Increased padding */
 }
 .hero h2{
+    /* This heading will now perfectly align with the Title/Subtitle text in the masthead */
     margin:0 0 16px; 
     font-size:1.75rem;
     color: var(--brand); 
