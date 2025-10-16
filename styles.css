@@ -1,206 +1,180 @@
-/* --- CSS Variables: Defines Colors/Themes --- */
-:root{ 
-    --brand:#8c1515; /* <-- This is the Stanford Cardinal Red! */
-    --brand-dark:#6b0f0f;
-    --bg:#ffffff; 
-    --text:#222222; 
-    --muted:#666666; 
-    --card:#f7f7f7; 
-    --border:#e5e5e5; 
-    --link:#0645ad; 
-} 
-
-/* --- Global Styles & Typography --- */
-*{box-sizing:border-box} 
-html,body{
-    margin:0; /* CRUCIAL: Eliminates browser default margin allowing full-width */
-    padding:0;
-    background:var(--bg);
-    color:var(--text);
-    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"
-} 
-a{color:var(--link);text-decoration:none} 
-a:hover{text-decoration:underline}
-
-/* --- Header / TOP BANNER --- */
-.topbar{
-    background:var(--brand); /* Applies the Cardinal Red color */
-    color:#fff;
-    padding: 10px 0; 
-}
-.container{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 16px
-}
-.masthead{
-    /* Changed to block to allow nav to be below */
-    display:block; 
-    padding:8px 0; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
-}
-.title{
-    display:flex;
-    flex-direction:column;
-    padding-bottom: 10px; /* Space above the nav menu */
-}
-.title h1{
-    margin:0;
-    font-size:1.5rem;
-    letter-spacing:0.2px
-}
-.title .subtitle{
-    opacity:.9;
-    font-size:.95rem
+/* --- CSS Variables --- */
+:root {
+  --brand: #8c1515;       /* Stanford Cardinal Red */
+  --brand-dark: #6b0f0f;
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --card: #f7f7f7;
+  --border: #e5e5e5;
+  --link: #0645ad;
 }
 
-/* --- Navigation Menu (Tabs) --- */
-.nav{
-    display:flex;
-    gap:18px;
-    font-weight:600;
-    padding-top: 5px; 
-    padding-bottom: 5px;
+/* --- Reset / Base --- */
+* {
+  box-sizing: border-box;
 }
-.nav a{
-    color:#fff;
-    opacity:.95
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
-.nav a:hover{
-    opacity:1
+a {
+  color: var(--link);
+  text-decoration: none;
 }
-
-/* --- Hero Section (Course Description) --- */
-.hero{
-    background:linear-gradient(0deg,#fafafa,#fff);
-    border-bottom:1px solid var(--border)
-}
-.hero .inner{
-    padding:28px 0
-}
-.hero h2{
-    margin:0 0 8px;
-    font-size:1.75rem
-}
-.meta{
-    color:var(--muted)
+a:hover {
+  text-decoration: underline;
 }
 
-/* --- Grid Layout (Main Content + Sidebar) --- */
-.grid{
-    display:grid;
-    grid-template-columns:1fr 320px;
-    gap:22px;
-    padding:26px 0
+/* --- Top Bar --- */
+.topbar {
+  background: var(--brand);
+  color: white;
+  padding: 10px 0;
 }
-@media (max-width: 900px){
-    .grid{
-        grid-template-columns:1fr
-    }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
-
-.card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:18px
+.masthead {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.card h3{
-    margin-top:0
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-
-/* --- Tables (For the Schedule Page) --- */
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:10px;
-    overflow:hidden
+.title h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
-th,td{
-    padding:12px;
-    border-bottom:1px solid var(--border);
-    text-align:left;
-    vertical-align:top
-}
-thead th{
-    background:#fafafa;
-    font-weight:700
-}
-tbody tr:hover{
-    background:#fff8f8
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
-/* --- Utility Classes --- */
-.badge{
-    display:inline-block;
-    padding:4px 8px;
-    border-radius:999px;
-    background:#f0f0f0;
-    border:1px solid var(--border);
-    font-size:.8rem;
-    color:var(--muted)
+/* --- Nav Menu --- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-weight: 600;
+  padding: 6px 0;
 }
-.btn{
-    display:inline-block;
-    padding:10px 14px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    background:#fff;
-    font-weight:600;
-    margin-right: 10px;
+.nav a {
+  color: white;
+  opacity: 0.95;
 }
-.btn:hover{
-    border-color:#d4d4d4
-}
-.btn.primary{
-    background:var(--brand); /* Applies red to primary buttons */
-    color:#fff;
-    border-color:var(--brand-dark)
+.nav a:hover {
+  opacity: 1;
 }
 
-/* --- Footer --- */
-footer{
-    border-top: none; /* Removed so the banner can fill the top edge */
-    padding: 0; /* CRUCIAL: Allows full-width children to touch the screen edges */
-    margin-top:28px;
-    color:var(--muted);
-    font-size:.95rem;
-    text-align: center; 
+/* --- Orb Image Section --- */
+.orb-section {
+  position: relative;
+  margin-top: -40px; /* visually overlap red bar */
+  z-index: 0;
 }
-
-/* Re-adds padding for the copyright text which is inside the .container */
-footer .container {
-    padding-top: 22px; 
-    padding-bottom: 22px;
+.orb-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to top, rgba(10,10,10,0) 0%, var(--brand) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
-
-/* --- Footer --- */
-footer{
-    border-top: 1px solid var(--border); /* Re-adds a separator line above the footer content */
-    padding: 22px 0; /* Re-adds padding for the copyright text container */
-    margin-top:28px;
-    color:var(--muted);
-    font-size:.95rem;
-    text-align: center; /* Center the copyright text */
-}
-
-/* We no longer need to target footer .container specifically for padding, 
-   but we'll keep the footer styling clean. */
-
-/* --- NEW BANNER STYLE for Untitled design-6.png --- */
 .header-banner {
-    display: block; 
-    width: 100%; /* Stretches the image to the full width of the header */
-    
-    /* 🎯 CRUCIAL CHANGE: Set a fixed height to make the banner thinner */
-    height: 150px; /* Adjust this value (e.g., 100px for thinner, 200px for thicker) */
-    
-    object-fit: cover; /* This ensures the image covers the 150px height without being squished */
-    margin: 0; 
-    padding: 0;
-    
-    /* Adds a thin line to separate the banner from the main content below it */
-    border-bottom: 1px solid var(--border); 
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border: none;
+}
+
+/* --- Hero / Course Description --- */
+.hero {
+  background: linear-gradient(0deg, #fafafa, #fff);
+  border-bottom: 1px solid var(--border);
+}
+.hero .inner {
+  padding: 28px 0;
+}
+.hero h2 {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+}
+.meta {
+  color: var(--muted);
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 22px;
+  padding: 26px 0;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.card h3 {
+  margin-top: 0;
+}
+
+/* --- Buttons / Badges --- */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.btn:hover {
+  border-color: #d4d4d4;
+}
+.btn.primary {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand-dark);
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 22px 0;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
 }
