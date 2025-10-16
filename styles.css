@@ -13,7 +13,7 @@
 /* --- Global Styles & Typography --- */
 *{box-sizing:border-box} 
 html,body{
-    margin:0;
+    margin:0; /* CRUCIAL: Eliminates browser default margin allowing full-width */
     padding:0;
     background:var(--bg);
     color:var(--text);
@@ -162,32 +162,26 @@ tbody tr:hover{
 
 /* --- Footer --- */
 footer{
-    border-top:1px solid var(--border);
-    padding:22px 0;
-    margin-top:28px;
-    color:var(--muted);
-    font-size:.95rem
-}
-
-/* --- Footer --- */
-footer{
-    border-top: none; /* Remove the top border for a clean banner look */
-    padding: 0; /* Remove padding */
+    border-top: none; /* Removed so the banner can fill the top edge */
+    padding: 0; /* CRUCIAL: Allows full-width children to touch the screen edges */
     margin-top:28px;
     color:var(--muted);
     font-size:.95rem;
-    text-align: center; /* Center the copyright text */
+    text-align: center; 
 }
 
+/* Re-adds padding for the copyright text which is inside the .container */
 footer .container {
-    padding-top: 22px; /* Re-add the vertical spacing for the text inside the container */
+    padding-top: 22px; 
     padding-bottom: 22px;
 }
 
-/* --- NEW BANNER STYLE --- */
+/* --- NEW BANNER STYLE FOR Untitled design-6.png --- */
 .footer-banner {
-    display: block; /* Ensures it takes up the full width */
-    width: 100%; /* Makes the image stretch across the entire page */
-    height: auto; /* Maintains the image's aspect ratio */
-    object-fit: cover; /* Ensures the image fills the space nicely */
+    display: block; 
+    width: 100%; /* Stretches the image to the full width of the footer */
+    height: auto; 
+    object-fit: cover; /* Ensures the image covers the area without being squished */
+    margin: 0;
+    padding: 0;
 }
