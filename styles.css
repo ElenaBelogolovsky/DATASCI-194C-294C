@@ -45,14 +45,14 @@ a:hover{text-decoration:underline}
 }
 .masthead{
     display:block; 
-    padding:8px 0 18px; /* Adjusted padding */
+    padding:8px 0 18px; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 .title{
     display:flex;
     flex-direction:column;
     padding-bottom: 0; 
-    /* Indentation for the title and subtitle */
+    /* Title Indentation */
     padding-left: 20px; 
 }
 .title h1{
@@ -68,7 +68,7 @@ a:hover{text-decoration:underline}
 /* --- Navigation Menu (Tabs) --- */
 .nav{
     display:flex;
-    gap:22px; /* Increased gap */
+    gap:22px; 
     font-weight:600;
     padding-top: 15px; 
     padding-bottom: 10px; 
@@ -128,7 +128,13 @@ a:hover{text-decoration:underline}
 }
 @media (max-width: 900px){
     .grid{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
+        gap: 40px; /* Increase gap between stacked sections */
+    }
+    
+    /* Space between stacked cards on mobile */
+    aside .card:not(:last-child) {
+        margin-bottom: 20px;
     }
 }
 
@@ -193,7 +199,7 @@ tbody tr:hover{
 .btn:hover{
     border-color:#d4d4d4;
     text-decoration: none;
-    transform: translateY(-1px); /* Little lift effect */
+    transform: translateY(-1px); 
 }
 .btn.primary{
     background:var(--brand); 
@@ -212,4 +218,44 @@ footer{
     color:var(--muted);
     font-size:.95rem;
     text-align: center; 
+}
+
+/* -------------------------------------------
+   --- MOBILE-SPECIFIC STYLES (UNDER 600PX) ---
+   ------------------------------------------- */
+@media (max-width: 600px) {
+    /* 1. Reduce overall padding on the container */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* 2. Shrink Title and Subtitle */
+    .title h1 {
+        font-size: 1.2rem; 
+    }
+    .title .subtitle {
+        font-size: 0.85rem; 
+    }
+    
+    /* 3. Stack Navigation Links */
+    .nav {
+        flex-direction: column; 
+        gap: 8px; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .nav a.active-page {
+        border-bottom: 2px solid var(--accent); 
+        padding-bottom: 2px;
+    }
+    
+    /* 4. Shrink Banner */
+    .header-banner {
+        height: 100px; 
+    }
+    
+    /* 5. Reduce main content padding */
+    .hero .inner {
+        padding: 25px 0;
+    }
 }
