@@ -1,39 +1,72 @@
-/* --- CSS Variables --- */
+/* --- CSS Variables / Themes --- */
 :root {
-  --brand: #8c1515;       /* Stanford Cardinal Red */
+  --brand: #8c1515;
   --brand-dark: #6b0f0f;
-  --bg: #ffffff;
-  --text: #222222;
-  --muted: #666666;
-  --card: #f7f7f7;
-  --border: #e5e5e5;
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a2e;
+  --text-light: #222222;
+  --text-dark: #dddddd;
+  --muted-light: #666666;
+  --muted-dark: #aaaaaa;
+  --card-light: #f7f7f7;
+  --card-dark: #2a2a3f;
+  --border-light: #e5e5e5;
+  --border-dark: #444466;
   --link: #0645ad;
 }
 
-/* --- Reset / Base --- */
+/* Base resets */
 * {
   box-sizing: border-box;
 }
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 a {
   color: var(--link);
-  text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-/* --- Top Bar --- */
+/* Dark mode */
+html.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+html.dark-mode .card {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+html.dark-mode .hero {
+  background: none;
+}
+html.dark-mode .hero .inner {
+  background: none;
+}
+/* adjust borders, muted, etc. */
+html.dark-mode .meta {
+  color: var(--muted-dark);
+}
+html.dark-mode .badge {
+  background: var(--card-dark);
+  color: var(--muted-dark);
+  border-color: var(--border-dark);
+}
+
+/* Top bar & header */
 .topbar {
   background: var(--brand);
   color: white;
   padding: 10px 0;
+  position: relative;
+  z-index: 100;
 }
 .container {
   max-width: 1100px;
@@ -41,9 +74,10 @@ a:hover {
   padding: 0 16px;
 }
 .masthead {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .title {
   display: flex;
@@ -58,8 +92,15 @@ a:hover {
   font-size: 0.95rem;
   opacity: 0.9;
 }
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
-/* --- Nav Menu --- */
+/* Navigation */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -67,19 +108,19 @@ a:hover {
   font-weight: 600;
   padding: 6px 0;
 }
-.nav a {
-  color: white;
-  opacity: 0.95;
-}
-.nav a:hover {
-  opacity: 1;
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: var(--brand);
+  z-index: 90;
 }
 
-/* --- Orb Image Section --- */
+/* Orb image section */
 .orb-section {
   position: relative;
-  margin-top: -40px; /* visually overlap red bar */
+  margin-top: -40px;
   z-index: 0;
+  overflow: hidden;
 }
 .orb-section::before {
   content: "";
@@ -101,10 +142,10 @@ a:hover {
   border: none;
 }
 
-/* --- Hero / Course Description --- */
+/* Hero / main content section */
 .hero {
   background: linear-gradient(0deg, #fafafa, #fff);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
 }
 .hero .inner {
   padding: 28px 0;
@@ -114,10 +155,19 @@ a:hover {
   font-size: 1.75rem;
 }
 .meta {
-  color: var(--muted);
+  color: var(--muted-light);
+}
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  color: var(--muted-light);
 }
 
-/* --- Grid Layout --- */
+/* Grid / layout */
 .grid {
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -130,35 +180,32 @@ a:hover {
   }
 }
 
-/* --- Cards --- */
+/* Cards */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 .card h3 {
   margin-top: 0;
 }
 
-/* --- Buttons / Badges --- */
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: #f0f0f0;
-  border: 1px solid var(--border);
-  font-size: 0.8rem;
-  color: var(--muted);
-}
+/* Buttons */
 .btn {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   background: white;
   font-weight: 600;
   margin-right: 10px;
+  transition: background 0.2s, border-color 0.2s;
 }
 .btn:hover {
   border-color: #d4d4d4;
@@ -169,12 +216,13 @@ a:hover {
   border-color: var(--brand-dark);
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-light);
   padding: 22px 0;
   margin-top: 28px;
-  color: var(--muted);
+  color: var(--muted-light);
   font-size: 0.95rem;
   text-align: center;
+  transition: color 0.3s;
 }
