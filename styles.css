@@ -169,49 +169,25 @@ footer{
     font-size:.95rem
 }
 
-/* 🖼️ UPDATED BACKGROUND IMAGE RULE FOR DESCRIPTION SECTION 🖼️ */
-/* This rule MUST come after the generic .hero rules to override the background property. */
-.description-hero {
-    /* Set the existing background gradient first */
-    background:linear-gradient(0deg,#fafafa,#fff); /* This was originally on .hero, keep it here */
-    border-bottom:1px solid var(--border); /* Keep this as well */
-    padding:28px 0; /* Keep the padding for the content */
-
-    position: relative; /* Crucial for positioning the pseudo-element */
-    overflow: hidden; /* Important if the blurred image extends beyond the content box */
+/* --- Footer --- */
+footer{
+    border-top: none; /* Remove the top border for a clean banner look */
+    padding: 0; /* Remove padding */
+    margin-top:28px;
+    color:var(--muted);
+    font-size:.95rem;
+    text-align: center; /* Center the copyright text */
 }
 
-.description-hero::before {
-    content: ""; /* Required for pseudo-elements */
-    position: absolute; /* Allows precise positioning */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Your background image properties for the pseudo-element */
-    background-image: url("Untitled design-5.png"); 
-    background-repeat: no-repeat; 
-    background-position: center center; /* Centered for a larger background */
-    background-size: cover; /* Make the image cover the entire area, potentially cropping edges */
-    
-    /* Apply the blur filter ONLY to the pseudo-element (the image) */
-    filter: blur(5px); /* Adjust the '5px' value for more or less blur */
-    
-    /* Lower opacity for a more subtle watermark effect */
-    opacity: 0.3; /* Adjust between 0 (invisible) and 1 (fully opaque) */
-
-    /* Ensure the pseudo-element is behind the actual text content */
-    z-index: 0; 
+footer .container {
+    padding-top: 22px; /* Re-add the vertical spacing for the text inside the container */
+    padding-bottom: 22px;
 }
 
-/* Ensure the text content sits above the blurred background */
-.description-hero h2,
-.description-hero p,
-.description-hero .meta {
-    position: relative;
-    z-index: 1; /* Puts the text content above the blurred pseudo-element */
-    /* You might want a slight background or shadow for text readability if the image is busy */
-    /* background-color: rgba(255, 255, 255, 0.5); */ /* Example: semi-transparent white behind text */
-    /* padding: 2px 5px; */ /* Adjust as needed */
+/* --- NEW BANNER STYLE --- */
+.footer-banner {
+    display: block; /* Ensures it takes up the full width */
+    width: 100%; /* Makes the image stretch across the entire page */
+    height: auto; /* Maintains the image's aspect ratio */
+    object-fit: cover; /* Ensures the image fills the space nicely */
 }
