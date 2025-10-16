@@ -193,9 +193,12 @@ footer{
 .header-banner {
     display: block; 
     width: 100%; /* Stretches the image to the full width of the header */
-    height: auto; 
-    object-fit: cover; /* Ensures the image covers the area without being squished */
-    margin: 0; /* Remove default image margin */
+    
+    /* 🎯 CRUCIAL CHANGE: Set a fixed height to make the banner thinner */
+    height: 150px; /* Adjust this value (e.g., 100px for thinner, 200px for thicker) */
+    
+    object-fit: cover; /* This ensures the image covers the 150px height without being squished */
+    margin: 0; 
     padding: 0;
     
     /* Adds a thin line to separate the banner from the main content below it */
