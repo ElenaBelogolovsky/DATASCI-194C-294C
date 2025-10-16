@@ -1,0 +1,4 @@
+:root{ --brand:#8c1515; /* Stanford cardinal-ish */ /* ... all your CSS code ... */ }
+/* ... */
+.btn.primary{background:var(--brand);color:#fff;border-color:var(--brand-dark)}
+/* ... */
