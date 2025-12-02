@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,74 @@
     <link rel="stylesheet" href="../styles.css">
 
     <style>
+        /* Speaker layout – conference-style bio card */
+        .speaker-section {
+            padding: 24px 0 32px;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border-radius: 12px;
+            border: 1px solid var(--border, #e5e5e5);
+            padding: 18px 18px 20px;
+            margin-bottom: 28px;
+        }
+
         .speaker-photo {
             max-width: 220px;
             border-radius: 10px;
             display: block;
-            margin-bottom: 1rem;
+            flex-shrink: 0;
         }
 
-        .titles p {
-            margin: 0 0 6px 0;
+        .speaker-main {
+            flex: 1 1 auto;
+        }
+
+        .speaker-name {
+            margin: 0 0 6px;
+            font-size: 1.6rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 12px;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-titles {
+            margin: 0 0 10px;
+            padding-left: 16px;
+        }
+
+        .speaker-titles li {
+            margin-bottom: 2px;
+        }
+
+        .speaker-meta-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted, #666);
+            margin-bottom: 3px;
+        }
+
+        .talk-title {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .speaker-photo {
+                max-width: 180px;
+            }
         }
     </style>
 </head>
@@ -29,51 +88,64 @@
     </div>
 </header>
 
-<div class="container">
-    <section>
-        <h2>Steven L. Brunton</h2>
+<div class="container speaker-section">
+    <!-- Bio-card / conference-style profile -->
+    <div class="speaker-card">
+        <!-- Photo: adjust path if you move the file -->
+        <img src="../brunton.jpg" alt="Steven L. Brunton" class="speaker-photo">
 
-        <!-- Speaker photo -->
-        <img src="brunton.jpg" alt="Steven L. Brunton" class="speaker-photo">
+        <div class="speaker-main">
+            <h2 class="speaker-name">Steven L. Brunton</h2>
 
-        <!-- Professional Titles -->
-        <div class="titles">
-            <p><strong>Professor of Mechanical Engineering</strong></p>
-            <p>Adjunct Professor of Aeronautics & Astronautics</p>
-            <p>Adjunct Professor of Computer Science</p>
-            <p>Adjunct Professor of Applied Mathematics</p>
-            <p>Associate Professor of Mechanical Engineering</p>
-            <p>Data Science Fellow, eScience Institute</p>
-            <p>University of Washington, Seattle</p>
+            <p class="speaker-affiliation">
+                University of Washington, Seattle
+            </p>
+
+            <div>
+                <div class="speaker-meta-label">Academic Roles</div>
+                <ul class="speaker-titles">
+                    <li><strong>Professor of Mechanical Engineering</strong></li>
+                    <li>Adjunct Professor of Aeronautics &amp; Astronautics</li>
+                    <li>Adjunct Professor of Computer Science</li>
+                    <li>Adjunct Professor of Applied Mathematics</li>
+                    <li>Associate Professor of Mechanical Engineering</li>
+                    <li>Data Science Fellow, eScience Institute</li>
+                </ul>
+            </div>
         </div>
+    </div>
 
-        <h3>Title</h3>
+    <!-- Talk info + abstract + bio -->
+    <section>
+        <h3 class="talk-title">Talk Title</h3>
         <p><strong>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</strong></p>
 
         <h3>Abstract</h3>
         <p>
             This work will discuss several key challenges and opportunities in using machine learning
-            for nonlinear system identification. In particular, I will describe how machine learning may be
-            used to develop accurate and efficient nonlinear dynamical systems models for complex natural
-            and engineered systems. I will emphasize the need for interpretable and generalizable
-            data-driven models, such as the sparse identification of nonlinear dynamics (SINDy) algorithm,
-            which identifies a minimal dynamical system model that balances model complexity with accuracy,
-            avoiding overfitting.
+            for nonlinear system identification. In particular, Prof. Brunton will describe how machine
+            learning may be used to develop accurate and efficient nonlinear dynamical systems models for
+            complex natural and engineered systems.
         </p>
         <p>
-            I will also introduce several key benchmark problems in dynamical systems and fluid dynamics
-            that provide diverse metrics to assess modern system identification techniques. Because fluid
-            dynamics is central to transportation, health, and defense systems, we will emphasize the need
-            for machine learning solutions that are interpretable, explainable, generalizable, and that
-            respect known physics.
+            He will emphasize the need for interpretable and generalizable data-driven models, such as
+            the sparse identification of nonlinear dynamics (SINDy) algorithm, which identifies a minimal
+            dynamical system model that balances model complexity with accuracy, avoiding overfitting.
+            The talk will also introduce several key benchmark problems in dynamical systems and fluid
+            dynamics that provide diverse metrics to assess modern system identification techniques.
+        </p>
+        <p>
+            Because fluid dynamics is central to transportation, health, and defense systems, the talk
+            will emphasize the importance of machine learning solutions that are interpretable,
+            explainable, generalizable, and that respect known physics.
         </p>
 
-        <h3>Bio</h3>
+        <h3>More Information</h3>
         <p>
             For full bio and additional information, see:
             <a href="https://www.me.washington.edu/facultyfinder/steve-brunton"
                target="_blank" rel="noopener noreferrer">
-                Steven Brunton Faculty Page
+                Steven Brunton – University of Washington Faculty Page
             </a>
         </p>
     </section>
