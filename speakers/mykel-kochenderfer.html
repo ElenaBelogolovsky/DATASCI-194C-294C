@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mykel J. Kochenderfer – DATASCI 194C/294C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Speaker layout – conference-style */
+        .speaker-section {
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border: 1px solid var(--border, #e5e5e5);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-photo {
+            max-width: 220px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .speaker-main {
+            flex: 1 1 auto;
+        }
+
+        .speaker-name {
+            margin: 0 0 0.4rem;
+            font-size: 1.6rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 0.8rem;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-meta-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            color: var(--muted, #666);
+        }
+
+        .speaker-titles {
+            padding-left: 1rem;
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .speaker-titles li {
+            margin-bottom: 2px;
+        }
+
+        /* Mobile rule matching your Schedule page padding */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+
+            .speaker-photo {
+                max-width: 180px;
+            }
+
+            h2, h3 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container speaker-section">
+
+    <!-- Bio-card -->
+    <div class="speaker-card">
+        <img src="../kochenderfer.jpg" alt="Mykel Kochenderfer" class="speaker-photo">
+
+        <div class="speaker-main">
+            <h2 class="speaker-name">Mykel J. Kochenderfer</h2>
+
+            <p class="speaker-affiliation">
+                Stanford University
+            </p>
+
+            <div>
+                <div class="speaker-meta-label">Academic Roles</div>
+                <ul class="speaker-titles">
+                    <li>Associate Professor of Aeronautics and Astronautics</li>
+                    <li>Associate Professor (by courtesy) of Computer Science</li>
+                    <li>Senior Fellow, Stanford Human-Centered AI Institute (HAI)</li>
+                    <li>Director, Stanford Intelligent Systems Laboratory (SISL)</li>
+                    <li>Co-Director, Center for AI Safety</li>
+                    <li>Editor-in-Chief, Journal of Artificial Intelligence Research</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Talk details -->
+    <section>
+        <h3>Talk Title</h3>
+        <p><strong>Automated Decision Making for Safety-Critical Applications</strong></p>
+
+        <h3>Abstract</h3>
+        <p>
+            Building robust decision-making systems for autonomous platforms is challenging. Decisions must be made
+            under uncertainty — with imperfect information about the environment and incomplete knowledge of how it
+            will evolve. These systems must balance safety with operational efficiency, while navigating vast spaces
+            of edge cases that designers must anticipate.
+        </p>
+        <p>
+            This talk discusses major challenges associated with ensuring computational tractability and establishing
+            trust that autonomous decision systems will behave correctly when deployed in the real world. We will
+            outline methodologies for addressing these challenges and highlight research applications that illustrate
+            pathways toward safer systems.
+        </p>
+
+        <h3>Bio</h3>
+        <p>
+            Mykel J. Kochenderfer is an Associate Professor of Aeronautics and Astronautics at Stanford University
+            and director of the Stanford Intelligent Systems Laboratory (SISL), where his group develops advanced
+            algorithms and analytical frameworks for robust decision making. His research centers on efficient
+            computational methods for deriving optimal decision strategies from high-dimensional probabilistic
+            representations.
+        </p>
+        <p>
+            Prior to joining Stanford in 2013, Prof. Kochenderfer worked at MIT Lincoln Laboratory, where he led
+            development of aircraft collision avoidance systems, resulting in the ACAS X international standard for
+            manned and unmanned aviation.
+        </p>
+        <p>
+            He is co-director of the Center for AI Safety, editor-in-chief of the Journal of Artificial Intelligence
+            Research, and author of several MIT Press textbooks including <em>Decision Making under Uncertainty</em>
+            (2015), <em>Algorithms for Optimization</em> (2019), and <em>Algorithms for Decision Making</em> (2022).
+        </p>
+    </section>
+</div>
+
+      
+
+        <h3>More Information</h3>
+        <p>
+            Full bio, publications, and research details available at:
+            <a href="https://mykel.kochenderfer.com" target="_blank" rel="noopener noreferrer">
+                mykel.kochenderfer.com
+            </a>
+        </p>
+
+    <!-- … rest of page … -->
+
+</body>
+</html>
 
