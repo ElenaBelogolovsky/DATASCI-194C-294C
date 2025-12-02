@@ -272,3 +272,22 @@ footer{
         padding: 25px 0;
     }
 }
+
+/* --- Mobile improvements for tables --- */
+@media (max-width: 600px) {
+    .grid {
+        padding: 20px 0;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;     /* allow horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* smoother on iOS */
+    }
+
+    th, td {
+        white-space: nowrap;  /* keeps cells readable */
+    }
+}
+
