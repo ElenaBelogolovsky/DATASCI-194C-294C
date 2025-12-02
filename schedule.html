@@ -4,80 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATASCI 194C/294C: Schedule</title>
-
-    <!-- Use your shared site styles -->
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* Schedule-specific styling, minimal and table-focused */
-
         .page-header {
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
+            margin: 2rem 0 1rem;
         }
-
         .page-header h2 {
             margin: 0;
             font-size: 1.8rem;
             color: #8C1515;
         }
-
         .page-header p {
             margin-top: 0.4rem;
             color: #555;
             font-size: 0.95rem;
         }
 
-        .table-wrapper {
-            margin-top: 1.5rem;
-            overflow-x: auto;      /* horizontal scroll on mobile */
-            -webkit-overflow-scrolling: touch;
+        /* Desktop: clean table */
+        @media (min-width: 769px) {
+            .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table.schedule-table {
+                width: 100%;
+                border-collapse: collapse;
+                min-width: 900px;
+                font-size: 0.95rem;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 0.7rem 0.8rem;
+                vertical-align: top;
+            }
+            th { background: #f5f5f5; font-weight: 600; }
+            .week-col { white-space: nowrap; font-weight: 600; }
+            .date-col { white-space: nowrap; }
         }
 
-        table.schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 900px;      /* ensures table structure on desktop; scrolls on small screens */
-            font-size: 0.95rem;
+        /* Mobile: beautiful stacked cards – no horizontal scroll */
+        @media (max-width: 768px) {
+            .container { padding: 1.4rem; }
+            .table-wrapper { overflow: visible; }
+            table, thead, tbody, th, td, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr {
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                margin-bottom: 1.4rem;
+                background: #fff;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+                overflow: hidden;
+            }
+            td {
+                display: block;
+                padding: 0.7rem 1rem;
+                position: relative;
+                padding-left: 40%;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            td:last-child { border-bottom: none; }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 35%;
+                font-weight: 700;
+                color: #8C1515;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            td:first-child, td:nth-child(2) {
+                background: #8C1515;
+                color: white;
+                font-weight: 700;
+                padding-left: 1rem !important;
+            }
+            td:first-child:before, td:nth-child(2):before { display: none; }
+            td:first-child::after {
+                content: " – " attr(data-date);
+                opacity: 0.9;
+                font-size: 0.9rem;
+            }
         }
 
-        table.schedule-table th,
-        table.schedule-table td {
-            border: 1px solid #ddd;
-            padding: 0.6rem 0.7rem;
-            vertical-align: top;
-        }
-
-        table.schedule-table th {
-            background-color: #f5f5f5;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        table.schedule-table td.week-col {
-            white-space: nowrap;
-            font-weight: 600;
-        }
-
-        table.schedule-table td.date-col {
-            white-space: nowrap;
-        }
-
-        .topic-title {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .speaker-name a {
-            color: #8C1515;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .speaker-name a:hover {
-            text-decoration: underline;
-        }
-
+        .topic-title { font-weight: 600; margin-bottom: 0.3rem; }
+        .speaker-name a { color: #8C1515; text-decoration: none; font-weight: 600; }
+        .speaker-name a:hover { text-decoration: underline; }
         .guest-tag {
             display: inline-block;
             margin-left: 0.3rem;
@@ -90,49 +101,19 @@
             color: #fff;
             font-weight: 700;
         }
-
-        .reading-list,
-        .activity-list {
-            margin: 0.25rem 0;
-            padding-left: 1.1rem;
-        }
-
-        .reading-list li,
-        .activity-list li {
-            margin-bottom: 0.25rem;
-        }
-
-        .reading-list a,
-        .activity-list a {
-            color: #8C1515;
-            text-decoration: none;
-        }
-
-        .reading-list a:hover,
-        .activity-list a:hover {
-            text-decoration: underline;
-        }
-
+        .reading-list, .activity-list { margin: 0.4rem 0; padding-left: 1.1rem; }
+        .reading-list li, .activity-list li { margin-bottom: 0.3rem; }
+        .reading-list a, .activity-list a { color: #8C1515; text-decoration: none; }
+        .reading-list a:hover, .activity-list a:hover { text-decoration: underline; }
         .assignment-pill {
             display: inline-block;
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.7rem;
             border-radius: 999px;
             border: 1px solid #8C1515;
             color: #8C1515;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 600;
             background: #FFEBEE;
-            margin-bottom: 0.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .page-header h2 {
-                font-size: 1.4rem;
-            }
-            table.schedule-table {
-                font-size: 0.9rem;
-                min-width: 750px;
-            }
         }
     </style>
 </head>
@@ -172,31 +153,24 @@
                 </tr>
             </thead>
             <tbody>
+
                 <!-- WEEK 1 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 1</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 01/06">Week 1</td>
                     <td class="date-col">Tue • 01/06/2026</td>
-                    <td>
-                        <div class="topic-title">Introduction; Nobel Prizes for Data Science</div>
-                    </td>
+                    <td><div class="topic-title">Introduction; Nobel Prizes for Data Science</div></td>
                     <td>—</td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
-                            <li>
-                                <a href="https://www.nature.com/articles/s41746-024-01345-9#citeas" target="_blank">
-                                    Artificial Intelligence awarded two Nobel Prizes… (Li &amp; Gilbert, 2024)
-                                </a>
-                            </li>
+                            <li><a href="https://www.nature.com/articles/s41746-024-01345-9#citeas" target="_blank">Artificial Intelligence awarded two Nobel Prizes… (Li & Gilbert, 2024)</a></li>
                         </ul>
                     </td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 01/08/2026</td>
-                    <td>
-                        <div class="topic-title">Common Task Framework (CTF)</div>
-                    </td>
+                    <td><div class="topic-title">Common Task Framework (CTF)</div></td>
                     <td>—</td>
                     <td>
                         <strong>Read</strong>
@@ -218,58 +192,36 @@
 
                 <!-- WEEK 2 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 2</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 01/13">Week 2</td>
                     <td class="date-col">Tue • 01/13/2026</td>
-                    <td>
-                        <div class="topic-title">Emergence of Empirical ML &amp; Benchmark Culture</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Emergence of Empirical ML & Benchmark Culture</div></td>
+                    <td><div class="speaker-name"><a href="speakers/moritz-hardt.html">Moritz Hardt</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
-                            <li>
-                                <a href="https://mlbenchmarks.org" target="_blank">
-                                    The Emerging Science of Machine Learning Benchmarks (Hardt, 2026)
-                                </a>
-                            </li>
+                            <li><a href="https://mlbenchmarks.org" target="_blank">The Emerging Science of Machine Learning Benchmarks (Hardt, 2026)</a></li>
                         </ul>
                     </td>
-                    <td>
-                        <span class="assignment-pill">Assignment 1 Due</span>
-                    </td>
+                    <td><span class="assignment-pill">Assignment 1 Due</span></td>
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 01/15/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Topic TBA</div></td>
+                    <td><div class="speaker-name"><a href="speakers/moritz-hardt.html">Moritz Hardt</a> <span class="guest-tag">Guest</span></div></td>
                     <td>—</td>
                     <td>—</td>
                 </tr>
 
                 <!-- WEEK 3 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 3</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 01/20">Week 3</td>
                     <td class="date-col">Tue • 01/20/2026</td>
-                    <td>
-                        <div class="topic-title">Case Studies: NIPS / NETFLIX</div>
-                    </td>
+                    <td><div class="topic-title">Case Studies: NIPS / NETFLIX</div></td>
                     <td>—</td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
-                            <li><a href="https://facctconference.org/static/papers24/facct24-127.pdf" target="_blank">AI as a Sport… (Orr &amp; Kang, 2024) – optional</a></li>
+                            <li><a href="https://facctconference.org/static/papers24/facct24-127.pdf" target="_blank">AI as a Sport… (Orr & Kang, 2024)</a></li>
                             <li><a href="https://mlcontests.com/state-of-machine-learning-competitions-2024/" target="_blank">The State of Competitive Machine Learning 2024</a></li>
                         </ul>
                         <strong>Watch</strong>
@@ -282,50 +234,25 @@
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 01/22/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/jonathon-philips.html">Jonathon Philips</a>
-                            <span class="guest-tag">Guest</span> (confirmation pending)
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Topic TBA</div></td>
+                    <td><div class="speaker-name"><a href="speakers/jonathon-philips.html">Jonathon Philips</a> <span class="guest-tag">Guest</span></div></td>
                     <td>—</td>
-                    <td>
-                        <span class="assignment-pill">Assignment 2 Due</span>
-                    </td>
+                    <td><span class="assignment-pill">Assignment 2 Due</span></td>
                 </tr>
 
                 <!-- WEEK 4 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 4</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 01/27">Week 4</td>
                     <td class="date-col">Tue • 01/27/2026</td>
-                    <td>
-                        <div class="topic-title">Reproducibility &amp; CTF Method</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/mark-liberman.html">Mark Liberman</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Reproducibility & CTF Method</div></td>
+                    <td><div class="speaker-name"><a href="speakers/mark-liberman.html">Mark Liberman</a> <span class="guest-tag">Guest</span></div></td>
                     <td>—</td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 01/29/2026</td>
-                    <td>
-                        <div class="topic-title">
-                            Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics
-                        </div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/steven-brunton.html">Steven L. Brunton</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</div></td>
+                    <td><div class="speaker-name"><a href="speakers/steven-brunton.html">Steven L. Brunton</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Watch</strong>
                         <ul class="activity-list">
@@ -342,17 +269,10 @@
 
                 <!-- WEEK 5 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 5</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 02/03">Week 5</td>
                     <td class="date-col">Tue • 02/03/2026</td>
-                    <td>
-                        <div class="topic-title">Biomedical Challenge Problems; DREAM Challenges</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/gustavo-stolovitzky.html">Gustavo Stolovitzky</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Biomedical Challenge Problems; DREAM Challenges</div></td>
+                    <td><div class="speaker-name"><a href="speakers/gustavo-stolovitzky.html">Gustavo Stolovitzky</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
@@ -363,46 +283,29 @@
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 02/05/2026</td>
-                    <td>
-                        <div class="topic-title">Code Sharing</div>
-                    </td>
+                    <td><div class="topic-title">Code Sharing</div></td>
                     <td>—</td>
                     <td>—</td>
-                    <td>
-                        <span class="assignment-pill">Assignment 3 Due</span>
-                    </td>
+                    <td><span class="assignment-pill">Assignment 3 Due</span></td>
                 </tr>
 
                 <!-- WEEK 6 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 6</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 02/10">Week 6</td>
                     <td class="date-col">Tue • 02/10/2026</td>
-                    <td>
-                        <div class="topic-title">Data Sharing, Reanalysis, Critical Views of Data Sharing</div>
-                    </td>
+                    <td><div class="topic-title">Data Sharing, Reanalysis, Critical Views of Data Sharing</div></td>
                     <td>—</td>
                     <td>—</td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 02/12/2026</td>
-                    <td>
-                        <div class="topic-title">Economics of CTF</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/theis-ingerslev-jensen.html">Theis Ingerslev Jensen</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Economics of CTF</div></td>
+                    <td><div class="speaker-name"><a href="speakers/theis-ingerslev-jensen.html">Theis Ingerslev Jensen</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
-                            <li>
-                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">
-                                    The Power of the Common Task Framework (Hellum et al., 2025)
-                                </a>
-                            </li>
+                            <li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">The Power of the Common Task Framework (Hellum et al., 2025)</a></li>
                         </ul>
                     </td>
                     <td>—</td>
@@ -410,55 +313,32 @@
 
                 <!-- WEEK 7 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 7</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 02/17">Week 7</td>
                     <td class="date-col">Tue • 02/17/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/peter-mattson.html">Peter Mattson (Google / MLCommons)</a>
-                            <span class="guest-tag">Guest</span> (confirmation pending)
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Topic TBA</div></td>
+                    <td>—</td>
                     <td>—</td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 02/19/2026</td>
-                    <td>
-                        <div class="topic-title">Mathematics &amp; Frontier Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/elliot-glazer.html">Elliot Glazer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Mathematics & Frontier Benchmarks</div></td>
+                    <td><div class="speaker-name"><a href="speakers/elliot-glazer.html">Elliot Glazer</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
                             <li><a href="https://arxiv.org/pdf/2411.04872" target="_blank">FrontierMath… (Glazer et al., 2025)</a></li>
                         </ul>
                     </td>
-                    <td>
-                        <span class="assignment-pill">Assignment 4 Due</span>
-                    </td>
+                    <td><span class="assignment-pill">Assignment 4 Due</span></td>
                 </tr>
 
                 <!-- WEEK 8 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 8</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 02/24">Week 8</td>
                     <td class="date-col">Tue • 02/24/2026</td>
-                    <td>
-                        <div class="topic-title">Medical Data Sharing &amp; Medical Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/ziad-obermeyer.html">Ziad Obermeyer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Medical Data Sharing & Medical Benchmarks</div></td>
+                    <td><div class="speaker-name"><a href="speakers/ziad-obermeyer.html">Ziad Obermeyer</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
@@ -471,15 +351,8 @@
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 02/26/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/mykel-kochenderfer.html">Mykel J. Kochenderfer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Topic TBA</div></td>
+                    <td><div class="speaker-name"><a href="speakers/mykel-kochenderfer.html">Mykel J. Kochenderfer</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
@@ -492,17 +365,10 @@
 
                 <!-- WEEK 9 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 9</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 03/03">Week 9</td>
                     <td class="date-col">Tue • 03/03/2026</td>
-                    <td>
-                        <div class="topic-title">Agentic Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/jacob-steinhardt.html">Jacob Steinhardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Agentic Benchmarks</div></td>
+                    <td><div class="speaker-name"><a href="speakers/jacob-steinhardt.html">Jacob Steinhardt</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read</strong>
                         <ul class="reading-list">
@@ -515,15 +381,8 @@
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 03/05/2026</td>
-                    <td>
-                        <div class="topic-title">Critique of Challenges, Data-Based Science and Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/sanmi-koyejo.html">Sanmi Koyejo</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
+                    <td><div class="topic-title">Critique of Challenges, Data-Based Science and Benchmarks</div></td>
+                    <td><div class="speaker-name"><a href="speakers/sanmi-koyejo.html">Sanmi Koyejo</a> <span class="guest-tag">Guest</span></div></td>
                     <td>
                         <strong>Read (choose 3–4)</strong>
                         <ul class="reading-list">
@@ -533,21 +392,17 @@
                             <li><a href="https://arxiv.org/pdf/2510.07575" target="_blank">Benchmarking is Broken (Cheng et al., 2025)</a></li>
                             <li><a href="https://arxiv.org/pdf/2502.06559" target="_blank">Can We Trust AI Benchmarks? (Eriksson et al., 2025)</a></li>
                             <li><a href="https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/" target="_blank">Chatbots Are Cheating… (Reisnder, 2025)</a></li>
-                            <li><a href="https://www.theinformation.com/articles/openai-cfo-said-uncle-sam-backstop-chip-financing-databricks-co-founder-responds-benchmark-critics" target="_blank">OpenAI CFO… (Drew &amp; Efrati, 2025)</a></li>
+                            <li><a href="https://www.theinformation.com/articles/openai-cfo-said-uncle-sam-backstop-chip-financing-databricks-co-founder-responds-benchmark-critics" target="_blank">OpenAI CFO… (Drew & Efrati, 2025)</a></li>
                         </ul>
                     </td>
-                    <td>
-                        <span class="assignment-pill">Assignment 5 Due</span>
-                    </td>
+                    <td><span class="assignment-pill">Assignment 5 Due</span></td>
                 </tr>
 
                 <!-- WEEK 10 -->
                 <tr>
-                    <td class="week-col" rowspan="2">Week 10</td>
+                    <td class="week-col" rowspan="2" data-date="Tue 03/10">Week 10</td>
                     <td class="date-col">Tue • 03/10/2026</td>
-                    <td>
-                        <div class="topic-title">Leaderboards as Media: Implications for Our Scientific Future</div>
-                    </td>
+                    <td><div class="topic-title">Leaderboards as Media: Implications for Our Scientific Future and The Path Forward</div></td>
                     <td>—</td>
                     <td>
                         <strong>Read</strong>
@@ -560,20 +415,15 @@
                 </tr>
                 <tr>
                     <td class="date-col">Thu • 03/12/2026</td>
-                    <td>
-                        <div class="topic-title">Leaderboard Day: Final Presentations &amp; Wrap-Up</div>
-                    </td>
+                    <td><div class="topic-title">Leaderboard Day: Final Presentations & Wrap-Up</div></td>
                     <td>—</td>
                     <td>—</td>
-                    <td>
-                        <span class="assignment-pill">Final Presentations</span>
-                    </td>
+                    <td><span class="assignment-pill">Final Presentations</span></td>
                 </tr>
 
             </tbody>
         </table>
     </div>
 </main>
-
 </body>
 </html>
