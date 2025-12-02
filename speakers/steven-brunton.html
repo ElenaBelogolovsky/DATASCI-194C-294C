@@ -1,10 +1,23 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Steven L. Brunton – DATASCI 194C/294C</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .speaker-photo {
+            max-width: 220px;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .titles p {
+            margin: 0 0 6px 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,11 +25,6 @@
     <div class="container masthead">
         <div class="title">
             <h1>DATASCI 194C/294C</h1>
-            <span class="subtitle">
-                <a href="../speakers.html" style="color: white; text-decoration: underline;">
-                    ← Back to Guest Speakers
-                </a>
-            </span>
         </div>
     </div>
 </header>
@@ -25,22 +33,39 @@
     <section>
         <h2>Steven L. Brunton</h2>
 
+        <!-- Speaker photo -->
+        <img src="brunton.jpg" alt="Steven L. Brunton" class="speaker-photo">
+
+        <!-- Professional Titles -->
+        <div class="titles">
+            <p><strong>Professor of Mechanical Engineering</strong></p>
+            <p>Adjunct Professor of Aeronautics & Astronautics</p>
+            <p>Adjunct Professor of Computer Science</p>
+            <p>Adjunct Professor of Applied Mathematics</p>
+            <p>Associate Professor of Mechanical Engineering</p>
+            <p>Data Science Fellow, eScience Institute</p>
+            <p>University of Washington, Seattle</p>
+        </div>
+
         <h3>Title</h3>
         <p><strong>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</strong></p>
 
         <h3>Abstract</h3>
         <p>
-            This work will discuss several key challenges and opportunities in the use of machine learning
+            This work will discuss several key challenges and opportunities in using machine learning
             for nonlinear system identification. In particular, I will describe how machine learning may be
             used to develop accurate and efficient nonlinear dynamical systems models for complex natural
             and engineered systems. I will emphasize the need for interpretable and generalizable
             data-driven models, such as the sparse identification of nonlinear dynamics (SINDy) algorithm,
             which identifies a minimal dynamical system model that balances model complexity with accuracy,
-            avoiding overfitting. I will also introduce several key benchmark problems in dynamical systems
-            and fluid dynamics that provide a diversity of metrics to assess modern system identification
-            techniques. Because fluid dynamics is central to transportation, health, and defense systems,
-            we will emphasize the importance of machine learning solutions that are interpretable,
-            explainable, generalizable, and that respect known physics.
+            avoiding overfitting.
+        </p>
+        <p>
+            I will also introduce several key benchmark problems in dynamical systems and fluid dynamics
+            that provide diverse metrics to assess modern system identification techniques. Because fluid
+            dynamics is central to transportation, health, and defense systems, we will emphasize the need
+            for machine learning solutions that are interpretable, explainable, generalizable, and that
+            respect known physics.
         </p>
 
         <h3>Bio</h3>
@@ -48,7 +73,7 @@
             For full bio and additional information, see:
             <a href="https://www.me.washington.edu/facultyfinder/steve-brunton"
                target="_blank" rel="noopener noreferrer">
-                https://www.me.washington.edu/facultyfinder/steve-brunton
+                Steven Brunton Faculty Page
             </a>
         </p>
     </section>
