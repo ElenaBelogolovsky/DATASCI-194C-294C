@@ -9,23 +9,22 @@
     <style>
         /* Speaker layout – conference-style */
         .speaker-section {
-            padding-top: 2rem;
-            padding-bottom: 2.5rem;
+            padding: 2rem 0 2.75rem;
         }
 
         .speaker-card {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.6rem;
             align-items: flex-start;
             background: var(--card, #f7f7f7);
             border: 1px solid var(--border, #e5e5e5);
             border-radius: 12px;
-            padding: 1.2rem 1.4rem;
-            margin-bottom: 2rem;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2.4rem;
         }
 
         .speaker-photo {
-            max-width: 220px;
+            max-width: 260px;  /* slightly larger image */
             border-radius: 10px;
             flex-shrink: 0;
         }
@@ -36,26 +35,26 @@
 
         .speaker-name {
             margin: 0 0 0.4rem;
-            font-size: 1.6rem;
+            font-size: 1.65rem;
         }
 
         .speaker-affiliation {
-            margin: 0 0 0.8rem;
+            margin: 0 0 1rem;
             color: var(--muted, #666);
             font-size: 0.95rem;
         }
 
         .speaker-meta-label {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
             color: var(--muted, #666);
         }
 
         .speaker-titles {
             padding-left: 1rem;
-            margin: 0 0 0.5rem;
+            margin: 0 0 0.8rem;
             font-size: 0.95rem;
         }
 
@@ -63,11 +62,11 @@
             margin-bottom: 2px;
         }
 
-        /* Mobile rule matching your Schedule page padding */
+        /* Mobile optimization */
         @media (max-width: 768px) {
             .container {
-                padding-left: 1.4rem;
-                padding-right: 1.4rem;
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
             }
 
             .speaker-card {
@@ -77,17 +76,11 @@
             }
 
             .speaker-photo {
-                max-width: 180px;
-            }
-
-            h2, h3 {
-                margin-left: 0;
-                margin-right: 0;
+                max-width: 200px;
             }
         }
     </style>
 </head>
-
 <body>
 
 <header class="topbar">
@@ -106,10 +99,7 @@
 
         <div class="speaker-main">
             <h2 class="speaker-name">Mykel J. Kochenderfer</h2>
-
-            <p class="speaker-affiliation">
-                Stanford University
-            </p>
+            <p class="speaker-affiliation">Stanford University</p>
 
             <div>
                 <div class="speaker-meta-label">Academic Roles</div>
@@ -118,8 +108,6 @@
                     <li>Associate Professor (by courtesy) of Computer Science</li>
                     <li>Senior Fellow, Stanford Human-Centered AI Institute (HAI)</li>
                     <li>Director, Stanford Intelligent Systems Laboratory (SISL)</li>
-                    <li>Co-Director, Center for AI Safety</li>
-                    <li>Editor-in-Chief, Journal of Artificial Intelligence Research</li>
                 </ul>
             </div>
         </div>
@@ -132,51 +120,43 @@
 
         <h3>Abstract</h3>
         <p>
-            Building robust decision-making systems for autonomous platforms is challenging. Decisions must be made
-            under uncertainty — with imperfect information about the environment and incomplete knowledge of how it
-            will evolve. These systems must balance safety with operational efficiency, while navigating vast spaces
-            of edge cases that designers must anticipate.
+            Building robust decision-making systems for autonomous platforms is challenging.
+            Decisions must be made under uncertainty — with imperfect information about the
+            environment and incomplete knowledge of how it will evolve.
         </p>
         <p>
-            This talk discusses major challenges associated with ensuring computational tractability and establishing
-            trust that autonomous decision systems will behave correctly when deployed in the real world. We will
-            outline methodologies for addressing these challenges and highlight research applications that illustrate
-            pathways toward safer systems.
+            This talk discusses major challenges associated with ensuring computational tractability
+            and establishing trust that autonomous decision systems will behave correctly when deployed
+            in the real world. We will outline methodologies for addressing these challenges and highlight
+            research applications that illustrate pathways toward safer systems.
         </p>
 
         <h3>Bio</h3>
         <p>
-            Mykel J. Kochenderfer is an Associate Professor of Aeronautics and Astronautics at Stanford University
-            and director of the Stanford Intelligent Systems Laboratory (SISL), where his group develops advanced
-            algorithms and analytical frameworks for robust decision making. His research centers on efficient
-            computational methods for deriving optimal decision strategies from high-dimensional probabilistic
-            representations.
+            Mykel J. Kochenderfer is an Associate Professor of Aeronautics and Astronautics at Stanford
+            University and director of the Stanford Intelligent Systems Laboratory (SISL), where his group
+            develops advanced algorithms and analytical frameworks for robust decision making.
         </p>
         <p>
-            Prior to joining Stanford in 2013, Prof. Kochenderfer worked at MIT Lincoln Laboratory, where he led
-            development of aircraft collision avoidance systems, resulting in the ACAS X international standard for
-            manned and unmanned aviation.
+            Prior to joining Stanford in 2013, Prof. Kochenderfer worked at MIT Lincoln Laboratory,
+            where he led development of aircraft collision avoidance systems, resulting in the ACAS X
+            international standard for manned and unmanned aviation.
         </p>
         <p>
-            He is co-director of the Center for AI Safety, editor-in-chief of the Journal of Artificial Intelligence
-            Research, and author of several MIT Press textbooks including <em>Decision Making under Uncertainty</em>
-            (2015), <em>Algorithms for Optimization</em> (2019), and <em>Algorithms for Decision Making</em> (2022).
+            He is author of several MIT Press textbooks including <em>Decision Making under Uncertainty</em>
+            (2015), <em>Algorithms for Optimization</em> (2019), and <em>Algorithms for Decision Making</em>
+            (2022).
         </p>
     </section>
 </div>
 
-      
-
-        <h3>More Information</h3>
-        <p>
-            Full bio, publications, and research details available at:
-            <a href="https://mykel.kochenderfer.com" target="_blank" rel="noopener noreferrer">
-                mykel.kochenderfer.com
-            </a>
-        </p>
-
-    <!-- … rest of page … -->
+<h3>More Information</h3>
+<p>
+    Full bio, publications, and research details available at:
+    <a href="https://mykel.kochenderfer.com" target="_blank" rel="noopener noreferrer">
+        mykel.kochenderfer.com
+    </a>
+</p>
 
 </body>
 </html>
-
