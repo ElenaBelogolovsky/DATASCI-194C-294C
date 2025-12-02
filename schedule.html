@@ -4,135 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATASCI 194C/294C: Schedule</title>
-
-    <!-- Use your shared site styles -->
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* Schedule-specific styling, minimal and table-focused */
-
-        .page-header {
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .page-header h2 {
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             margin: 0;
-            font-size: 1.8rem;
-            color: #8C1515;
+            padding: 0;
+            line-height: 1.5;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .topbar {
+            background: #8c1515;
+            color: #ffffff;
+            padding: 0.75rem 0 0.5rem 0;
+            border-bottom: 2px solid #5e0f0f;
+        }
+        .topbar h1 { margin: 0; color: #fff; }
+        .nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .nav a.active-page { text-decoration: underline; font-weight: 600; }
+
+        h2 {
+            margin: 2rem 0 1rem;
+            color: #8c1515;
+            font-size: 1.6rem;
+            font-weight: 600;
         }
 
-        .page-header p {
-            margin-top: 0.4rem;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        .table-wrapper {
-            margin-top: 1.5rem;
-            overflow-x: auto;      /* horizontal scroll on mobile */
-            -webkit-overflow-scrolling: touch;
-        }
-
-        table.schedule-table {
+        /* Desktop table – clean and overview-friendly */
+        table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 900px;      /* ensures table structure on desktop; scrolls on small screens */
+            margin: 1.5rem 0;
             font-size: 0.95rem;
         }
-
-        table.schedule-table th,
-        table.schedule-table td {
-            border: 1px solid #ddd;
-            padding: 0.6rem 0.7rem;
+        th {
+            background: #f0f0f0;
+            text-align: left;
+            padding: 0.75rem 0.8rem;
+            border-bottom: 3px solid #8c1515;
+            font-weight: 600;
+        }
+        td {
+            padding: 0.9rem 0.8rem;
+            border-bottom: 1px solid #ddd;
             vertical-align: top;
         }
+        tr:hover { background: #fdf6f6; }
 
-        table.schedule-table th {
-            background-color: #f5f5f5;
-            text-align: left;
+        .guest {
+            color: #8c1515;
             font-weight: 600;
         }
-
-        table.schedule-table td.week-col {
-            white-space: nowrap;
-            font-weight: 600;
-        }
-
-        table.schedule-table td.date-col {
-            white-space: nowrap;
-        }
-
-        .topic-title {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .speaker-name a {
-            color: #8C1515;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .speaker-name a:hover {
-            text-decoration: underline;
-        }
-
-        .guest-tag {
-            display: inline-block;
-            margin-left: 0.3rem;
-            padding: 0.1rem 0.5rem;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            border-radius: 999px;
-            background: #8C1515;
-            color: #fff;
+        .due {
+            background: #ffebee;
+            color: #8c1515;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
             font-weight: 700;
-        }
-
-        .reading-list,
-        .activity-list {
-            margin: 0.25rem 0;
-            padding-left: 1.1rem;
-        }
-
-        .reading-list li,
-        .activity-list li {
-            margin-bottom: 0.25rem;
-        }
-
-        .reading-list a,
-        .activity-list a {
-            color: #8C1515;
-            text-decoration: none;
-        }
-
-        .reading-list a:hover,
-        .activity-list a:hover {
-            text-decoration: underline;
-        }
-
-        .assignment-pill {
+            font-size: 0.9rem;
             display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 999px;
-            border: 1px solid #8C1515;
-            color: #8C1515;
-            font-size: 0.8rem;
-            font-weight: 600;
-            background: #FFEBEE;
-            margin-bottom: 0.25rem;
         }
 
+        /* Mobile – perfect stacked cards */
         @media (max-width: 768px) {
-            .page-header h2 {
-                font-size: 1.4rem;
+            .container { padding: 1.4rem; }
+            table, thead, tbody, th, td, tr { display: block; }
+            thead { display: none; }
+            tr {
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin-bottom: 1.2rem;
+                background: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                overflow: hidden;
             }
-            table.schedule-table {
-                font-size: 0.9rem;
-                min-width: 750px;
+            td {
+                display: block;
+                padding: 0.7rem 1rem;
+                border: none;
+                position: relative;
+                padding-left: 40%;
             }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 35%;
+                font-weight: 700;
+                color: #666;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+            td:first-child {
+                background: #8c1515;
+                color: white;
+                font-weight: 700;
+                padding-left: 1rem !important;
+            }
+            td:first-child:before { display: none; }
+            .due { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -141,388 +127,258 @@
 <header class="topbar">
     <div class="container masthead">
         <div class="title">
-            <h1>DATASCI 194C/294C</h1>
-            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
+            <h1>DATASCI 194C/294C: Driving Innovation</h1>
         </div>
+    </div>
+    <div class="container">
         <nav class="nav">
             <a href="index.html">Course Description</a>
             <a href="schedule.html" class="active-page">Schedule</a>
-            <a href="slides.html">Slides</a>
+            <a href="slides.html">Lecture Slides</a>
             <a href="grading.html">Grading</a>
         </nav>
     </div>
 </header>
 
-<main class="container">
-    <div class="page-header">
-        <h2>Tentative Course Schedule</h2>
-        <p>Subject to change; guest speaker dates and topics may be adjusted.</p>
-    </div>
+<div class="container">
+    <h2>Tentative Course Schedule – Spring 2026</h2>
 
-    <div class="table-wrapper">
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Week</th>
-                    <th>Date</th>
-                    <th>Topic</th>
-                    <th>Guest / Speaker</th>
-                    <th>Read / Watch</th>
-                    <th>Assignments / Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- WEEK 1 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 1</td>
-                    <td class="date-col">Tue • 01/06/2026</td>
-                    <td>
-                        <div class="topic-title">Introduction; Nobel Prizes for Data Science</div>
-                    </td>
-                    <td>—</td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li>
-                                <a href="https://www.nature.com/articles/s41746-024-01345-9#citeas" target="_blank">
-                                    Artificial Intelligence awarded two Nobel Prizes… (Li &amp; Gilbert, 2024)
-                                </a>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 01/08/2026</td>
-                    <td>
-                        <div class="topic-title">Common Task Framework (CTF)</div>
-                    </td>
-                    <td>—</td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://hdsr.mitpress.mit.edu/pub/g9mau4m0/release/2" target="_blank">Data Science at the Singularity (Donoho, 2024)</a></li>
-                            <li><a href="https://hdsr.mitpress.mit.edu/pub/8qexde24/release/1" target="_blank">After Computational Reproducibility… (Yu, 2024)</a></li>
-                            <li><a href="https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Fss%2F1009213726" target="_blank">Statistical Modeling: The Two Cultures (Breiman, 2001)</a></li>
-                            <li><a href="https://arxiv.org/pdf/2510.23166" target="_blank">Common Task Framework… (Wyder et al., 2025)</a></li>
-                            <li><a href="https://arxiv.org/pdf/2511.04001" target="_blank">Accelerating scientific discovery… (Kutz et al., 2025)</a></li>
-                        </ul>
-                        <strong>Watch</strong>
-                        <ul class="activity-list">
-                            <li><a href="https://www.youtube.com/watch?v=gyYwRSS9UtM" target="_blank">Mindset Talk IHES (Donoho, 2023)</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=katCavvVKxQ" target="_blank">Common Task Framework… (Nathan Kutz, 2024)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Topic</th>
+                <th>Guest Speaker</th>
+                <th>Readings / Activities</th>
+                <th>Due</th>
+            </tr>
+        </thead>
+        <tbody>
 
-                <!-- WEEK 2 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 2</td>
-                    <td class="date-col">Tue • 01/13/2026</td>
-                    <td>
-                        <div class="topic-title">Emergence of Empirical ML &amp; Benchmark Culture</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li>
-                                <a href="https://mlbenchmarks.org" target="_blank">
-                                    The Emerging Science of Machine Learning Benchmarks (Hardt, 2026)
-                                </a>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        <span class="assignment-pill">Assignment 1 Due</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 01/15/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>—</td>
-                    <td>—</td>
-                </tr>
+            <!-- Week 1 -->
+            <tr>
+                <td data-label="Date">Tue 01/06</td>
+                <td data-label="Topic">Introduction; Nobel Prizes for Data Science</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">
+                    <a href="https://www.nature.com/articles/s41746-024-01345-9#citeas" target="_blank">
+                        Artificial Intelligence awarded two Nobel Prizes… (Li & Gilbert, 2024)
+                    </a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 01/08</td>
+                <td data-label="Topic">Common Task Framework (CTF)</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">
+                    Donoho (2024), Yu (2024), Breiman (2001), Wyder et al. (2025), Kutz et al. (2025)<br>
+                    Watch: <a href="https://www.youtube.com/watch?v=gyYwRSS9UtM" target="_blank">Donoho IHES</a>, 
+                    <a href="https://www.youtube.com/watch?v=katCavvVKxQ" target="_blank">Kutz CTF</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
 
-                <!-- WEEK 3 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 3</td>
-                    <td class="date-col">Tue • 01/20/2026</td>
-                    <td>
-                        <div class="topic-title">Case Studies: NIPS / NETFLIX</div>
-                    </td>
-                    <td>—</td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://facctconference.org/static/papers24/facct24-127.pdf" target="_blank">AI as a Sport… (Orr &amp; Kang, 2024) – optional</a></li>
-                            <li><a href="https://mlcontests.com/state-of-machine-learning-competitions-2024/" target="_blank">The State of Competitive Machine Learning 2024</a></li>
-                        </ul>
-                        <strong>Watch</strong>
-                        <ul class="activity-list">
-                            <li><a href="https://www.youtube.com/watch?v=RR7toLuXZ7g" target="_blank">Benchmarking in the Era of Foundation Models (Percy Liang, 2023)</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=sooj-_bXWgk" target="_blank">Matrix Completion and the Netflix Prize (Steve Brunton, 2020)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 01/22/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/jonathon-philips.html">Jonathon Philips</a>
-                            <span class="guest-tag">Guest</span> (confirmation pending)
-                        </div>
-                    </td>
-                    <td>—</td>
-                    <td>
-                        <span class="assignment-pill">Assignment 2 Due</span>
-                    </td>
-                </tr>
+            <!-- Week 2 -->
+            <tr>
+                <td data-label="Date">Tue 01/13</td>
+                <td data-label="Topic">Emergence of Empirical ML & Benchmark Culture</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
+                </td>
+                <td data-label="Readings">
+                    <a href="https://mlbenchmarks.org" target="_blank">The Emerging Science of Machine Learning Benchmarks (Hardt, 2026)</a>
+                </td>
+                <td data-label="Due"><span class="due">Assignment 1</span></td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 01/15</td>
+                <td data-label="Topic">Topic TBA</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
+                </td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due">—</td>
+            </tr>
 
-                <!-- WEEK 4 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 4</td>
-                    <td class="date-col">Tue • 01/27/2026</td>
-                    <td>
-                        <div class="topic-title">Reproducibility &amp; CTF Method</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/mark-liberman.html">Mark Liberman</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>—</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 01/29/2026</td>
-                    <td>
-                        <div class="topic-title">
-                            Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics
-                        </div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/steven-brunton.html">Steven L. Brunton</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Watch</strong>
-                        <ul class="activity-list">
-                            <li><a href="https://www.youtube.com/watch?v=GCz6afDVy5Y" target="_blank">AI/ML+Physics: Recap and Summary</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=NxAn0oglMVw" target="_blank">Sparse Identification of Nonlinear Dynamics (SINDy)</a></li>
-                        </ul>
-                        <strong>Optional</strong>
-                        <ul class="activity-list">
-                            <li><a href="https://www.youtube.com/watch?v=JoFW2uSd3Uo" target="_blank">Physics Informed Machine Learning Overview</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
+            <!-- Week 3 -->
+            <tr>
+                <td data-label="Date">Tue 01/20</td>
+                <td data-label="Topic">Case Studies: NIPS/NETFLIX</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">
+                    Orr & Kang (2024, optional), State of Comp ML 2024<br>
+                    Watch: <a href="https://www.youtube.com/watch?v=RR7toLuXZ7g" target="_blank">Liang (2023)</a>, 
+                    <a href="https://www.youtube.com/watch?v=sooj-_bXWgk" target="_blank">Brunton (2020)</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 01/22</td>
+                <td data-label="Topic">Topic TBA</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/jonathon-philips.html">Jonathon Philips</a> (confirmation pending)
+                </td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due"><span class="due">Assignment 2</span></td>
+            </tr>
 
-                <!-- WEEK 5 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 5</td>
-                    <td class="date-col">Tue • 02/03/2026</td>
-                    <td>
-                        <div class="topic-title">Biomedical Challenge Problems; DREAM Challenges</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/gustavo-stolovitzky.html">Gustavo Stolovitzky</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://openreview.net/pdf?id=SCnDxbsNrq" target="_blank">The life cycle of challenges and benchmarks (Stolovitzky et al., 2023)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 02/05/2026</td>
-                    <td>
-                        <div class="topic-title">Code Sharing</div>
-                    </td>
-                    <td>—</td>
-                    <td>—</td>
-                    <td>
-                        <span class="assignment-pill">Assignment 3 Due</span>
-                    </td>
-                </tr>
+            <!-- Week 4 -->
+            <tr>
+                <td data-label="Date">Tue 01/27</td>
+                <td data-label="Topic">Reproducibility & CTF Method</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/mark-liberman.html">Mark Liberman</a>
+                </td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 01/29</td>
+                <td data-label="Topic">ML for Scientific Discovery (Fluid Mechanics)</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/steven-brunton.html">Steven L. Brunton</a>
+                </td>
+                <td data-label="Readings">
+                    Watch: <a href="https://www.youtube.com/watch?v=GCz6afDVy5Y" target="_blank">AI/ML+Physics</a>, 
+                    <a href="https://www.youtube.com/watch?v=NxAn0oglMVw" target="_blank">SINDy</a>
+                    <br><em>Optional:</em> <a href="https://www.youtube.com/watch?v=JoFW2uSd3Uo" target="_blank">Physics-Informed ML</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
 
-                <!-- WEEK 6 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 6</td>
-                    <td class="date-col">Tue • 02/10/2026</td>
-                    <td>
-                        <div class="topic-title">Data Sharing, Reanalysis, Critical Views of Data Sharing</div>
-                    </td>
-                    <td>—</td>
-                    <td>—</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 02/12/2026</td>
-                    <td>
-                        <div class="topic-title">Economics of CTF</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/theis-ingerslev-jensen.html">Theis Ingerslev Jensen</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li>
-                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">
-                                    The Power of the Common Task Framework (Hellum et al., 2025)
-                                </a>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
+            <!-- Week 5 -->
+            <tr>
+                <td data-label="Date">Tue 02/03</td>
+                <td data-label="Topic">Biomedical Challenge Problems; DREAM Challenges</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/gustavo-stolovitzky.html">Gustavo Stolovitzky</a>
+                </td>
+                <td data-label="Readings">
+                    <a href="https://openreview.net/pdf?id=SCnDxbsNrq" target="_blank">Stolovitzky et al. (2023)</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 02/05</td>
+                <td data-label="Topic">Code Sharing</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due"><span class="due">Assignment 3</span></td>
+            </tr>
 
-                <!-- WEEK 7 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 7</td>
-                    <td class="date-col">Tue • 02/17/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/peter-mattson.html">Peter Mattson (Google / MLCommons)</a>
-                            <span class="guest-tag">Guest</span> (confirmation pending)
-                        </div>
-                    </td>
-                    <td>—</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 02/19/2026</td>
-                    <td>
-                        <div class="topic-title">Mathematics &amp; Frontier Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/elliot-glazer.html">Elliot Glazer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://arxiv.org/pdf/2411.04872" target="_blank">FrontierMath… (Glazer et al., 2025)</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <span class="assignment-pill">Assignment 4 Due</span>
-                    </td>
-                </tr>
+            <!-- Week 6 -->
+            <tr>
+                <td data-label="Date">Tue 02/10</td>
+                <td data-label="Topic">Data Sharing, Reanalysis, Critical Views</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 02/12</td>
+                <td data-label="Topic">Economics of CTF</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/theis-ingerslev-jensen.html">Theis Ingerslev Jensen</a>
+                </td>
+                <td data-label="Readings">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">Hellum et al. (2025)</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
 
-                <!-- WEEK 8 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 8</td>
-                    <td class="date-col">Tue • 02/24/2026</td>
-                    <td>
-                        <div class="topic-title">Medical Data Sharing &amp; Medical Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/ziad-obermeyer.html">Ziad Obermeyer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://arxiv.org/html/2508.04325v1" target="_blank">Beyond the Leaderboard… (Ding et al., 2025)</a></li>
-                            <li><a href="https://ai.nejm.org/doi/full/10.1056/AIdbp2500144" target="_blank">MedAgentBench… (Jiang et al., 2025)</a></li>
-                            <li><a href="https://www.tandfonline.com/doi/full/10.1080/1369118X.2024.2334393#abstract" target="_blank">AI competitions as infrastructures… (Luitse et al., 2024)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 02/26/2026</td>
-                    <td>
-                        <div class="topic-title">Topic TBA</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/mykel-kochenderfer.html">Mykel J. Kochenderfer</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li>More than Marketing? … (Hardy et al., 2025)</li>
-                            <li><a href="https://arxiv.org/pdf/2411.12990" target="_blank">Betterbench… (Reuel et al., 2024)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
+            <!-- Week 7 -->
+            <tr>
+                <td data-label="Date">Tue 02/17</td>
+                <td data-label="Topic">Topic TBA</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/peter-mattson.html">Peter Mattson (Google / MLCommons)</a> (confirmation pending)
+                </td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 02/19</td>
+                <td data-label="Topic">Mathematics & Frontier Benchmarks</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/elliot-glazer.html">Elliot Glazer</a>
+                </td>
+                <td data-label="Readings">
+                    <a href="https://arxiv.org/pdf/2411.04872" target="_blank">Glazer et al. (2025)</a>
+                </td>
+                <td data-label="Due"><span class="due">Assignment 4</span></td>
+            </tr>
 
-                <!-- WEEK 9 -->
-                <tr>
-                    <td class="week-col" rowspan="2">Week 9</td>
-                    <td class="date-col">Tue • 03/03/2026</td>
-                    <td>
-                        <div class="topic-title">Agentic Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/jacob-steinhardt.html">Jacob Steinhardt</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <strong>Read</strong>
-                        <ul class="reading-list">
-                            <li><a href="https://arxiv.org/pdf/2507.02825" target="_blank">Establishing best practices… (Zhu et al., 2025)</a></li>
-                            <li><a href="https://arxiv.org/pdf/2503.06745" target="_blank">Beyond Black-Box Benchmarking… (Moshkovich et al., 2025)</a></li>
-                            <li><a href="https://arxiv.org/pdf/2508.16260" target="_blank">Mcpverse… (Lei et al., 2025)</a></li>
-                        </ul>
-                    </td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="date-col">Thu • 03/05/2026</td>
-                    <td>
-                        <div class="topic-title">Critique of Challenges, Data-Based Science and Benchmarks</div>
-                    </td>
-                    <td>
-                        <div class="speaker-name">
-                            <a href="speakers/sanmi-koyejo.html">Sanmi Koyejo</a>
-                            <span class="guest-tag">Guest</span>
-                        </div>
-                    </td>
-                    <td>
-                        <stron
+            <!-- Week 8 -->
+            <tr>
+                <td data-label="Date">Tue 02/24</td>
+                <td data-label="Topic">Medical Data Sharing & Medical Benchmarks</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/ziad-obermeyer.html">Ziad Obermeyer</a>
+                </td>
+                <td data-label="Readings">
+                    Ding et al. (2025), Jiang et al. (2025), Luitse et al. (2024)
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 02/26</td>
+                <td data-label="Topic">Topic TBA</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/mykel-kochenderfer.html">Mykel J. Kochenderfer</a>
+                </td>
+                <td data-label="Readings">
+                    Hardy et al. (2025), Reuel et al. (2024)
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+
+            <!-- Week 9 -->
+            <tr>
+                <td data-label="Date">Tue 03/03</td>
+                <td data-label="Topic">Agentic Benchmarks</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/jacob-steinhardt.html">Jacob Steinhardt</a>
+                </td>
+                <td data-label="Readings">
+                    Zhu et al., Moshkovich et al., Lei et al. (2025)
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 03/05</td>
+                <td data-label="Topic">Critique of Challenges & Benchmarks</td>
+                <td data-label="Speaker" class="guest">
+                    <a href="speakers/sanmi-koyejo.html">Sanmi Koyejo</a>
+                </td>
+                <td data-label="Readings">
+                    McIntosh, Bean, Singh, Cheng, Eriksson, Reisnder, Drew & Efrati (choose 3–4)
+                </td>
+                <td data-label="Due"><span class="due">Assignment 5</span></td>
+            </tr>
+
+            <!-- Week 10 -->
+            <tr>
+                <td data-label="Date">Tue 03/10</td>
+                <td data-label="Topic">Leaderboards as Media: The Path Forward</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">
+                    <a href="https://media.nature.com/original/magazine-assets/d41586-025-02462-5/d41586-025-02462-5.pdf" target="_blank">Brooks (2025)</a>, 
+                    <a href="https://pivot-to-ai.com/2025/11/06/oxford-pretends-ai-benchmarks-are-science-not-marketing/" target="_blank">Gerard (2025)</a>
+                </td>
+                <td data-label="Due">—</td>
+            </tr>
+            <tr>
+                <td data-label="Date">Thu 03/12</td>
+                <td data-label="Topic">Leaderboard Day: Final Presentations & Wrap-Up</td>
+                <td data-label="Speaker">—</td>
+                <td data-label="Readings">—</td>
+                <td data-label="Due"><span class="due">Final Presentations</span></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
