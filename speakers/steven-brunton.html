@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="../styles.css">
 
     <style>
-        /* Speaker layout – conference-style bio card */
+        /* Speaker layout – conference-style */
         .speaker-section {
-            padding: 24px 0 32px;
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
         }
 
         .speaker-card {
             display: flex;
-            gap: 24px;
+            gap: 1.5rem;
             align-items: flex-start;
             background: var(--card, #f7f7f7);
-            border-radius: 12px;
             border: 1px solid var(--border, #e5e5e5);
-            padding: 18px 18px 20px;
-            margin-bottom: 28px;
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
         }
 
         .speaker-photo {
             max-width: 220px;
             border-radius: 10px;
-            display: block;
             flex-shrink: 0;
         }
 
@@ -35,49 +35,59 @@
         }
 
         .speaker-name {
-            margin: 0 0 6px;
+            margin: 0 0 0.4rem;
             font-size: 1.6rem;
         }
 
         .speaker-affiliation {
-            margin: 0 0 12px;
+            margin: 0 0 0.8rem;
             color: var(--muted, #666);
             font-size: 0.95rem;
         }
 
+        .speaker-meta-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            color: var(--muted, #666);
+        }
+
         .speaker-titles {
-            margin: 0 0 10px;
-            padding-left: 16px;
+            padding-left: 1rem;
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
         }
 
         .speaker-titles li {
             margin-bottom: 2px;
         }
 
-        .speaker-meta-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--muted, #666);
-            margin-bottom: 3px;
-        }
-
-        .talk-title {
-            margin-top: 0;
-        }
-
+        /* Mobile rule matching your Schedule page padding */
         @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
             .speaker-card {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 1rem 1.2rem;
             }
 
             .speaker-photo {
                 max-width: 180px;
             }
+
+            h2, h3 {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header class="topbar">
@@ -89,9 +99,9 @@
 </header>
 
 <div class="container speaker-section">
-    <!-- Bio-card / conference-style profile -->
+
+    <!-- Bio-card -->
     <div class="speaker-card">
-        <!-- Photo: adjust path if you move the file -->
         <img src="../brunton.jpg" alt="Steven L. Brunton" class="speaker-photo">
 
         <div class="speaker-main">
@@ -115,37 +125,40 @@
         </div>
     </div>
 
-    <!-- Talk info + abstract + bio -->
+    <!-- Talk details -->
     <section>
-        <h3 class="talk-title">Talk Title</h3>
-        <p><strong>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</strong></p>
+        <h3>Talk Title</h3>
+        <p>
+            <strong>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</strong>
+        </p>
 
         <h3>Abstract</h3>
         <p>
-            This work will discuss several key challenges and opportunities in using machine learning
-            for nonlinear system identification. In particular, Prof. Brunton will describe how machine
-            learning may be used to develop accurate and efficient nonlinear dynamical systems models for
-            complex natural and engineered systems.
+            This talk discusses key challenges and opportunities in using machine learning for nonlinear
+            system identification. Prof. Brunton will show how machine learning can develop accurate
+            dynamical models for complex natural and engineered systems.
         </p>
         <p>
-            He will emphasize the need for interpretable and generalizable data-driven models, such as
-            the sparse identification of nonlinear dynamics (SINDy) algorithm, which identifies a minimal
-            dynamical system model that balances model complexity with accuracy, avoiding overfitting.
-            The talk will also introduce several key benchmark problems in dynamical systems and fluid
-            dynamics that provide diverse metrics to assess modern system identification techniques.
+            He will emphasize interpretable and generalizable approaches such as the sparse identification
+            of nonlinear dynamics (SINDy) framework — which balances model simplicity and accuracy while
+            avoiding overfitting.
         </p>
         <p>
-            Because fluid dynamics is central to transportation, health, and defense systems, the talk
-            will emphasize the importance of machine learning solutions that are interpretable,
-            explainable, generalizable, and that respect known physics.
+            Several benchmark problems in dynamical systems and fluid mechanics illustrate how system
+            identification techniques can be evaluated in diverse settings.
+        </p>
+        <p>
+            Because fluid dynamics underpins transportation, health, and defense systems, the talk will
+            highlight the importance of data-driven models that remain interpretable, explainable,
+            generalizable, and consistent with physics.
         </p>
 
         <h3>More Information</h3>
         <p>
-            For full bio and additional information, see:
+            Full bio available at:
             <a href="https://www.me.washington.edu/facultyfinder/steve-brunton"
                target="_blank" rel="noopener noreferrer">
-                Steven Brunton – University of Washington Faculty Page
+                University of Washington Faculty Page
             </a>
         </p>
     </section>
