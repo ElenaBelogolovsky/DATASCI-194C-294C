@@ -23,7 +23,12 @@ html,body{
     font-size:16px;
     line-height:1.6;
 } 
-a{color:var(--link);text-decoration:none} 
+a{
+    color:var(--link);
+    text-decoration:none;
+    /* Added transition for smoother hover on all links */
+    transition: color 0.2s, text-decoration 0.2s;
+} 
 a:hover{text-decoration:underline}
 
 /* Added margin to paragraphs for better reading flow */
@@ -170,7 +175,7 @@ table{
     background:#fff;
     border:1px solid var(--border);
     border-radius:10px;
-    overflow:hidden
+    /* Removed overflow:hidden here, handled in mobile query */
 }
 th,td{
     padding:12px;
@@ -205,6 +210,7 @@ tbody tr:hover{
     font-weight:600;
     margin-right: 10px;
     transition: background 0.2s, transform 0.1s;
+    cursor: pointer; /* Added for better usability */
 }
 .btn:hover{
     border-color:#d4d4d4;
@@ -231,8 +237,8 @@ footer{
 }
 
 /* -------------------------------------------
-   --- MOBILE-SPECIFIC STYLES (UNDER 600PX) ---
-   ------------------------------------------- */
+    --- MOBILE-SPECIFIC STYLES (UNDER 600PX) ---
+    ------------------------------------------- */
 @media (max-width: 600px) {
     /* 1. Reduce overall padding on the container */
     .container {
@@ -250,12 +256,19 @@ footer{
         font-size: 0.85rem; 
     }
     
-    /* 3. Stack Navigation Links */
+    /* 3. Stack and Center Navigation Links */
     .nav {
         flex-direction: column; 
         gap: 8px; 
         padding-top: 5px;
         padding-bottom: 5px;
+        align-items: center; /* Center links in the column layout */
+    }
+    .nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 4px 0;
     }
     .nav a.active-page {
         border-bottom: 2px solid var(--accent); 
@@ -271,23 +284,22 @@ footer{
     .hero .inner {
         padding: 25px 0;
     }
-}
-
-/* --- Mobile improvements for tables --- */
-@media (max-width: 600px) {
+    
     .grid {
         padding: 20px 0;
     }
 
+    /* 6. TABLE OPTIMIZATION: Allow Horizontal Scroll */
     table {
         display: block;
         width: 100%;
-        overflow-x: auto;     /* allow horizontal scroll */
+        overflow-x: auto;      /* allows horizontal scroll */
         -webkit-overflow-scrolling: touch; /* smoother on iOS */
+        border-radius: 0; /* Better look when scrolling */
     }
 
     th, td {
-        white-space: nowrap;  /* keeps cells readable */
+        white-space: nowrap;   /* prevents text wrapping inside cells */
+        padding: 10px;         /* slightly reduced padding */
     }
 }
-
