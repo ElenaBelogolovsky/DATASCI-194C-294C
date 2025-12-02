@@ -2,78 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Steven L. Brunton – DATASCI 194C/294C</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
+    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
+    
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Speaker layout – conference-style bio card */
-        .speaker-section {
-            padding: 24px 0 32px;
-        }
-
-        .speaker-card {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-            background: var(--card, #f7f7f7);
-            border-radius: 12px;
-            border: 1px solid var(--border, #e5e5e5);
-            padding: 18px 18px 20px;
-            margin-bottom: 28px;
-        }
-
-        .speaker-photo {
-            max-width: 220px;
-            border-radius: 10px;
-            display: block;
-            flex-shrink: 0;
-        }
-
-        .speaker-main {
-            flex: 1 1 auto;
-        }
-
-        .speaker-name {
-            margin: 0 0 6px;
-            font-size: 1.6rem;
-        }
-
-        .speaker-affiliation {
-            margin: 0 0 12px;
-            color: var(--muted, #666);
+        /* Course meta block (dates / time / room) */
+        .course-meta {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem 1rem;
+            background-color: #f5f5f5;
+            border-left: 4px solid #8c1515; /* Stanford red */
             font-size: 0.95rem;
+            display: block;
         }
 
-        .speaker-titles {
-            margin: 0 0 10px;
-            padding-left: 16px;
+        .course-meta span {
+            display: block;
+            white-space: normal;
+            margin-bottom: 0.25rem;
         }
 
-        .speaker-titles li {
-            margin-bottom: 2px;
+        .course-meta a {
+            text-decoration: underline;
         }
 
-        .speaker-meta-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--muted, #666);
-            margin-bottom: 3px;
+        /* Make Donoho photo look nice in sidebar */
+        .instructor-photo {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
         }
 
-        .talk-title {
-            margin-top: 0;
-        }
-
+        /* Page-level mobile tweaks to match grading/schedule feel */
         @media (max-width: 768px) {
-            .speaker-card {
-                flex-direction: column;
-                align-items: flex-start;
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
             }
 
-            .speaker-photo {
-                max-width: 180px;
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px 0;
+            }
+
+            .hero .inner {
+                padding: 25px 0;
             }
         }
     </style>
@@ -83,73 +62,127 @@
 <header class="topbar">
     <div class="container masthead">
         <div class="title">
-            <h1>DATASCI 194C/294C</h1>
+            <h1>
+                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
+                <br>
+                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
+            </h1>
+            <span class="subtitle">Stanford University, Winter 2026</span>
         </div>
+    </div>
+    
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html" class="active-page">Course Description</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="slides.html">Lecture Slides</a>
+            <a href="grading.html">Grading</a>
+        </nav>
     </div>
 </header>
 
-<div class="container speaker-section">
-    <!-- Bio-card / conference-style profile -->
-    <div class="speaker-card">
-        <!-- Photo: adjust path if you move the file -->
-        <img src="../brunton.jpg" alt="Steven L. Brunton" class="speaker-photo">
+<div class="container">
+    <div class="hero">
+        <div class="inner">
+            <h2 id="overview">Course Description</h2>
 
-        <div class="speaker-main">
-            <h2 class="speaker-name">Steven L. Brunton</h2>
+            <div class="course-meta">
+                <span><strong>Dates:</strong> 01/05/2026 – 03/13/2026</span>
+                <span><strong>Class Time:</strong> Tue / Thu, 9:00 AM – 10:20 AM</span>
+                <span>
+                    <strong>Room:</strong>
+                    <a href="https://campus-map.stanford.edu/?srch=Hewlett"
+                       target="_blank" rel="noopener noreferrer">
+                        HEWLETT 101
+                    </a>
+                </span>
+            </div>
 
-            <p class="speaker-affiliation">
-                University of Washington, Seattle
+            <p>
+                This course examines the Challenge Problems Paradigm (CPP) and its broader role in empirical
+                machine learning and related fields. At the heart of CPP is the Common Task Framework (CTF)—
+                a structured methodology that has driven major breakthroughs, including the Netflix Prize and
+                AlphaFold, which was recognized with the 2024 Nobel Prize in Chemistry for its groundbreaking
+                contributions to protein structure prediction.
             </p>
 
-            <div>
-                <div class="speaker-meta-label">Academic Roles</div>
-                <ul class="speaker-titles">
-                    <li><strong>Professor of Mechanical Engineering</strong></li>
-                    <li>Adjunct Professor of Aeronautics &amp; Astronautics</li>
-                    <li>Adjunct Professor of Computer Science</li>
-                    <li>Adjunct Professor of Applied Mathematics</li>
-                    <li>Associate Professor of Mechanical Engineering</li>
-                    <li>Data Science Fellow, eScience Institute</li>
-                </ul>
-            </div>
+            <p>
+                CTF consists of a publicly available training dataset, a collaborative competition model, and
+                an objective scoring referee that evaluates performance against a sequestered test set.
+            </p>
+
+            <p>
+                We will explore how this framework, popularized by platforms like Kaggle, CodaLab, and
+                Nightingale Open Science, fosters rapid innovation through accessible collaboration,
+                transparent benchmarks, rapid feedback loops, and outcome-driven reasoning. Case studies from
+                computer vision, natural language processing, empirical finance, and computational sciences
+                will illustrate its widespread impact.
+            </p>
+
+            <p>
+                We will examine evidence that CTF itself serves as a “secret sauce” of data science, driving
+                technological advancements and breakthrough innovations. Additionally, we will discuss critical
+                concerns, including dataset biases, reproducibility issues, and overfitting to benchmarks.
+            </p>
+
+            <p class="meta">
+                <span class="badge">Last updated: Oct 16, 2025</span>
+            </p>
         </div>
     </div>
 
-    <!-- Talk info + abstract + bio -->
-    <section>
-        <h3 class="talk-title">Talk Title</h3>
-        <p><strong>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</strong></p>
+    <div class="grid">
+        <section>
+            <!-- empty on purpose; main text is in hero above -->
+        </section>
 
-        <h3>Abstract</h3>
-        <p>
-            This work will discuss several key challenges and opportunities in using machine learning
-            for nonlinear system identification. In particular, Prof. Brunton will describe how machine
-            learning may be used to develop accurate and efficient nonlinear dynamical systems models for
-            complex natural and engineered systems.
-        </p>
-        <p>
-            He will emphasize the need for interpretable and generalizable data-driven models, such as
-            the sparse identification of nonlinear dynamics (SINDy) algorithm, which identifies a minimal
-            dynamical system model that balances model complexity with accuracy, avoiding overfitting.
-            The talk will also introduce several key benchmark problems in dynamical systems and fluid
-            dynamics that provide diverse metrics to assess modern system identification techniques.
-        </p>
-        <p>
-            Because fluid dynamics is central to transportation, health, and defense systems, the talk
-            will emphasize the importance of machine learning solutions that are interpretable,
-            explainable, generalizable, and that respect known physics.
-        </p>
+        <aside>
+            <div class="card">
+                <h3>Instructor</h3>
+                <img src="donoho.jpg" alt="Prof. David Donoho" class="instructor-photo">
+                <p><strong>Prof. David Donoho</strong></p>
+                <p><a href="mailto:donoho@stanford.edu">donoho@stanford.edu</a></p>
+                <p><strong>Office Hours:</strong> To be announced</p>
+                <p>
+                    <strong>Office Hours Location:</strong>
+                    <a href="https://campus-map.stanford.edu/?srch=Sequoia"
+                       target="_blank" rel="noopener noreferrer">
+                        SEQUOIA 128
+                    </a>
+                </p>
+            </div>
 
-        <h3>More Information</h3>
-        <p>
-            For full bio and additional information, see:
-            <a href="https://www.me.washington.edu/facultyfinder/steve-brunton"
-               target="_blank" rel="noopener noreferrer">
-                Steven Brunton – University of Washington Faculty Page
-            </a>
-        </p>
-    </section>
+            <div class="card">
+                <h3>Course Administration</h3>
+                <p>
+                    <strong>Course Admin:</strong><br>
+                    Dr. Elena Belogolovsky<br>
+                    <a href="mailto:ebelog@stanford.edu">ebelog@stanford.edu</a>
+                </p>
+                <p>
+                    <strong>Teaching Assistant:</strong><br>
+                    Ivy Zhang<br>
+                    <a href="mailto:ivyzhang@stanford.edu">ivyzhang@stanford.edu</a>
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Course Access</h3>
+                <p>
+                    <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer">
+                        Canvas Site
+                    </a>
+                </p>
+            </div>
+        </aside>
+    </div>
 </div>
+
+<footer>
+    <div class="container">
+        &copy; David Donoho • Department of Statistics • Stanford University.
+    </div>
+</footer>
 
 </body>
 </html>
