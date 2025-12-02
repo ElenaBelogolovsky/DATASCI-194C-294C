@@ -6,6 +6,41 @@
     <title>DATASCI 194C/294C: Grading</title>
     
     <link rel="stylesheet" href="styles.css"> 
+
+    <style>
+        /* Mobile-specific tweaks */
+        @media (max-width: 768px) {
+            /* Give more side padding on mobile */
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            /* Make sure any grid turns into a single column */
+            .grid {
+                display: block;
+            }
+
+            /* Improve readability of headings on small screens */
+            h2, h3 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            /* Make the grading table scrollable instead of cramped */
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.9rem;
+            }
+
+            table thead, table tbody, table tr, table th, table td {
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -13,13 +48,16 @@
         <div class="container masthead">
             <div class="title">
                 <h1>DATASCI 194C/294C</h1>
-                <span class="subtitle">Back to <a href="index.html" style="color: white; text-decoration: underline;">Overview</a></span> 
+                <span class="subtitle">
+                    Back to 
+                    <a href="index.html" style="color: white; text-decoration: underline;">Overview</a>
+                </span> 
             </div>
         </div>
         
         <div class="container">
             <nav class="nav">
-                <a href="schedule.html">Course Description</a> 
+                <a href="index.html">Course Description</a>
                 <a href="schedule.html">Schedule</a> 
                 <a href="slides.html">Lecture Slides</a>
                 <a href="grading.html" class="active-page">Grading</a>
@@ -31,7 +69,7 @@
         <section>
             <h2>Grading</h2>
 
-            <h3>1. Attendance & Participation — 15%</h3>
+            <h3>1. Attendance &amp; Participation — 15%</h3>
             <p>Based on the number of classes attended (out of 20):</p>
 
             <table>
