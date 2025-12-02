@@ -2,7 +2,7 @@
 :root{ 
     --brand:#8c1515; /* Stanford Cardinal Red */
     --brand-dark:#6b0f0f;
-    --accent:#fcd116; /* Stanford Gold/Yellow for highlights */
+    --accent:#fcd116; /* Stanford Gold/Yellow for highlights (still available if needed) */
     --bg:#ffffff; 
     --text:#222222; 
     --muted:#666666; 
@@ -18,18 +18,20 @@ html,body{
     padding:0;
     background:var(--bg);
     color:var(--text);
-    /* Updated font to Inter for modern look */
     font-family: 'Inter', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji", sans-serif;
     font-size:16px;
     line-height:1.6;
 } 
+
 a{
     color:var(--link);
     text-decoration:none;
-    /* Added transition for smoother hover on all links */
     transition: color 0.2s, text-decoration 0.2s;
 } 
-a:hover{text-decoration:underline}
+
+a:hover{
+    text-decoration:underline;
+}
 
 /* Added margin to paragraphs for better reading flow */
 .hero p {
@@ -43,11 +45,13 @@ a:hover{text-decoration:underline}
     color:#fff;
     padding: 10px 0; 
 }
+
 .container{
     max-width:1100px;
     margin:0 auto;
     padding:0 16px
 }
+
 /* 🎯 FIX: Remove alignment padding on masthead container to allow title centering */
 .masthead{
     display:block; 
@@ -56,29 +60,33 @@ a:hover{text-decoration:underline}
     padding-left: 0;
     padding-right: 0;
 }
+
 .title{
     display:flex;
     flex-direction:column;
     padding-bottom: 0; 
-    /* 🎯 CRITICAL: Center all title text */
     text-align: center; 
 }
+
 .title h1{
     margin:0;
     font-size:1.5rem;
     letter-spacing:0.2px;
     line-height: 1.2; 
 }
+
 /* 🎯 NEW: Specific style for the course number line */
 .title h1 .course-number {
-    font-size: 1.25rem; /* Make it smaller than the main title text (1.5rem) */
+    font-size: 1.25rem;
     font-weight: 600;
 }
+
 .title .subtitle{
     opacity:.9;
     font-size:.95rem;
-    margin-top: 5px; /* Add small space above subtitle */
+    margin-top: 5px; 
 }
+
 
 /* --- Navigation Menu (Tabs) --- */
 .nav{
@@ -88,19 +96,32 @@ a:hover{text-decoration:underline}
     padding-top: 15px; 
     padding-bottom: 10px; 
 }
+
+/* Base nav link style */
 .nav a{
     color:#fff;
     opacity:.95;
-    transition: opacity 0.2s; 
+    text-decoration:none;
+    text-decoration-color:#fff;              /* ensure underline (when present) is white */
+    text-underline-offset:6px;              /* Stanford-style offset */
+    text-decoration-thickness:3px;          /* thicker underline */
+    -webkit-tap-highlight-color:transparent;
+    transition: opacity 0.2s;
 }
+
+/* Hover: just brighten, no underline */
 .nav a:hover{
     opacity:1;
+    text-decoration:none;                   /* override global a:hover underline for nav */
 }
-/* Highlight current page with the accent color */
-.nav a.active-page {
-    border-bottom: 3px solid var(--accent); 
-    padding-bottom: 5px; 
-    opacity: 1; 
+
+/* ACTIVE PAGE: thick white underline, Stanford-style */
+.nav a.active-page{
+    opacity:1;
+    text-decoration:underline;
+    text-decoration-color:#fff;
+    text-underline-offset:6px;
+    text-decoration-thickness:3px;
 }
 
 
@@ -108,7 +129,7 @@ a:hover{text-decoration:underline}
 .header-banner {
     display: block; 
     width: 100%; 
-    height: 150px; /* Thinner height */
+    height: 150px;
     object-fit: cover; 
     object-position: center top; 
     margin: 0; 
@@ -122,17 +143,21 @@ a:hover{text-decoration:underline}
     background:linear-gradient(0deg,#fafafa,#fff);
     border-bottom:1px solid var(--border)
 }
+
 .hero .inner{
-    padding:40px 0; /* Increased padding */
+    padding:40px 0;
 }
+
 .hero h2{
     margin:0 0 16px; 
     font-size:1.75rem;
     color: var(--brand); 
 }
+
 .meta{
     color:var(--muted)
 }
+
 
 /* --- Grid Layout (Main Content + Sidebar) --- */
 .grid{
@@ -141,17 +166,18 @@ a:hover{text-decoration:underline}
     gap:30px; 
     padding:30px 0; 
 }
+
 @media (max-width: 900px){
     .grid{
         grid-template-columns:1fr;
-        gap: 40px; /* Increase gap between stacked sections */
+        gap: 40px;
     }
     
-    /* Space between stacked cards on mobile */
     aside .card:not(:last-child) {
         margin-bottom: 20px;
     }
 }
+
 
 /* CARD STYLING: Added subtle shadow/lift effect on hover */
 .card{
@@ -161,35 +187,41 @@ a:hover{text-decoration:underline}
     padding:18px;
     transition: box-shadow 0.3s ease; 
 }
+
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle lift on hover */
-}
-.card h3{
-    margin-top:0
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Tables (For the Schedule Page) --- */
+.card h3{
+    margin-top:0;
+}
+
+
+/* --- Tables (For the Schedule/Grading Pages) --- */
 table{
     width:100%;
     border-collapse:collapse;
     background:#fff;
     border:1px solid var(--border);
     border-radius:10px;
-    /* Removed overflow:hidden here, handled in mobile query */
 }
+
 th,td{
     padding:12px;
     border-bottom:1px solid var(--border);
     text-align:left;
     vertical-align:top
 }
+
 thead th{
     background:#fafafa;
     font-weight:700
 }
+
 tbody tr:hover{
     background:#fff8f8
 }
+
 
 /* --- Utility Classes --- */
 .badge{
@@ -201,6 +233,7 @@ tbody tr:hover{
     font-size:.8rem;
     color:var(--muted)
 }
+
 .btn{
     display:inline-block;
     padding:10px 14px;
@@ -210,21 +243,25 @@ tbody tr:hover{
     font-weight:600;
     margin-right: 10px;
     transition: background 0.2s, transform 0.1s;
-    cursor: pointer; /* Added for better usability */
+    cursor: pointer;
 }
+
 .btn:hover{
     border-color:#d4d4d4;
     text-decoration: none;
     transform: translateY(-1px); 
 }
+
 .btn.primary{
     background:var(--brand); 
     color:#fff;
     border-color:var(--brand-dark);
 }
+
 .btn.primary:hover{
     background:var(--brand-dark);
 }
+
 
 /* --- Footer --- */
 footer{
@@ -236,9 +273,10 @@ footer{
     text-align: center; 
 }
 
+
 /* -------------------------------------------
     --- MOBILE-SPECIFIC STYLES (UNDER 600PX) ---
-    ------------------------------------------- */
+   ------------------------------------------- */
 @media (max-width: 600px) {
     /* 1. Reduce overall padding on the container */
     .container {
@@ -247,11 +285,13 @@ footer{
     
     /* 2. Shrink Title and Subtitle */
     .title h1 {
-        font-size: 1.1rem; /* Smaller on phone */
+        font-size: 1.1rem;
     }
+
     .title h1 .course-number {
-        font-size: 1rem; /* Even smaller course number */
+        font-size: 1rem;
     }
+
     .title .subtitle {
         font-size: 0.85rem; 
     }
@@ -262,17 +302,22 @@ footer{
         gap: 8px; 
         padding-top: 5px;
         padding-bottom: 5px;
-        align-items: center; /* Center links in the column layout */
+        align-items: center;
     }
+
     .nav a {
         display: block;
         width: 100%;
         text-align: center;
         padding: 4px 0;
     }
-    .nav a.active-page {
-        border-bottom: 2px solid var(--accent); 
-        padding-bottom: 2px;
+
+    /* Active page still uses thick white underline */
+    .nav a.active-page{
+        text-decoration:underline;
+        text-decoration-color:#fff;
+        text-underline-offset:6px;
+        text-decoration-thickness:3px;
     }
     
     /* 4. Shrink Banner */
@@ -293,13 +338,13 @@ footer{
     table {
         display: block;
         width: 100%;
-        overflow-x: auto;      /* allows horizontal scroll */
-        -webkit-overflow-scrolling: touch; /* smoother on iOS */
-        border-radius: 0; /* Better look when scrolling */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 0;
     }
 
     th, td {
-        white-space: nowrap;   /* prevents text wrapping inside cells */
-        padding: 10px;         /* slightly reduced padding */
+        white-space: nowrap;
+        padding: 10px;
     }
 }
