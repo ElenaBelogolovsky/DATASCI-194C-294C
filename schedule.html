@@ -49,7 +49,7 @@
         .week-section h3 {
             margin-top: 24px;
             margin-bottom: 8px;
-            font-size: 1.15rem; /* unified heading size */
+            font-size: 1.15rem;
         }
 
         .week-table-container {
@@ -75,7 +75,7 @@
             text-align: left;
         }
 
-        /* Column widths: Date, Topic, Speakers, Readings/Activities, Assignments */
+        /* Column widths on desktop */
         table.week-table th:nth-child(1),
         table.week-table td:nth-child(1) {
             width: 12%;
@@ -124,7 +124,14 @@
             font-weight: bold;
         }
 
+        /* ---------- MOBILE: turn each row into a card ---------- */
         @media (max-width: 768px) {
+
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
             .grid {
                 flex-direction: column;
             }
@@ -136,24 +143,62 @@
                 margin-bottom: 12px;
             }
 
-            /* match mobile margins from grading page */
-            .container {
-                padding-left: 1.4rem;
-                padding-right: 1.4rem;
+            .week-table-container {
+                overflow-x: visible;
             }
 
             table.week-table {
+                border: 0;
                 min-width: 100%;
                 font-size: 0.9rem;
             }
 
-            table.week-table th,
-            table.week-table td {
-                white-space: nowrap;
+            table.week-table thead {
+                display: none;
             }
 
-            .sidebar h3,
-            .week-section h3 {
+            table.week-table,
+            table.week-table tbody,
+            table.week-table tr,
+            table.week-table td {
+                display: block;
+                width: 100%;
+            }
+
+            table.week-table tr {
+                margin-bottom: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                background: #fff;
+                padding: 6px 8px;
+            }
+
+            table.week-table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding: 6px 8px 6px 7rem;
+                white-space: normal;
+            }
+
+            table.week-table td:last-child {
+                border-bottom: none;
+            }
+
+            table.week-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 8px;
+                top: 6px;
+                font-weight: 600;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: #666;
+            }
+
+            .week-section h3,
+            .sidebar h3 {
                 font-size: 1.1rem;
             }
         }
@@ -216,10 +261,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01/06/2026 (Tue)</td>
-                                <td>Introduction; Nobel Prizes for Data Science</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">01/06/2026 (Tue)</td>
+                                <td data-label="Topic">Introduction; Nobel Prizes for Data Science</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -230,13 +275,13 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>01/08/2026 (Thu)</td>
-                                <td>Common Task Framework (CTF)</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">01/08/2026 (Thu)</td>
+                                <td data-label="Topic">Common Task Framework (CTF)</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -286,7 +331,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -309,12 +354,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01/13/2026 (Tue)</td>
-                                <td>Emergence of Empirical ML &amp; Benchmark Culture</td>
-                                <td>
+                                <td data-label="Date">01/13/2026 (Tue)</td>
+                                <td data-label="Topic">Emergence of Empirical ML &amp; Benchmark Culture</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -325,18 +370,18 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td>Assignment 1</td>
+                                <td data-label="Assignments">Assignment 1</td>
                             </tr>
                             <tr>
-                                <td>01/15/2026 (Thu)</td>
-                                <td>Topic TBA</td>
-                                <td>
+                                <td data-label="Date">01/15/2026 (Thu)</td>
+                                <td data-label="Topic">Topic TBA</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/moritz-hardt.html">Moritz Hardt</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -359,10 +404,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01/20/2026 (Tue)</td>
-                                <td>Case Studies: NIPS/NETFLIX</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">01/20/2026 (Tue)</td>
+                                <td data-label="Topic">Case Studies: NIPS/NETFLIX</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -394,18 +439,18 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>01/22/2026 (Thu)</td>
-                                <td>Topic TBA</td>
-                                <td>
+                                <td data-label="Date">01/22/2026 (Thu)</td>
+                                <td data-label="Topic">Topic TBA</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/jonathon-philips.html">Jonathon Philips</a> (TBA)
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td>Assignment 2</td>
+                                <td data-label="Assignments">Assignment 2</td>
                             </tr>
                         </tbody>
                     </table>
@@ -428,23 +473,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01/27/2026 (Tue)</td>
-                                <td>Reproducibility &amp; CTF Method</td>
-                                <td>
+                                <td data-label="Date">01/27/2026 (Tue)</td>
+                                <td data-label="Topic">Reproducibility &amp; CTF Method</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/mark-liberman.html">Mark Liberman</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>01/29/2026 (Thu)</td>
-                                <td>Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</td>
-                                <td>
+                                <td data-label="Date">01/29/2026 (Thu)</td>
+                                <td data-label="Topic">Machine Learning for Scientific Discovery, with Examples in Fluid Mechanics</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/steven-brunton.html">Steven L. Brunton</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Watch:</span>
                                     <ol class="activity-list">
                                         <li>
@@ -470,7 +515,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -493,12 +538,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02/03/2026 (Tue)</td>
-                                <td>Biomedical Challenge Problems; DREAM Challenges</td>
-                                <td>
+                                <td data-label="Date">02/03/2026 (Tue)</td>
+                                <td data-label="Topic">Biomedical Challenge Problems; DREAM Challenges</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/gustavo-stolovitzky.html">Gustavo Stolovitzky</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -509,16 +554,16 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>02/05/2026 (Thu)</td>
-                                <td>Code Sharing</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">02/05/2026 (Thu)</td>
+                                <td data-label="Topic">Code Sharing</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td>Assignment 3</td>
+                                <td data-label="Assignments">Assignment 3</td>
                             </tr>
                         </tbody>
                     </table>
@@ -541,21 +586,21 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02/10/2026 (Tue)</td>
-                                <td>Data Sharing, Reanalysis, Critical Views of Data Sharing</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">02/10/2026 (Tue)</td>
+                                <td data-label="Topic">Data Sharing, Reanalysis, Critical Views of Data Sharing</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>02/12/2026 (Thu)</td>
-                                <td>Economics of CTF</td>
-                                <td>
+                                <td data-label="Date">02/12/2026 (Thu)</td>
+                                <td data-label="Topic">Economics of CTF</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/theis-ingerslev-jensen.html">Theis Ingerslev Jensen</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -566,7 +611,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -589,23 +634,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02/17/2026 (Tue)</td>
-                                <td>Topic TBA</td>
-                                <td>
+                                <td data-label="Date">02/17/2026 (Tue)</td>
+                                <td data-label="Topic">Topic TBA</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/peter-mattson.html">Peter Mattson (Google / MLCommons)</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>02/19/2026 (Thu)</td>
-                                <td>Mathematics &amp; Frontier Benchmarks</td>
-                                <td>
+                                <td data-label="Date">02/19/2026 (Thu)</td>
+                                <td data-label="Topic">Mathematics &amp; Frontier Benchmarks</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/elliot-glazer.html">Elliot Glazer</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -616,7 +661,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td>Assignment 4</td>
+                                <td data-label="Assignments">Assignment 4</td>
                             </tr>
                         </tbody>
                     </table>
@@ -639,12 +684,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02/24/2026 (Tue)</td>
-                                <td>Medical Data Sharing &amp; Medical Benchmarks</td>
-                                <td>
+                                <td data-label="Date">02/24/2026 (Tue)</td>
+                                <td data-label="Topic">Medical Data Sharing &amp; Medical Benchmarks</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/ziad-obermeyer.html">Ziad Obermeyer</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -667,15 +712,15 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>02/26/2026 (Thu)</td>
-                                <td>Topic TBA</td>
-                                <td>
+                                <td data-label="Date">02/26/2026 (Thu)</td>
+                                <td data-label="Topic">Topic TBA</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/mykel-kochenderfer.html">Mykel J. Kochenderfer</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -690,7 +735,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -713,12 +758,12 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>03/03/2026 (Tue)</td>
-                                <td>Agentic Benchmarks</td>
-                                <td>
+                                <td data-label="Date">03/03/2026 (Tue)</td>
+                                <td data-label="Topic">Agentic Benchmarks</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/jacob-steinhardt.html">Jacob Steinhardt</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -741,15 +786,15 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>03/05/2026 (Thu)</td>
-                                <td>Critique of Challenges, Data-Based Science and Benchmarks</td>
-                                <td>
+                                <td data-label="Date">03/05/2026 (Thu)</td>
+                                <td data-label="Topic">Critique of Challenges, Data-Based Science and Benchmarks</td>
+                                <td data-label="Speakers">
                                     <a href="speakers/sanmi-koyejo.html">Sanmi Koyejo</a>
                                 </td>
-                                <td class="activities">
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -796,7 +841,7 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td>Assignment 5</td>
+                                <td data-label="Assignments">Assignment 5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -819,10 +864,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>03/10/2026 (Tue)</td>
-                                <td>Leaderboards as Media: Implications for Our Scientific Future and The Path Forward</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">03/10/2026 (Tue)</td>
+                                <td data-label="Topic">Leaderboards as Media: Implications for Our Scientific Future and The Path Forward</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     <span class="label-inline">Read:</span>
                                     <ol class="reading-list">
                                         <li>
@@ -839,16 +884,16 @@
                                         </li>
                                     </ol>
                                 </td>
-                                <td></td>
+                                <td data-label="Assignments"></td>
                             </tr>
                             <tr>
-                                <td>03/12/2026 (Thu)</td>
-                                <td>Leaderboard Day: Final Presentations &amp; Wrap-Up</td>
-                                <td></td>
-                                <td class="activities">
+                                <td data-label="Date">03/12/2026 (Thu)</td>
+                                <td data-label="Topic">Leaderboard Day: Final Presentations &amp; Wrap-Up</td>
+                                <td data-label="Speakers"></td>
+                                <td data-label="Readings / Activities" class="activities">
                                     No required readings or activities listed.
                                 </td>
-                                <td>Final presentations</td>
+                                <td data-label="Assignments">Final presentations</td>
                             </tr>
                         </tbody>
                     </table>
