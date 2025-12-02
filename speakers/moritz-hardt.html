@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moritz Hardt – DATASCI 194C/294C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Speaker layout – conference-style */
+        .speaker-section {
+            padding: 2rem 0 2.75rem;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 1.6rem;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border: 1px solid var(--border, #e5e5e5);
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2.4rem;
+        }
+
+        .speaker-photo {
+            max-width: 260px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .speaker-main {
+            flex: 1 1 auto;
+        }
+
+        .speaker-name {
+            margin: 0 0 0.4rem;
+            font-size: 1.65rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 1rem;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-meta-label {
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+            color: var(--muted, #666);
+        }
+
+        .speaker-titles {
+            padding-left: 1rem;
+            margin: 0 0 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .speaker-titles li {
+            margin-bottom: 2px;
+        }
+
+        .more-info {
+            margin-top: 1.5rem;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+
+            .speaker-photo {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container speaker-section">
+
+    <!-- Bio-card -->
+    <div class="speaker-card">
+        <img src="../hardt.jpg" alt="Moritz Hardt" class="speaker-photo">
+
+        <div class="speaker-main">
+            <h2 class="speaker-name">Moritz Hardt</h2>
+            <p class="speaker-affiliation">University of Tübingen</p>
+
+            <div>
+                <div class="speaker-meta-label">Academic Roles</div>
+                <ul class="speaker-titles">
+                    <li>Director, Social Foundations of Computation</li>
+                    <li>Honorary Professor, University of Tübingen</li>
+                    <li>Tübingen AI Center</li>
+                    <li>Max Planck Institute for Intelligent Systems, Tübingen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Talk details -->
+    <section>
+        <h3>Talk Title</h3>
+        <p><strong>TBD</strong></p>
+
+        <h3>Abstract</h3>
+        <p><em>TBD</em></p>
+
+        <h3>Bio</h3>
+        <p>
+            Moritz Hardt is Director of the Social Foundations of Computation at the University of Tübingen,
+            Honorary Professor, and affiliated with both the Tübingen AI Center and the Max Planck Institute
+            for Intelligent Systems.
+        </p>
+        <p>
+            His research focuses on the foundations and societal consequences of computing. 
+        </p>
+        <p>
+            His work spans algorithmic fairness, social impact of AI, learning theory, and the dynamics of
+            socio-technical systems, including influential contributions to fairness in machine learning
+            and institutional accountability in AI systems.
+        </p>
+    </section>
+
+    <!-- More Information -->
+    <section class="more-info">
+        <h3>More Information</h3>
+        <p>
+            Full bio, research, publications, and projects available at:
+            <a href="https://mrtz.org" target="_blank" rel="noopener noreferrer">
+                mrtz.org
+            </a>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
 
