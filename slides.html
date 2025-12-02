@@ -27,33 +27,149 @@
                 margin-right: 0;
             }
         }
+
+        /* Slides list styling */
+        .slides-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .slides-item {
+            padding: 0.45rem 0;
+            border-bottom: 1px solid var(--border, #e5e5e5);
+        }
+
+        .slides-week {
+            font-weight: 600;
+            margin-right: 0.75rem;
+            min-width: 4.5rem;
+            display: inline-block;
+        }
+
+        .slides-link {
+            text-decoration: underline;
+            margin-right: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .slides-divider {
+            margin-right: 0.5rem;
+            color: var(--muted, #999);
+        }
+
+        @media (max-width: 600px) {
+            .slides-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.15rem;
+            }
+
+            .slides-week {
+                margin-bottom: 0.1rem;
+            }
+        }
     </style>
 </head>
 <body>
     
-    <header class="topbar">
-        <div class="container masthead">
-            <div class="title">
-                <h1>DATASCI 194C/294C</h1>
-                           <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
         </div>
-        
-        <div class="container">
-            <nav class="nav">
-                <a href="index.html">Course Description</a>
-                <a href="schedule.html">Schedule</a> 
-                <a href="slides.html" class="active-page">Lecture Slides</a> 
-                <a href="grading.html">Grading</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container grid">
-        <section>
-            <h2>Lecture Slides (TBD)</h2>
-            <p>Slides will be posted here weekly.</p>
-        </section>
     </div>
+
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Course Description</a>
+            <a href="schedule.html">Schedule</a> 
+            <a href="slides.html" class="active-page">Lecture Slides</a> 
+            <a href="grading.html">Grading</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container grid">
+    <section>
+        <h2>Lecture Slides (TBD)</h2>
+        <p>Slides will be posted here weekly.</p>
+
+        <ul class="slides-list">
+            <li class="slides-item">
+                <span class="slides-week">Week 1</span>
+                <a href="#" class="slides-link">Tue • 01/06/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 01/08/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 2</span>
+                <a href="#" class="slides-link">Tue • 01/13/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 01/15/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 3</span>
+                <a href="#" class="slides-link">Tue • 01/20/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 01/22/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 4</span>
+                <a href="#" class="slides-link">Tue • 01/27/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 01/29/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 5</span>
+                <a href="#" class="slides-link">Tue • 02/03/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 02/05/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 6</span>
+                <a href="#" class="slides-link">Tue • 02/10/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 02/12/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 7</span>
+                <a href="#" class="slides-link">Tue • 02/17/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 02/19/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 8</span>
+                <a href="#" class="slides-link">Tue • 02/24/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 02/26/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 9</span>
+                <a href="#" class="slides-link">Tue • 03/03/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 03/05/2026</a>
+            </li>
+
+            <li class="slides-item">
+                <span class="slides-week">Week 10</span>
+                <a href="#" class="slides-link">Tue • 03/10/2026</a>
+                <span class="slides-divider">·</span>
+                <a href="#" class="slides-link">Thu • 03/12/2026</a>
+            </li>
+        </ul>
+
+    </section>
+</div>
 
 </body>
 </html>
