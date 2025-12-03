@@ -1,67 +1,206 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Grading</title>
+    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
     
-    <link rel="stylesheet" href="styles.css"> 
+    <!-- You can keep this if it's not breaking layout -->
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Mobile-specific tweaks */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .masthead .title h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #f5f5f5;
+        }
+
+        .topbar {
+            position: relative;
+            z-index: 10;
+            background: #8c1515;          /* Stanford red */
+            color: #ffffff;
+            padding: 0.75rem 0 0.5rem 0;
+            border-bottom: 2px solid #5e0f0f;
+        }
+
+        .topbar h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .topbar a {
+            color: #ffffff;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav a.active-page {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Main layout: description + sidebar */
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero.inner {
+            background: #fff;
+        }
+
+        /* Make date/time/location more visible */
+        .course-meta {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem 1rem;
+            background-color: #f5f5f5;
+            border-left: 4px solid #8c1515; /* Stanford-ish red */
+            font-size: 0.95rem;
+            display: block;                 /* simplified layout */
+        }
+
+        .course-meta span {
+            display: block;                 /* each on its own line */
+            white-space: normal;
+            margin-bottom: 0.25rem;
+        }
+
+        .course-meta a {
+            text-decoration: underline;
+        }
+
+        .meta .badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            background: #eee;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        aside .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #fafafa;
+        }
+
+        aside .card h3 {
+            margin-top: 0;
+        }
+
+        .btn.primary {
+            display: inline-block;
+            padding: 0.5rem 0.9rem;
+            border-radius: 4px;
+            background: #8c1515;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn.primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Donoho image */
+        .instructor-photo {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            /* Give more side padding on mobile */
             .container {
                 padding-left: 1.4rem;
                 padding-right: 1.4rem;
             }
 
-            /* Make sure any grid turns into a single column */
             .grid {
                 display: block;
             }
 
-            /* Improve readability of headings on small screens */
-            h2, h3 {
-                margin-left: 0;
-                margin-right: 0;
-            }
-
-            /* Make the grading table scrollable instead of cramped */
-            table {
-                display: block;
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                font-size: 0.9rem;
-            }
-
-            table thead, table tbody, table tr, table th, table td {
-                white-space: nowrap;
+            .course-meta {
+                padding: 0.75rem 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    
-    <header class="topbar">
-        <div class="container masthead">
-            <div class="title">
-                <h1>DATASCI 194C/294C</h1>
-                           <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
-          
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>
+                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
+                <br>
+                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
+            </h1>
+            <span class="subtitle">Stanford University, Winter 2026</span>
         </div>
-        
-        <div class="container">
-            <nav class="nav">
-                <a href="index.html">Course Description</a>
+    </div>
+    
+    <div class="container">
+        <nav class="nav">
+        <a href="index.html">Course Description</a>
                 <a href="schedule.html">Schedule</a> 
                 <a href="slides.html">Lecture Slides</a>
                 <a href="grading.html" class="active-page">Grading</a>
                     <a href="optimization.html">Optimization Over Lunch</a>
-            </nav>
-        </div>
-    </header>
+        </nav>
+    </div>
+</header>
+
+
 
     <div class="container grid">
         <section>
