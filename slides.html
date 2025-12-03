@@ -3,70 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Schedule</title>
+    <title>DATASCI 194C/294C: Lecture Slides</title>
     
     <link rel="stylesheet" href="styles.css"> 
 
     <style>
+        /* Layout & typography similar to schedule page */
+        main.container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .page-header {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #8C1515;
+        }
+
+        .page-header p {
+            margin-top: 0.4rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .week-block {
+            margin-bottom: 1.6rem;
+        }
+
+        .week-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #8C1515;
+            margin-bottom: 0.6rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.25rem;
+        }
+
+        .session-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            padding: 0.85rem 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .session-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .session-topic {
+            margin-top: 0.1rem;
+            font-size: 0.97rem;
+        }
+
+        .slides-link {
+            color: #8C1515;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
         /* Mobile-specific tweaks */
         @media (max-width: 768px) {
-            /* Give more side padding on mobile */
             .container {
                 padding-left: 1.4rem;
                 padding-right: 1.4rem;
             }
 
-            /* Make sure any grid turns into a single column */
-            .grid {
-                display: block;
-            }
-
-            /* Improve readability of headings on small screens */
             h2, h3 {
                 margin-left: 0;
                 margin-right: 0;
             }
         }
 
-        /* Slides list styling */
-        .slides-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.2rem 0 2rem;
-        }
-
-        .slides-item {
-            padding: 0.45rem 0;
-            border-bottom: 1px solid var(--border, #e5e5e5);
-        }
-
-        .slides-week {
-            font-weight: 600;
-            margin-right: 0.75rem;
-            min-width: 4.5rem;
-            display: inline-block;
-        }
-
-        .slides-link {
-            text-decoration: underline;
-            margin-right: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .slides-divider {
-            margin-right: 0.5rem;
-            color: var(--muted, #999);
-        }
-
-        @media (max-width: 600px) {
-            .slides-item {
-                display: flex;
-                flex-direction: column;
-                gap: 0.15rem;
+        @media (min-width: 768px) {
+            main.container {
+                padding: 0 0 2.5rem;
             }
 
-            .slides-week {
-                margin-bottom: 0.1rem;
+            .session-card {
+                padding: 1rem 1.1rem;
+            }
+
+            .week-title {
+                font-size: 1.35rem;
             }
         }
     </style>
@@ -91,85 +127,242 @@
     </div>
 </header>
 
-<div class="container grid">
-    <section>
+<main class="container">
+    <div class="page-header">
         <h2>Lecture Slides</h2>
-        <p>Slides will be posted here weekly.</p>
+        <p>Slides will be posted here weekly as PDFs or HTML slide decks.</p>
+    </div>
 
-        <ul class="slides-list">
-            <li class="slides-item">
-                <span class="slides-week">Week 1</span>
-                <a href="#" class="slides-link">Tue • 01/06/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 01/08/2026</a>
-            </li>
+    <!-- Week 1 -->
+    <section class="week-block" id="week1">
+        <h3 class="week-title">Week 1</h3>
 
-            <li class="slides-item">
-                <span class="slides-week">Week 2</span>
-                <a href="#" class="slides-link">Tue • 01/13/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 01/15/2026</a>
-            </li>
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 01/06/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
 
-            <li class="slides-item">
-                <span class="slides-week">Week 3</span>
-                <a href="#" class="slides-link">Tue • 01/20/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 01/22/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 4</span>
-                <a href="#" class="slides-link">Tue • 01/27/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 01/29/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 5</span>
-                <a href="#" class="slides-link">Tue • 02/03/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 02/05/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 6</span>
-                <a href="#" class="slides-link">Tue • 02/10/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 02/12/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 7</span>
-                <a href="#" class="slides-link">Tue • 02/17/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 02/19/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 8</span>
-                <a href="#" class="slides-link">Tue • 02/24/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 02/26/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 9</span>
-                <a href="#" class="slides-link">Tue • 03/03/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 03/05/2026</a>
-            </li>
-
-            <li class="slides-item">
-                <span class="slides-week">Week 10</span>
-                <a href="#" class="slides-link">Tue • 03/10/2026</a>
-                <span class="slides-divider">·</span>
-                <a href="#" class="slides-link">Thu • 03/12/2026</a>
-            </li>
-        </ul>
-
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 01/08/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
     </section>
-</div>
+
+    <!-- Week 2 -->
+    <section class="week-block" id="week2">
+        <h3 class="week-title">Week 2</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 01/13/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 01/15/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 3 -->
+    <section class="week-block" id="week3">
+        <h3 class="week-title">Week 3</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 01/20/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 01/22/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 4 -->
+    <section class="week-block" id="week4">
+        <h3 class="week-title">Week 4</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 01/27/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 01/29/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 5 -->
+    <section class="week-block" id="week5">
+        <h3 class="week-title">Week 5</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 02/03/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 02/05/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 6 -->
+    <section class="week-block" id="week6">
+        <h3 class="week-title">Week 6</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 02/10/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 02/12/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 7 -->
+    <section class="week-block" id="week7">
+        <h3 class="week-title">Week 7</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 02/17/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 02/19/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 8 -->
+    <section class="week-block" id="week8">
+        <h3 class="week-title">Week 8</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 02/24/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 02/26/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 9 -->
+    <section class="week-block" id="week9">
+        <h3 class="week-title">Week 9</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 03/03/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 03/05/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Week 10 -->
+    <section class="week-block" id="week10">
+        <h3 class="week-title">Week 10</h3>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Tue • 03/10/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">Thu • 03/12/2026</span>
+            </div>
+            <div class="session-topic">
+                <a href="#" class="slides-link">Lecture slides</a>
+            </div>
+        </article>
+    </section>
+</main>
 
 </body>
 </html>
