@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATASCI 194C/294C: Optimization Over Lunch</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+
+    <style>
+        /* Layout similar to schedule/slides pages */
+        main.container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .page-header {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #8C1515;
+        }
+
+        .page-header p {
+            margin-top: 0.4rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .intro-block {
+            margin-top: 1rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .intro-block p {
+            margin: 0.4rem 0;
+        }
+
+        .how-it-works {
+            margin-top: 1.2rem;
+        }
+
+        .how-it-works h3,
+        .sessions-header {
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .how-it-works ul {
+            margin: 0.3rem 0 0.4rem 1.2rem;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+
+        .how-it-works li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sessions-meta {
+            font-size: 0.92rem;
+            color: #555;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Lunch session list – mobile friendly */
+        .lunch-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
+        }
+
+        .lunch-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.6rem;
+            align-items: baseline;
+            background: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 0.6rem 0.8rem;
+            font-size: 0.94rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lunch-item strong {
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .lunch-item span {
+            font-size: 0.9rem;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .lunch-item .lunch-label {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .reserve-section {
+            margin-top: 1.6rem;
+            font-size: 0.96rem;
+        }
+
+        .reserve-section p {
+            margin: 0.4rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            main.container {
+                padding: 0 0 2.2rem;
+            }
+
+            .lunch-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .lunch-item span {
+                white-space: normal;
+            }
+        }
+
+        @media (min-width: 768px) {
+            main.container {
+                padding: 0 0 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Course Description</a>
+            <a href="schedule.html">Schedule</a> 
+            <a href="slides.html">Lecture Slides</a> 
+
+            <a href="grading.html">Grading</a>
+           <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="page-header">
+        <h2>Optimization Over Lunch</h2>
+        <p>Conversations that improve models — and minds.</p>
+    </div>
+
+    <section class="intro-block">
+        <p>
+            This course offers a <strong>rare and exclusive learning experience</strong>:
+            lunch with our guest speakers at the Stanford Faculty Club,
+            where ideas unfold in small circles rather than lecture halls.
+        </p>
+        <p>
+            Each lunch is:
+        </p>
+        <ul>
+            <li>Free</li>
+            <li>Limited to <strong>five students</strong></li>
+            <li>Designed for curiosity, reflection, and dialogue</li>
+        </ul>
+        <p>
+            These lunches create space for thinking aloud, asking questions you can’t ask elsewhere,
+            and exploring how ideas evolve. Seats are few by design — to keep the conversation meaningful.
+        </p>
+    </section>
+
+    <section class="how-it-works">
+        <h3>How It Works</h3>
+        <ul>
+            <li>Choose one or more lunches you’d like to attend.</li>
+            <li>Seats are filled <strong>first-come, first-served</strong>.</li>
+            <li>Preference may rotate so all interested students have a chance.</li>
+            <li>Bring questions, perspectives, and a willingness to think together.</li>
+        </ul>
+    </section>
+
+    <section class="sessions">
+        <h3 class="sessions-header">Winter 2026 Lunch Sessions</h3>
+        <div class="sessions-meta">
+            Stanford Faculty Club &nbsp;•&nbsp; 11:30am–12:30pm
+        </div>
+
+        <ul class="lunch-list">
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>01/13 (Tue)</strong> — Lunch with Dr. Moritz Hardt</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>01/15 (Thu)</strong> — Lunch with Dr. Moritz Hardt</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>01/22 (Thu)</strong> — Lunch with Dr. Jonathan</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>01/27 (Tue)</strong> — Lunch with Dr. Mark Liberman</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>01/29 (Thu)</strong> — Lunch with Dr. Steven L. Brunton</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/03 (Tue)</strong> — Lunch with Dr. Gustavo</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/12 (Thu)</strong> — Lunch with Dr. Theis Ing…</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/17 (Tue)</strong> — Lunch with Dr. Peter Mattson</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/19 (Thu)</strong> — Lunch with Dr. Elliot Glashow</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/24 (Tue)</strong> — Lunch with Dr. Ziad Obermeyer</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>02/26 (Thu)</strong> — Lunch with Dr. Mykel Kochenderfer</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>03/03 (Tue)</strong> — Lunch with Dr. Jacob Steinhardt</div>
+                <span>(5 spots)</span>
+            </li>
+            <li class="lunch-item">
+                <div class="lunch-label"><strong>03/05 (Thu)</strong> — Lunch with Dr. Sanmi Koyejo</div>
+                <span>(5 spots)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section class="reserve-section">
+        <h3>Reserve Your Place</h3>
+        <p>
+            Click below to view available dates and request a seat.
+        </p>
+        <div style="text-al
