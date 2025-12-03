@@ -1,206 +1,193 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
+    <title>DATASCI 194C/294C: Optimization Over Lunch</title>
     
-    <!-- You can keep this if it's not breaking layout -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
 
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 960px;
+        /* Layout similar to schedule page (same as slides.html) */
+        main.container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0 1rem 2rem;
         }
 
-        .masthead .title h1 {
-            margin-bottom: 0.25rem;
+        .page-header {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .subtitle {
-            font-size: 0.95rem;
-            color: #f5f5f5;
-        }
-
-        .topbar {
-            position: relative;
-            z-index: 10;
-            background: #8c1515;          /* Stanford red */
-            color: #ffffff;
-            padding: 0.75rem 0 0.5rem 0;
-            border-bottom: 2px solid #5e0f0f;
-        }
-
-        .topbar h1 {
-            color: #ffffff;
+        .page-header h2 {
             margin: 0;
+            font-size: 1.8rem;
+            color: #8C1515;
         }
 
-        .topbar a {
-            color: #ffffff;
+        .page-header p {
+            margin-top: 0.4rem;
+            color: #555;
+            font-size: 0.95rem;
         }
 
-        .nav {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #ffffff;
+        /* Intro / sections */
+        .subtitle-big {
+            margin-top: 0.4rem;
+            color: #555;
+            font-size: 1.05rem;
             font-weight: 500;
         }
 
-        .nav a:hover {
+        .intro-block {
+            margin-top: 1.2rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .intro-block p {
+            margin: 0.45rem 0;
+        }
+
+        .intro-block a {
+            color: #8C1515;
             text-decoration: underline;
         }
 
-        .nav a.active-page {
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        /* Main layout: description + sidebar */
-        .grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .hero.inner {
-            background: #fff;
-        }
-
-        /* Make date/time/location more visible */
-        .course-meta {
-            margin-top: 1rem;
-            margin-bottom: 0.75rem;
-            padding: 0.75rem 1rem;
-            background-color: #f5f5f5;
-            border-left: 4px solid #8c1515; /* Stanford-ish red */
+        .intro-block ul {
+            margin: 0.3rem 0 0.6rem 1.2rem;
+            padding: 0;
             font-size: 0.95rem;
-            display: block;                 /* simplified layout */
         }
 
-        .course-meta span {
-            display: block;                 /* each on its own line */
-            white-space: normal;
-            margin-bottom: 0.25rem;
+        .how-it-works {
+            margin-top: 1.5rem;
+            font-size: 0.96rem;
         }
 
-        .course-meta a {
+        .how-it-works h3,
+        .sessions-header {
+            margin-top: 1.8rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .how-it-works ul {
+            margin: 0.3rem 0 0.6rem 1.2rem;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+
+        .how-it-works li {
+            margin-bottom: 0.2rem;
+        }
+
+        .sessions-meta {
+            font-size: 0.92rem;
+            color: #555;
+            margin-bottom: 0.6rem;
+        }
+
+        .sessions-meta a {
+            color: #8C1515;
             text-decoration: underline;
         }
 
-        .meta .badge {
-            display: inline-block;
-            padding: 0.15rem 0.5rem;
-            background: #eee;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            color: #555;
+        /* Lunch list with photos */
+        .lunch-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
         }
 
-        aside .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #fafafa;
+        .lunch-item {
+            background: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            margin-bottom: 0.55rem;
         }
 
-        aside .card h3 {
-            margin-top: 0;
-        }
-
-        .btn.primary {
-            display: inline-block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 4px;
-            background: #8c1515;
-            color: #fff;
+        /* Entire row is clickable */
+        .lunch-item a {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.65rem 0.9rem;
             text-decoration: none;
-            font-size: 0.9rem;
+            color: #333;
+            font-size: 0.95rem;
         }
 
-        .btn.primary:hover {
-            opacity: 0.9;
+        .lunch-item a strong {
+            color: #333;
+            font-weight: 600;
+            margin-right: 0.2rem;
         }
 
-        /* Donoho image */
-        .instructor-photo {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
+        .lunch-item a:hover {
+            background: #f0ecec;
         }
 
-        footer {
-            margin-top: 2rem;
-            padding: 1rem 0;
-            border-top: 1px solid #ddd;
-            font-size: 0.85rem;
-            color: #666;
+        .thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
                 padding-right: 1.4rem;
             }
 
-            .grid {
-                display: block;
+            main.container {
+                padding: 0 0 2.5rem;
             }
 
-            .course-meta {
-                padding: 0.75rem 0.75rem;
+            .lunch-item a {
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 768px) {
+            main.container {
+                padding: 0 0 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-
+    
 <header class="topbar">
     <div class="container masthead">
         <div class="title">
-            <h1>
-                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
-                <br>
-                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
-            </h1>
-            <span class="subtitle">Stanford University, Winter 2026</span>
+            <h1>DATASCI 194C/294C</h1>
+            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
         </div>
     </div>
-    
+
     <div class="container">
         <nav class="nav">
-           <a href="index.html">Course Description</a>
+            <a href="index.html">Course Description</a>
             <a href="schedule.html">Schedule</a> 
-              <a href="slides.html" class="active-page">Lecture Slides</a>
+            <a href="slides.html">Lecture Slides</a> 
             <a href="grading.html">Grading</a>
-            <a href="optimization.html">Optimization Over Lunch</a>
+            <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
         </nav>
     </div>
 </header>
 
-
-
+<main class="container">
+    <div class="page-header">
+        <h2>Optimization Over Lunch</h2>
+        <p class="subtitle-big">Conversations that improve models — and minds.</p>
+    </div>
 
     <section class="intro-block">
         <p>
