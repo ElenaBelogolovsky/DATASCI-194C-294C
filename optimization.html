@@ -1,92 +1,308 @@
-<ul class="lunch-list">
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/moritz.jpg" alt="Moritz Hardt" class="thumb">
-            <strong>01/13 (Tue)</strong> Lunch with Dr. Moritz Hardt
-        </a>
-    </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATASCI 194C/294C: Optimization Over Lunch</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/moritz.jpg" alt="Moritz Hardt" class="thumb">
-            <strong>01/15 (Thu)</strong> Lunch with Dr. Moritz Hardt
-        </a>
-    </li>
+    <style>
+        /* Layout similar to schedule/slides pages */
+        main.container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/jonathan.jpg" alt="Jonathan" class="thumb">
-            <strong>01/22 (Thu)</strong> Lunch with Dr. Jonathan
-        </a>
-    </li>
+        .page-header {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/liberman.jpg" alt="Mark Liberman" class="thumb">
-            <strong>01/27 (Tue)</strong> Lunch with Dr. Mark Liberman
-        </a>
-    </li>
+        .page-header h2 {
+            margin: 0;
+            font-size: 1.9rem;
+            color: #8C1515;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/brunton.jpg" alt="Steven L. Brunton" class="thumb">
-            <strong>01/29 (Thu)</strong> Lunch with Dr. Steven L. Brunton
-        </a>
-    </li>
+        .page-header .subtitle-big {
+            margin-top: 0.5rem;
+            color: #444;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/gustavo.jpg" alt="Gustavo" class="thumb">
-            <strong>02/03 (Tue)</strong> Lunch with Dr. Gustavo
-        </a>
-    </li>
+        .intro-block {
+            margin-top: 1.2rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #333;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/theis.jpg" alt="Theis" class="thumb">
-            <strong>02/12 (Thu)</strong> Lunch with Dr. Theis Ing…
-        </a>
-    </li>
+        .intro-block p {
+            margin: 0.45rem 0;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/mattson.jpg" alt="Peter Mattson" class="thumb">
-            <strong>02/17 (Tue)</strong> Lunch with Dr. Peter Mattson
-        </a>
-    </li>
+        .intro-block a {
+            color: #8C1515;
+            text-decoration: underline;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/glashow.jpg" alt="Elliot Glashow" class="thumb">
-            <strong>02/19 (Thu)</strong> Lunch with Dr. Elliot Glashow
-        </a>
-    </li>
+        .intro-block ul {
+            margin: 0.3rem 0 0.6rem 1.2rem;
+            padding: 0;
+            font-size: 0.95rem;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/obermeyer.jpg" alt="Ziad Obermeyer" class="thumb">
-            <strong>02/24 (Tue)</strong> Lunch with Dr. Ziad Obermeyer
-        </a>
-    </li>
+        .how-it-works {
+            margin-top: 1.5rem;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/mykel.jpg" alt="Mykel Kochenderfer" class="thumb">
-            <strong>02/26 (Thu)</strong> Lunch with Dr. Mykel Kochenderfer
-        </a>
-    </li>
+        .how-it-works h3,
+        .sessions-header {
+            margin-top: 1.8rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/steinhardt.jpg" alt="Jacob Steinhardt" class="thumb">
-            <strong>03/03 (Tue)</strong> Lunch with Dr. Jacob Steinhardt
-        </a>
-    </li>
+        .how-it-works ul {
+            margin: 0.3rem 0 0.6rem 1.2rem;
+            padding: 0;
+            font-size: 0.95rem;
+        }
 
-    <li class="lunch-item">
-        <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
-            <img src="images/sanmi.jpg" alt="Sanmi Koyejo" class="thumb">
-            <strong>03/05 (Thu)</strong> Lunch with Dr. Sanmi Koyejo
-        </a>
-    </li>
-</ul>
+        .how-it-works li {
+            margin-bottom: 0.2rem;
+        }
+
+        .sessions-meta {
+            font-size: 0.92rem;
+            color: #555;
+            margin-bottom: 0.6rem;
+        }
+
+        .sessions-meta a {
+            color: #8C1515;
+            text-decoration: underline;
+        }
+
+        /* Lunch list with photos */
+        .lunch-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0;
+        }
+
+        .lunch-item {
+            background: #f7f7f7;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            margin-bottom: 0.55rem;
+        }
+
+        .lunch-item a {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.65rem 0.9rem;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .lunch-item a strong {
+            color: #333;
+            font-weight: 600;
+            margin-right: 0.2rem;
+        }
+
+        .lunch-item a:hover {
+            background: #f0ecec;
+        }
+
+        .thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            main.container {
+                padding: 0 0 2.2rem;
+            }
+
+            .lunch-item a {
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 768px) {
+            main.container {
+                padding: 0 0 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html">Course Description</a>
+            <a href="schedule.html">Schedule</a> 
+            <a href="slides.html">Lecture Slides</a> 
+            <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
+            <a href="grading.html">Grading</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <div class="page-header">
+        <h2>Optimization Over Lunch</h2>
+        <p class="subtitle-big">Conversations that improve models — and minds.</p>
+    </div>
+
+    <section class="intro-block">
+        <p>
+            This course offers a <strong>rare and exclusive learning experience</strong>:
+            lunch with our guest speakers at the 
+            <a href="https://share.google/1Uk3SRUrIudu88OnW" target="_blank" rel="noopener noreferrer">
+                Stanford Faculty Club
+            </a>,
+            where ideas unfold in small circles rather than lecture halls.
+        </p>
+        <p>Each lunch is:</p>
+        <ul>
+            <li>Free</li>
+            <li>Limited to <strong>five students</strong></li>
+            <li>Designed for curiosity, reflection, and dialogue</li>
+        </ul>
+        <p>
+            These lunches create space for thinking aloud, asking questions you can’t ask elsewhere,
+            and exploring how ideas evolve. Seats are few by design — to keep the conversation meaningful.
+        </p>
+    </section>
+
+    <section class="how-it-works">
+        <h3>How It Works</h3>
+        <ul>
+            <li>Choose one or more lunches you’d like to attend.</li>
+            <li>Seats are filled <strong>first-come, first-served</strong>.</li>
+            <li>Preference may rotate so all interested students have a chance.</li>
+            <li>Bring questions, perspectives, and a willingness to think together.</li>
+        </ul>
+    </section>
+
+    <section class="sessions">
+        <h3 class="sessions-header">Winter 2026 Lunches — Reserve Your Seat</h3>
+        <div class="sessions-meta">
+            <a href="https://share.google/1Uk3SRUrIudu88OnW" 
+               target="_blank" rel="noopener noreferrer">
+                Stanford Faculty Club
+            </a>
+            • 11:30am–12:30pm
+        </div>
+
+        <ul class="lunch-list">
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/moritz.jpg" alt="Moritz Hardt" class="thumb">
+                    <span><strong>01/13 (Tue)</strong> Lunch with Dr. Moritz Hardt</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/moritz.jpg" alt="Moritz Hardt" class="thumb">
+                    <span><strong>01/15 (Thu)</strong> Lunch with Dr. Moritz Hardt</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/jonathan.jpg" alt="Jonathan" class="thumb">
+                    <span><strong>01/22 (Thu)</strong> Lunch with Dr. Jonathan</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/liberman.jpg" alt="Mark Liberman" class="thumb">
+                    <span><strong>01/27 (Tue)</strong> Lunch with Dr. Mark Liberman</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/brunton.jpg" alt="Steven L. Brunton" class="thumb">
+                    <span><strong>01/29 (Thu)</strong> Lunch with Dr. Steven L. Brunton</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/gustavo.jpg" alt="Gustavo" class="thumb">
+                    <span><strong>02/03 (Tue)</strong> Lunch with Dr. Gustavo</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/theis.jpg" alt="Theis" class="thumb">
+                    <span><strong>02/12 (Thu)</strong> Lunch with Dr. Theis Ing…</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/mattson.jpg" alt="Peter Mattson" class="thumb">
+                    <span><strong>02/17 (Tue)</strong> Lunch with Dr. Peter Mattson</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/glashow.jpg" alt="Elliot Glashow" class="thumb">
+                    <span><strong>02/19 (Thu)</strong> Lunch with Dr. Elliot Glashow</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/obermeyer.jpg" alt="Ziad Obermeyer" class="thumb">
+                    <span><strong>02/24 (Tue)</strong> Lunch with Dr. Ziad Obermeyer</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/mykel.jpg" alt="Mykel Kochenderfer" class="thumb">
+                    <span><strong>02/26 (Thu)</strong> Lunch with Dr. Mykel Kochenderfer</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/steinhardt.jpg" alt="Jacob Steinhardt" class="thumb">
+                    <span><strong>03/03 (Tue)</strong> Lunch with Dr. Jacob Steinhardt</span>
+                </a>
+            </li>
+            <li class="lunch-item">
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank" rel="noopener noreferrer">
+                    <img src="images/sanmi.jpg" alt="Sanmi Koyejo" class="thumb">
+                    <span><strong>03/05 (Thu)</strong> Lunch with Dr. Sanmi Koyejo</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+
+</body>
+</html>
