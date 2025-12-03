@@ -134,6 +134,7 @@
             flex-shrink: 0;
         }
 
+        /* 🔧 Mobile: match slides.html margins, avoid overflow on the left */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
@@ -141,7 +142,9 @@
             }
 
             main.container {
-                padding: 0 0 2.5rem;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 2.5rem;
             }
 
             .lunch-item a {
@@ -165,6 +168,9 @@
             <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
         </div>
     </div>
+
+
+
 
     <div class="container">
         <nav class="nav">
