@@ -22,34 +22,35 @@
 
         .page-header h2 {
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             color: #8C1515;
         }
 
-        .page-header p {
-            margin-top: 0.4rem;
-            color: #555;
-            font-size: 0.95rem;
+        .page-header .subtitle-big {
+            margin-top: 0.5rem;
+            color: #444;
+            font-size: 1.15rem;
+            font-weight: 500;
         }
 
         .intro-block {
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             font-size: 0.98rem;
             line-height: 1.6;
             color: #333;
         }
 
         .intro-block p {
-            margin: 0.4rem 0;
+            margin: 0.45rem 0;
         }
 
         .how-it-works {
-            margin-top: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .how-it-works h3,
         .sessions-header {
-            margin-top: 1.6rem;
+            margin-top: 1.8rem;
             margin-bottom: 0.4rem;
             font-size: 1.1rem;
             font-weight: 600;
@@ -57,13 +58,9 @@
         }
 
         .how-it-works ul {
-            margin: 0.3rem 0 0.4rem 1.2rem;
+            margin: 0.3rem 0 0.6rem 1.2rem;
             padding: 0;
             font-size: 0.95rem;
-        }
-
-        .how-it-works li {
-            margin-bottom: 0.25rem;
         }
 
         .sessions-meta {
@@ -72,7 +69,7 @@
             margin-bottom: 0.6rem;
         }
 
-        /* Lunch session list – mobile friendly */
+        /* Mobile-friendly lunch list */
         .lunch-list {
             list-style: none;
             padding: 0;
@@ -82,40 +79,30 @@
         .lunch-item {
             display: flex;
             justify-content: space-between;
-            gap: 0.6rem;
+            gap: 0.4rem;
             align-items: baseline;
             background: #f7f7f7;
             border: 1px solid #e5e5e5;
             border-radius: 10px;
-            padding: 0.6rem 0.8rem;
-            font-size: 0.94rem;
-            margin-bottom: 0.5rem;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.55rem;
         }
 
         .lunch-item strong {
             font-weight: 600;
             color: #333;
-            white-space: nowrap;
         }
 
-        .lunch-item span {
-            font-size: 0.9rem;
-            color: #555;
-            white-space: nowrap;
-        }
-
-        .lunch-item .lunch-label {
-            flex: 1 1 auto;
-            min-width: 0;
+        .lunch-item a {
+            color: #8C1515;
+            text-decoration: underline;
+            font-weight: 500;
         }
 
         .reserve-section {
-            margin-top: 1.6rem;
+            margin-top: 1.7rem;
             font-size: 0.96rem;
-        }
-
-        .reserve-section p {
-            margin: 0.4rem 0;
         }
 
         @media (max-width: 768px) {
@@ -124,17 +111,9 @@
                 padding-right: 1.4rem;
             }
 
-            main.container {
-                padding: 0 0 2.2rem;
-            }
-
             .lunch-item {
                 flex-direction: column;
                 align-items: flex-start;
-            }
-
-            .lunch-item span {
-                white-space: normal;
             }
         }
 
@@ -160,9 +139,8 @@
             <a href="index.html">Course Description</a>
             <a href="schedule.html">Schedule</a> 
             <a href="slides.html">Lecture Slides</a> 
-
+            <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
             <a href="grading.html">Grading</a>
-           <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
         </nav>
     </div>
 </header>
@@ -170,7 +148,7 @@
 <main class="container">
     <div class="page-header">
         <h2>Optimization Over Lunch</h2>
-        <p>Conversations that improve models — and minds.</p>
+        <p class="subtitle-big">Conversations that improve models — and minds.</p>
     </div>
 
     <section class="intro-block">
@@ -179,9 +157,7 @@
             lunch with our guest speakers at the Stanford Faculty Club,
             where ideas unfold in small circles rather than lecture halls.
         </p>
-        <p>
-            Each lunch is:
-        </p>
+        <p>Each lunch is:</p>
         <ul>
             <li>Free</li>
             <li>Limited to <strong>five students</strong></li>
@@ -210,64 +186,100 @@
         </div>
 
         <ul class="lunch-list">
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>01/13 (Tue)</strong> — Lunch with Dr. Moritz Hardt</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>01/13 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Moritz Hardt
+                </a>
+             
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>01/15 (Thu)</strong> — Lunch with Dr. Moritz Hardt</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>01/15 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Moritz Hardt
+                </a>
+         
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>01/22 (Thu)</strong> — Lunch with Dr. Jonathan</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>01/22 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Jonathan
+                </a>
+       
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>01/27 (Tue)</strong> — Lunch with Dr. Mark Liberman</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>01/27 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Mark Liberman
+                </a>
+             
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>01/29 (Thu)</strong> — Lunch with Dr. Steven L. Brunton</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>01/29 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Steven L. Brunton
+                </a>
+             
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/03 (Tue)</strong> — Lunch with Dr. Gustavo</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/03 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Gustavo
+                </a>
+         
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/12 (Thu)</strong> — Lunch with Dr. Theis Ing…</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/12 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Theis Ingerslev Jensen
+                </a>
+       
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/17 (Tue)</strong> — Lunch with Dr. Peter Mattson</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/17 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Peter Mattson
+                </a>
+    
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/19 (Thu)</strong> — Lunch with Dr. Elliot Glashow</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/19 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Elliot Glashow
+                </a>
+          
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/24 (Tue)</strong> — Lunch with Dr. Ziad Obermeyer</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/24 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Ziad Obermeyer
+                </a>
+  
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>02/26 (Thu)</strong> — Lunch with Dr. Mykel Kochenderfer</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>02/26 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Mykel Kochenderfer
+                </a>
+    
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>03/03 (Tue)</strong> — Lunch with Dr. Jacob Steinhardt</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>03/03 (Tue)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Jacob Steinhardt
+                </a>
+               
             </li>
-            <li class="lunch-item">
-                <div class="lunch-label"><strong>03/05 (Thu)</strong> — Lunch with Dr. Sanmi Koyejo</div>
-                <span>(5 spots)</span>
+            <li class="lunch-item"><strong>03/05 (Thu)</strong> — 
+                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization" target="_blank">
+                    Lunch with Dr. Sanmi Koyejo
+                </a>
+            
             </li>
         </ul>
     </section>
 
     <section class="reserve-section">
         <h3>Reserve Your Place</h3>
-        <p>
-            Click below to view available dates and request a seat.
-        </p>
-        <div style="text-al
+        <p>Click below to view available dates and request a seat.</p>
+
+        <div style="text-align:center; margin:1.5rem 0;">
+            <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
+               target="_blank" rel="noopener noreferrer">
+                <img src="https://www.signupgenius.com/images/sign-up-now1.gif"
+                     alt="Sign Up Now!" style="max-width:200px; height:auto; border:0;">
+            </a>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
