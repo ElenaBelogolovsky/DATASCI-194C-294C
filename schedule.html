@@ -3,173 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
-    
-    <!-- You can keep this if it's not breaking layout -->
+    <title>DATASCI 194C/294C: Schedule</title>
+
+    <!-- Shared site styles -->
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-        }
+        /* Layout & typography specific to the schedule page */
 
-        .container {
-            max-width: 960px;
+        main.container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 0 1rem 2rem;
         }
 
-        .masthead .title h1 {
-            margin-bottom: 0.25rem;
-        }
-
-        .subtitle {
-            font-size: 0.95rem;
-            color: #f5f5f5;
-        }
-
-        .topbar {
-            position: relative;
-            z-index: 10;
-            background: #8c1515;          /* Stanford red */
-            color: #ffffff;
-            padding: 0.75rem 0 0.5rem 0;
-            border-bottom: 2px solid #5e0f0f;
-        }
-
-        .topbar h1 {
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .topbar a {
-            color: #ffffff;
-        }
-
-        .nav {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
-        .nav a.active-page {
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        /* Main layout: description + sidebar */
-        .grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
+        .page-header {
             margin-top: 1.5rem;
-        }
-
-        .hero.inner {
-            background: #fff;
-        }
-
-        /* Make date/time/location more visible */
-        .course-meta {
-            margin-top: 1rem;
             margin-bottom: 0.75rem;
-            padding: 0.75rem 1rem;
-            background-color: #f5f5f5;
-            border-left: 4px solid #8c1515; /* Stanford-ish red */
-            font-size: 0.95rem;
-            display: block;                 /* simplified layout */
         }
 
-        .course-meta span {
-            display: block;                 /* each on its own line */
-            white-space: normal;
-            margin-bottom: 0.25rem;
+        .page-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #8C1515;
         }
 
-        .course-meta a {
-            text-decoration: underline;
-        }
-
-        .meta .badge {
-            display: inline-block;
-            padding: 0.15rem 0.5rem;
-            background: #eee;
-            border-radius: 999px;
-            font-size: 0.8rem;
+        .page-header p {
+            margin-top: 0.4rem;
             color: #555;
+            font-size: 0.95rem;
         }
 
-        aside .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #fafafa;
-        }
-
-        aside .card h3 {
-            margin-top: 0;
-        }
-
-        .btn.primary {
-            display: inline-block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 4px;
-            background: #8c1515;
-            color: #fff;
-            text-decoration: none;
+        /* Week anchor navigation */
+        .week-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
             font-size: 0.9rem;
         }
 
-        .btn.primary:hover {
-            opacity: 0.9;
+        .week-nav a {
+            text-decoration: none;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            color: #8C1515;
+            white-space: nowrap;
         }
 
-        /* Donoho image */
-        .instructor-photo {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .week-nav a:hover {
+            background: #f3e7e7;
+            border-color: #8C1515;
+        }
+
+        /* Week blocks */
+
+        .week-block {
+            margin-bottom: 2rem;
+        }
+
+        .week-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #8C1515;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Session cards */
+
+        .session-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            padding: 0.85rem 1rem;
             margin-bottom: 0.75rem;
         }
 
-        footer {
-            margin-top: 2rem;
-            padding: 1rem 0;
-            border-top: 1px solid #ddd;
-            font-size: 0.85rem;
-            color: #666;
+        .session-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
         }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            .container {
-                padding-left: 1.4rem;
-                padding-right: 1.4rem;
+        .session-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .session-speaker {
+            font-weight: 500;
+        }
+
+        .session-speaker a {
+            color: #8C1515;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .session-speaker a:hover {
+            text-decoration: underline;
+        }
+
+        .session-topic {
+            margin-top: 0.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #222;
+        }
+
+        .guest-tag {
+            display: inline-block;
+            margin-left: 0.2rem;
+            padding: 0.05rem 0.45rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-radius: 999px;
+            background: #8C1515;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .session-section {
+            margin-top: 0.45rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #777;
+            margin-bottom: 0.15rem;
+        }
+
+        .reading-list,
+        .activity-list {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .reading-list li,
+        .activity-list li {
+            margin-bottom: 0.2rem;
+            font-size: 0.92rem;
+        }
+
+        .reading-list a,
+        .activity-list a {
+            color: #8C1515;
+            text-decoration: none;
+        }
+
+        .reading-list a:hover,
+        .activity-list a:hover {
+            text-decoration: underline;
+        }
+
+        .assignment-pill {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid #8C1515;
+            color: #8C1515;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: #FFEBEE;
+            margin-top: 0.4rem;
+        }
+
+        @media (min-width: 768px) {
+            main.container {
+                padding: 0 0 2.5rem;
             }
 
-            .grid {
-                display: block;
+            .session-card {
+                padding: 1rem 1.1rem;
             }
 
-            .course-meta {
-                padding: 0.75rem 0.75rem;
+            .week-title {
+                font-size: 1.35rem;
             }
+        }
+
+        /* Floating "Back to top" button */
+        .back-to-top-floating {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background: #8C1515;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 50;
+        }
+
+        .back-to-top-floating:hover {
+            background: #a71c1c;
         }
     </style>
 </head>
@@ -178,18 +220,11 @@
 <header class="topbar">
     <div class="container masthead">
         <div class="title">
-            <h1>
-                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
-                <br>
-                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
-            </h1>
-            <span class="subtitle">Stanford University, Winter 2026</span>
+            <h1>DATASCI 194C/294C</h1>
+            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
         </div>
-    </div>
-    
-    <div class="container">
         <nav class="nav">
-         <a href="index.html">Course Description</a>
+            <a href="index.html">Course Description</a>
             <a href="schedule.html" class="active-page">Schedule</a>
             <a href="slides.html">Lecture Slides</a>
             <a href="grading.html">Grading</a>
@@ -197,8 +232,6 @@
         </nav>
     </div>
 </header>
-
- 
 
 <main class="container" id="top">
     <div class="page-header">
