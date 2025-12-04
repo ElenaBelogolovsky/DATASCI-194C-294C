@@ -69,6 +69,24 @@
             margin-top: 1.5rem;
         }
 
+        /* Talk details */
+        .talk-section {
+            margin-bottom: 2rem;
+        }
+
+        .talk-date {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 0.1rem;
+        }
+
+        .talk-title {
+            font-size: 1.25rem;   /* larger than Abstract/Bio headings */
+            font-weight: 700;
+            margin: 0 0 0.6rem;
+        }
+
         /* Mobile optimization */
         @media (max-width: 768px) {
             .container {
@@ -103,7 +121,6 @@
 
     <!-- Bio-card -->
     <div class="speaker-card">
-        <!-- Replace ../hardt.jpg with your actual filename/path -->
         <img src="../hardt.jpg" alt="Moritz Hardt" class="speaker-photo">
 
         <div class="speaker-main">
@@ -121,38 +138,37 @@
     </div>
 
     <!-- Talk details -->
-   
-    <!-- Talk details -->
-<section>
-    <h3>Tue • 01/13/2026 – Talk Title</h3>
-    <p><strong>Benchmarking in the Golden Era</strong></p>
+    <section class="talk-section">
+        <div class="talk-date">Tue • 01/13/2026</div>
+        <p class="talk-title">Benchmarking in the Golden Era</p>
 
-    <h3>Abstract</h3>
-    <p>
-        Benchmarking is a process of continual improvement through competitive testing, central
-        to engineering communities. Against academic concerns, benchmarking advanced machine
-        learning through its heyday, the ImageNet era. Although accuracy numbers varied from one
-        dataset to another, model rankings reliably guided progress. Why benchmarking works depends
-        on social and psychological patterns invisible from a purely statistical lens.
-    </p>
-</section>
+        <h3>Abstract</h3>
+        <p>
+            Benchmarking is a process of continual improvement through competitive testing, central
+            to engineering communities. Against academic concerns, benchmarking advanced machine
+            learning through its heyday, the ImageNet era. Although accuracy numbers varied from one
+            dataset to another, model rankings reliably guided progress. Why benchmarking works depends
+            on social and psychological patterns invisible from a purely statistical lens.
+        </p>
+    </section>
 
-<section>
-    <h3>Thu • 01/15/2026 – Talk Title</h3>
-    <p><strong>Why LLMs Broke Benchmarking and What to Salvage</strong></p>
+    <section class="talk-section">
+        <div class="talk-date">Thu • 01/15/2026</div>
+        <p class="talk-title">Why LLMs Broke Benchmarking and What to Salvage</p>
 
-    <h3>Abstract</h3>
-    <p>
-        After decades of success, benchmarking faces a growing crisis with generative models.
-        Different benchmarks give conflicting comparisons, even when targeting the same task.
-        Multi-task benchmarks exacerbate ranking disagreements, as do attempts to scale up
-        evaluation. Ranking fails when models receive different degrees of task-relevant preparation
-        — a problem called training on the test task. Not all is lost, though, and understanding
-        precisely what isn’t points to a possible future for benchmarking.
-    </p>
-</section>
+        <h3>Abstract</h3>
+        <p>
+            After decades of success, benchmarking faces a growing crisis with generative models.
+            Different benchmarks give conflicting comparisons, even when targeting the same task.
+            Multi-task benchmarks exacerbate ranking disagreements, as do attempts to scale up
+            evaluation. Ranking fails when models receive different degrees of task-relevant preparation
+            — a problem called training on the test task. Not all is lost, though, and understanding
+            precisely what isn’t points to a possible future for benchmarking.
+        </p>
+    </section>
 
-
+    <!-- Bio -->
+    <section>
         <h3>Bio</h3>
         <p>
             Moritz Hardt is a Director at the Max Planck Institute for Intelligent Systems in Tübingen.
