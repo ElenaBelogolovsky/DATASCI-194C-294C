@@ -63,7 +63,7 @@
             margin-bottom: 2px;
         }
 
-        /* Mobile rule matching your Schedule page padding */
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
@@ -78,11 +78,6 @@
 
             .speaker-photo {
                 max-width: 180px;
-            }
-
-            h2, h3 {
-                margin-left: 0;
-                margin-right: 0;
             }
         }
     </style>
@@ -102,15 +97,11 @@
 
     <!-- Bio-card -->
     <div class="speaker-card">
-        <!-- Update filename if needed -->
         <img src="../liberman.jpg" alt="Mark Liberman" class="speaker-photo">
 
         <div class="speaker-main">
             <h2 class="speaker-name">Mark Liberman</h2>
-
-            <p class="speaker-affiliation">
-                University of Pennsylvania
-            </p>
+            <p class="speaker-affiliation">University of Pennsylvania</p>
 
             <div>
                 <div class="speaker-meta-label">Academic Roles</div>
@@ -128,80 +119,78 @@
     <!-- Talk details -->
     <section>
         <h3>Talk Title</h3>
-        <p>
-            <strong>The Common Task Method: Past, Present, and Future</strong>
-        </p>
+        <p><strong>The Common Task Method: Past, Present, and Future</strong></p>
 
         <h3>Abstract</h3>
 
         <p>
-            The “Edisonian approach” 
-            (<a href="https://arxiv.org/abs/2012.01477" target="_blank" rel="noopener noreferrer">example discussion</a>)
+            The 
+            <a href="https://arxiv.org/abs/2012.01477" target="_blank" rel="noopener noreferrer">
+                “Edisonian approach”
+            </a>
             to invention goes back to the medieval alchemists and beyond – in areas where theory was lacking or incomplete,
             systematic trial and error with quantitative comparison of outcomes was sometimes a practical success.
-            After a series of Human Language Technology (HLT) failures, similar methods were applied in the 1970s and 1980s by
+            After a series of Human Language Technology failures, similar methods were applied in the 1970s and 1980s by
             Fred Jelinek’s group at IBM, by George Doddington’s group at Texas Instruments, and by various speech and language
             groups at Bell Labs, MIT, and elsewhere. These researchers shared the Edisonian belief that HLT is an area where
-            engineering can precede science, and where learning from large amounts of data is needed.
-            In order to make experimental hill-climbing possible, they devised specific simplified tasks, like recognizing
-            digit strings, and they designed simple automatically-calculable metrics like “word error rate” and the
-            BLEU translation metric
-            (<a href="https://en.wikipedia.org/wiki/BLEU" target="_blank" rel="noopener noreferrer">BLEU</a>).
+            engineering can precede science, and where learning from large amounts of data is needed. In order to make
+            experimental hill-climbing possible, they devised specific simplified tasks, like recognizing digit strings, and
+            they designed simple automatically-calculable metrics like “word error rate” and the
+            <a href="https://en.wikipedia.org/wiki/BLEU" target="_blank" rel="noopener noreferrer">
+                BLEU translation metric
+            </a>.
         </p>
 
         <p>
-            Starting in the mid-1980s, (D)ARPA decided to return to HLT after some earlier failed attempts,
-            and decided to use quantitative evaluation methods rather than the “evaluation by demonstration”
-            that they’d used before. There were some honest believers in the methodology, and others who mainly saw it as
-            a way to detect what John Pierce had called “deceit and glamour”
-            (<a href="https://iiif.library.cmu.edu/file/Newell_box00030_fld02101_doc0004/Newell_box00030_fld02101_doc0004.pdf"
-               target="_blank" rel="noopener noreferrer">Pierce, 1969</a>),
-            with the expectation that quantitative failure would soon be followed by program termination.
+            Starting in the mid-1980s, (D)ARPA decided to return to HLT after some earlier failed attempts, and chose to use
+            quantitative evaluation methods rather than the “evaluation by demonstration” that they’d used before. Some believed
+            in the methodology; others saw it mainly as a way to detect what John Pierce had called 
+            <a href="https://iiif.library.cmu.edu/file/Newell_box00030_fld02101_doc0004/Newell_box00030_fld02101_doc0004.pdf"
+               target="_blank" rel="noopener noreferrer">
+                “deceit and glamour”
+            </a>,
+            expecting quantitative failure to lead to program termination.
         </p>
 
         <p>
             This context required an iterative series of task designs that were easy enough to allow measurable progress,
-            hard enough to persuade funders of progress towards the ultimate goals, and cheap enough to start and finish quickly.
-            To avoid being trapped by local biases, multiple research groups should be involved, which meant that the data and the
-            quantitative evaluation metric should be public. And to achieve these goals, the task design had to be a careful group
-            effort, involving funders, potential consumers, and researchers.
+            hard enough to persuade funders of progress toward ultimate goals, and cheap enough to start and finish quickly.
+            To avoid being trapped by local biases, multiple research groups should participate, which required public datasets
+            and public evaluation metrics. Achieving this required careful joint task design involving funders, researchers,
+            and potential consumers.
         </p>
 
         <p>This resulted in what came to be known as the “Common Task” structure:</p>
+
         <ul>
-            <li>A detailed task definition and evaluation plan, published as the first step in the project;</li>
-            <li>Automatic evaluation software, written and maintained by NIST, and published at the start of the project;</li>
-            <li>Shared training and “(dev)elopmental test” data, published at the start of the project;</li>
-            <li>“Evaluation test” data withheld and used (once) for periodic public evaluations.</li>
+            <li>A detailed task definition and evaluation plan published at the start;</li>
+            <li>Automatic evaluation software written and maintained by NIST, released at project start;</li>
+            <li>Shared training and developmental test data released publicly;</li>
+            <li>Evaluation test data withheld for periodic public evaluations.</li>
         </ul>
 
-        <p>Although this approach was initially unpopular, it worked – because:</p>
+        <p>Although initially unpopular, the Common Task method succeeded because:</p>
+
         <ul>
-            <li>
-                It allowed funding to start (because the projects were perceived as glamour-and-deceit-proof),
-                and to continue (because funders could measure progress over time, many years before commercialization);
-            </li>
-            <li>
-                It allowed project-internal hill-climbing, because the metrics were automatic and the code was public;
-            </li>
-            <li>
-                It created a culture, because researchers shared methods and results on shared data with a common metric.
-            </li>
+            <li>It secured funding by appearing resistant to “glamour and deceit,” and allowed long-term evaluation years before commercialization.</li>
+            <li>It enabled internal experimental hill-climbing via automatic, standardized metrics.</li>
+            <li>It created a culture: researchers shared methods and results using common datasets and metrics.</li>
         </ul>
 
         <p>
-            And participation in this culture became so valuable that many research groups joined without funding.
-            That was the Classical Common Task era, which gave rise to the use of analogous “challenges” across many areas
-            of engineering, especially in what is now called “AI”.
+            Participation soon became so valuable that many research groups joined without funding. This was the Classical
+            Common Task era, which later inspired similar “challenges” across engineering and AI.
         </p>
 
         <p>
-            But some things have been lost in the process, and the practice of “Leaderboard Chasing”
-            (<a href="https://drive.google.com/file/d/1rJEPy-1FClKv2mcPKitkxHqs9oHI2RzC/view"
-               target="_blank" rel="noopener noreferrer">example critique</a>)
-            has been subject to some legitimate criticisms. Similar concerns were well understood 30 or 40 years ago,
-            and prompted some of the practices that have since been partly or entirely lost. In this talk,
-            I’ll suggest ways to restore and improve the Common Task method in current and future applications.
+            But some things have been lost in translation, and the modern practice of 
+            <a href="https://drive.google.com/file/d/1rJEPy-1FClKv2mcPKitkxHqs9oHI2RzC/view"
+               target="_blank" rel="noopener noreferrer">
+                “Leaderboard Chasing”
+            </a>
+            has drawn legitimate criticism. Many concerns raised today were well understood decades ago and motivated practices
+            that have since been partially or completely abandoned. This talk suggests ways to restore and improve the Common
+            Task method for future applications.
         </p>
 
         <h3>More Information</h3>
@@ -212,6 +201,7 @@
             </a>
         </p>
     </section>
+
 </div>
 
 </body>
