@@ -1,250 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DATASCI 194C/294C: Schedule</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATASCI 194C/294C: Schedule</title>
 
-  <!-- Shared site styles -->
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
 
-  <style>
-    /* ✅ Schedule-specific layout (prevents "content stuck to header") */
-    .schedule-main{
-      max-width: 900px;
-      margin: 0 auto;
+    <style>
+        /* Schedule-specific styles ONLY */
+        .page-header h2 {
+            font-size: 1.75rem;
+            color: var(--brand);
+            margin-bottom: 12px;
+        }
 
-      /* Match .grid padding feel from styles.css */
-      padding: 30px 16px 2rem;
-    }
+        .week-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
 
-    /* Page header */
-    .page-header{
-      margin-top: 0;              /* <- important: schedule-main already adds spacing */
-      margin-bottom: 0.75rem;
-    }
+        .week-nav a {
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: #fafafa;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
 
-    .page-header h2{
-      margin: 0;
-      font-size: 1.8rem;
-      color: var(--brand);
-    }
+        .week-nav a:hover {
+            background: #f3e7e7;
+        }
 
-    /* Week anchor navigation */
-    .week-nav{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.25rem;
-      font-size: 0.9rem;
-    }
+        .week-title {
+            font-size: 1.35rem;
+            color: var(--brand);
+            margin: 30px 0 12px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 6px;
+        }
 
-    .week-nav a{
-      text-decoration: none;
-      padding: 0.2rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid #ddd;
-      background: #fafafa;
-      color: var(--brand);
-      white-space: nowrap;
-    }
+        .session-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
 
-    .week-nav a:hover{
-      background: #f3e7e7;
-      border-color: var(--brand);
-    }
+        .session-date {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
 
-    /* Week blocks */
-    .week-block{
-      margin-bottom: 2rem;
-    }
+        .session-topic {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
 
-    .week-title{
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--brand);
-      margin-bottom: 0.75rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.3rem;
-    }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #777;
+            margin-top: 10px;
+        }
 
-    /* Session cards */
-    .session-card{
-      background: #fff;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.75rem;
-    }
+        .reading-list,
+        .activity-list {
+            padding-left: 18px;
+        }
 
-    .session-header{
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .session-date{
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #555;
-    }
-
-    .session-speaker{
-      font-weight: 500;
-    }
-
-    .session-speaker a{
-      color: var(--brand);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .session-speaker a:hover{
-      text-decoration: underline;
-    }
-
-    .session-topic{
-      margin-top: 0.2rem;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #222;
-    }
-
-    .guest-tag{
-      display: inline-block;
-      margin-left: 0.2rem;
-      padding: 0.05rem 0.45rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .session-section{
-      margin-top: 0.45rem;
-    }
-
-    .section-label{
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #777;
-      margin-bottom: 0.15rem;
-    }
-
-    .reading-list,
-    .activity-list{
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    .reading-list li,
-    .activity-list li{
-      margin-bottom: 0.2rem;
-      font-size: 0.92rem;
-    }
-
-    .reading-list a,
-    .activity-list a{
-      color: var(--brand);
-      text-decoration: none;
-    }
-
-    .reading-list a:hover,
-    .activity-list a:hover{
-      text-decoration: underline;
-    }
-
-    .assignment-pill{
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--brand);
-      color: var(--brand);
-      font-size: 0.8rem;
-      font-weight: 600;
-      background: #FFEBEE;
-      margin-top: 0.4rem;
-    }
-
-    /* Floating "Back to top" button */
-    .back-to-top-floating{
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 50;
-    }
-
-    .back-to-top-floating:hover{
-      background: #a71c1c;
-    }
-
-    @media (max-width: 600px){
-      .schedule-main{
-        padding: 22px 10px 2rem;
-      }
-    }
-  </style>
+        .assignment-pill {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--brand);
+            background: #ffebee;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- ✅ Header copied to match index/grading structure exactly -->
-  <header class="topbar">
+
+<!-- ✅ HEADER — IDENTICAL TO INDEX & GRADING -->
+<header class="topbar">
     <div class="container masthead">
-      <div class="title">
-        <h1>
-          <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
-          <br />
-          Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
-        </h1>
-        <span class="subtitle">Stanford University, Winter 2026</span>
-      </div>
+        <div class="title">
+            <h1>
+                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span><br>
+                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
+            </h1>
+            <span class="subtitle">Stanford University, Winter 2026</span>
+        </div>
     </div>
 
     <div class="container">
-      <nav class="nav">
-        <a href="index.html">Course Description</a>
-        <a href="schedule.html" class="active-page">Schedule</a>
-        <a href="slides.html">Lecture Slides</a>
-        <a href="grading.html">Grading</a>
-        <a href="optimization.html">Optimization Over Lunch</a>
-      </nav>
+        <nav class="nav">
+            <a href="index.html">Course Description</a>
+            <a href="schedule.html" class="active-page">Schedule</a>
+            <a href="slides.html">Lecture Slides</a>
+            <a href="grading.html">Grading</a>
+            <a href="optimization.html">Optimization Over Lunch</a>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main class="schedule-main" id="top">
-    <div class="page-header">
-      <h2>Tentative Course Schedule</h2>
-    </div>
+<!-- ✅ THIS IS THE CRITICAL FIX -->
+<!-- Use .grid so padding matches Course Description -->
+<div class="container grid">
 
-    <!-- Week anchor nav -->
-    <nav class="week-nav" aria-label="Jump to week">
-      <a href="#week1">Week 1</a>
-      <a href="#week2">Week 2</a>
-      <a href="#week3">Week 3</a>
-      <a href="#week4">Week 4</a>
-      <a href="#week5">Week 5</a>
-      <a href="#week6">Week 6</a>
-      <a href="#week7">Week 7</a>
-      <a href="#week8">Week 8</a>
-      <a href="#week9">Week 9</a>
-      <a href="#week10">Week 10</a>
-    </nav>
+    <section>
+
+        <div class="page-header">
+            <h2>Tentative Course Schedule</h2>
+        </div>
+
+        <nav class="week-nav">
+            <a href="#week1">Week 1</a>
+            <a href="#week2">Week 2</a>
+            <a href="#week3">Week 3</a>
+            <a href="#week4">Week 4</a>
+            <a href="#week5">Week 5</a>
+            <a href="#week6">Week 6</a>
+            <a href="#week7">Week 7</a>
+            <a href="#week8">Week 8</a>
+            <a href="#week9">Week 9</a>
+            <a href="#week10">Week 10</a>
+        </nav>
+
+        
+
 
     <!-- WEEK 1 -->
     <section id="week1" class="week-block">
