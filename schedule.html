@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Layout & typography specific to the schedule page */
+        /* =========================
+           Schedule-only styles
+           (Header/tabs come from styles.css)
+           ========================= */
 
-        main.container {
+        /* IMPORTANT: use a page-specific wrapper so we don't override .container */
+        .schedule-main{
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 1rem 2rem;
+            padding: 0 16px 2rem; /* match styles.css container side padding */
         }
 
         .page-header {
@@ -59,7 +63,6 @@
         }
 
         /* Week blocks */
-
         .week-block {
             margin-bottom: 2rem;
         }
@@ -74,7 +77,6 @@
         }
 
         /* Session cards */
-
         .session-card {
             background: #fff;
             border-radius: 10px;
@@ -181,8 +183,8 @@
         }
 
         @media (min-width: 768px) {
-            main.container {
-                padding: 0 0 2.5rem;
+            .schedule-main{
+                padding: 0 16px 2.5rem;
             }
 
             .session-card {
@@ -240,8 +242,7 @@
     </div>
 </header>
 
-
-<main class="container" id="top">
+<main class="schedule-main" id="top">
     <div class="page-header">
         <h2>Tentative Course Schedule</h2>
     </div>
@@ -308,79 +309,73 @@
         </article>
     </section>
 
-
     <!-- WEEK 2 -->
-<section id="week2" class="week-block">
-    <h3 class="week-title">Week 2</h3>
+    <section id="week2" class="week-block">
+        <h3 class="week-title">Week 2</h3>
 
-    <article class="session-card">
-        <div class="session-header">
-            <span class="session-date">
-                Tue • 01/13/2026
-                <span class="session-speaker">
-                    • <a href="speakers/moritz-hardt.html" target="_blank" rel="noopener noreferrer">Moritz Hardt</a>
-                    <span class="guest-tag">Guest</span>
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">
+                    Tue • 01/13/2026
+                    <span class="session-speaker">
+                        • <a href="speakers/moritz-hardt.html" target="_blank" rel="noopener noreferrer">Moritz Hardt</a>
+                        <span class="guest-tag">Guest</span>
+                    </span>
                 </span>
-            </span>
-        </div>
-        <div class="session-topic">Benchmarking in the Golden Era</div>
-
-        <div class="session-section">
-            <div class="section-label">Read</div>
-            <ol class="reading-list">
-                <li>
-                    <a href="https://mlbenchmarks.org" target="_blank">
-                        The Emerging Science of ML Benchmarks (Hardt, 2026)
-                    </a>
-                    <span class="reading-details"> — Ch. 1, 7, 8</span>
-                </li>
-            </ol>
-            <div class="reading-notes">
-                Additional background reading: Ch. 2–6
             </div>
-        </div>
+            <div class="session-topic">Benchmarking in the Golden Era</div>
 
-        <div class="session-section">
-            <span class="assignment-pill">Assignment 1 Due</span>
-        </div>
-    </article>
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://mlbenchmarks.org" target="_blank">
+                            The Emerging Science of ML Benchmarks (Hardt, 2026)
+                        </a>
+                        <span class="reading-details"> — Ch. 1, 7, 8</span>
+                    </li>
+                </ol>
+                <div class="reading-notes">
+                    Additional background reading: Ch. 2–6
+                </div>
+            </div>
 
-    <article class="session-card">
-        <div class="session-header">
-            <span class="session-date">
-                Thu • 01/15/2026
-                <span class="session-speaker">
-                    • <a href="speakers/moritz-hardt.html" target="_blank" rel="noopener noreferrer">Moritz Hardt</a>
-                    <span class="guest-tag">Guest</span>
+            <div class="session-section">
+                <span class="assignment-pill">Assignment 1 Due</span>
+            </div>
+        </article>
+
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">
+                    Thu • 01/15/2026
+                    <span class="session-speaker">
+                        • <a href="speakers/moritz-hardt.html" target="_blank" rel="noopener noreferrer">Moritz Hardt</a>
+                        <span class="guest-tag">Guest</span>
+                    </span>
                 </span>
-            </span>
-        </div>
-
-        <div class="session-topic">Why LLMs Broke Benchmarking and What to Salvage</div>
-
-        <div class="session-section">
-            <div class="section-label">Read</div>
-            <ol class="reading-list">
-                <li>
-                    <a href="https://mlbenchmarks.org" target="_blank">
-                        The Emerging Science of ML Benchmarks (Hardt, 2026)
-                    </a>
-                    <span class="reading-details"> — Ch. 11–14</span>
-                </li>
-            </ol>
-
-            <div class="reading-notes">
-                Additional background reading: Ch. 10
             </div>
-        </div>
-    </article>
-</section>
 
+            <div class="session-topic">Why LLMs Broke Benchmarking and What to Salvage</div>
 
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://mlbenchmarks.org" target="_blank">
+                            The Emerging Science of ML Benchmarks (Hardt, 2026)
+                        </a>
+                        <span class="reading-details"> — Ch. 11–14</span>
+                    </li>
+                </ol>
 
+                <div class="reading-notes">
+                    Additional background reading: Ch. 10
+                </div>
+            </div>
+        </article>
+    </section>
 
-
-    
     <!-- WEEK 3 -->
     <section id="week3" class="week-block">
         <h3 class="week-title">Week 3</h3>
@@ -427,7 +422,7 @@
     </section>
 
     <!-- WEEK 4 -->
-      <section id="week4" class="week-block">
+    <section id="week4" class="week-block">
         <h3 class="week-title">Week 4</h3>
 
         <article class="session-card">
@@ -511,73 +506,67 @@
     </section>
 
     <!-- WEEK 5 -->
-<section id="week5" class="week-block">
-    <h3 class="week-title">Week 5</h3>
+    <section id="week5" class="week-block">
+        <h3 class="week-title">Week 5</h3>
 
-    <article class="session-card">
-        <div class="session-header">
-            <span class="session-date">
-                Tue • 02/03/2026
-                <span class="session-speaker">
-                    • <a href="speakers/gustavo-stolovitzky.html" target="_blank" rel="noopener noreferrer">Gustavo Stolovitzky</a>
-                    <span class="guest-tag">Guest</span>
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">
+                    Tue • 02/03/2026
+                    <span class="session-speaker">
+                        • <a href="speakers/gustavo-stolovitzky.html" target="_blank" rel="noopener noreferrer">Gustavo Stolovitzky</a>
+                        <span class="guest-tag">Guest</span>
+                    </span>
                 </span>
-            </span>
-        </div>
+            </div>
 
-        <div class="session-topic">
-            DREAM Challenges and Beyond: The Replicability Crisis and the Role of Community Benchmarking
-        </div>
+            <div class="session-topic">
+                DREAM Challenges and Beyond: The Replicability Crisis and the Role of Community Benchmarking
+            </div>
 
-        <div class="session-section">
-            <div class="section-label">Read</div>
-            <ol class="reading-list">
-                <li>
-                    <a href="https://link.springer.com/article/10.1038/msb.2011.70" target="_blank">
-                        The Self-Assessment Trap… (Norel et al., 2011)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S2666389923001599" target="_blank">
-                        Leakage and the Reproducibility Crisis… (Kapoor &amp; Narayanan, 2023)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.sciencefictions.org" target="_blank">
-                        Science Fictions… (Ritchie, 2020)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.nature.com/articles/nrg.2016.69" target="_blank">
-                        Crowdsourcing Biomedical Research… (Saez-Rodriguez et al., 2016)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2761795" target="_blank">
-                        Evaluation of Combined Artificial Intelligence and Radiologist Assessment… (Schaffter et al., 2020)
-                    </a>
-                </li>
-            </ol>
-        </div>
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://link.springer.com/article/10.1038/msb.2011.70" target="_blank">
+                            The Self-Assessment Trap… (Norel et al., 2011)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S2666389923001599" target="_blank">
+                            Leakage and the Reproducibility Crisis… (Kapoor &amp; Narayanan, 2023)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.sciencefictions.org" target="_blank">
+                            Science Fictions… (Ritchie, 2020)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.nature.com/articles/nrg.2016.69" target="_blank">
+                            Crowdsourcing Biomedical Research… (Saez-Rodriguez et al., 2016)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2761795" target="_blank">
+                            Evaluation of Combined Artificial Intelligence and Radiologist Assessment… (Schaffter et al., 2020)
+                        </a>
+                    </li>
+                </ol>
+            </div>
 
-        <div class="session-section">
-            <div class="section-label">Watch</div>
-            <ol class="activity-list">
-                <li>
-                    <a href="https://www.youtube.com/watch?v=SHkoglvWdx8&t=98s" target="_blank">
-                        Seeking the Wisdom of Crowds in Biomedical Research: The DREAM Challenges (Stolovitzky, 2015)
-                    </a>
-                </li>
-            </ol>
-        </div>
-    </article>
-</section>
+            <div class="session-section">
+                <div class="section-label">Watch</div>
+                <ol class="activity-list">
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=SHkoglvWdx8&t=98s" target="_blank">
+                            Seeking the Wisdom of Crowds in Biomedical Research: The DREAM Challenges (Stolovitzky, 2015)
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </article>
 
-
-
-
-
-        
         <article class="session-card">
             <div class="session-header">
                 <span class="session-date">Thu • 02/05/2026</span>
@@ -590,13 +579,6 @@
         </article>
     </section>
 
-
-
-
-
-
-
-    
     <!-- WEEK 6 -->
     <section id="week6" class="week-block">
         <h3 class="week-title">Week 6</h3>
@@ -620,23 +602,21 @@
             </div>
             <div class="session-topic">Replication and the CTF</div>
 
-           <div class="session-section">
-    <div class="section-label">Read</div>
-    <ol class="reading-list">
-        <li>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">
-                The Power of the Common Task Framework (Hellum et al., 2025)
-            </a>
-        </li>
-        <li>
-            <a href="https://onlinelibrary.wiley.com/doi/10.1111/jofi.13249" target="_blank">
-                Is There a Replication Crisis in Finance? (Jensen et al., 2023)
-            </a>
-        </li>
-    </ol>
-</div>
-
-
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5242901" target="_blank">
+                            The Power of the Common Task Framework (Hellum et al., 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1111/jofi.13249" target="_blank">
+                            Is There a Replication Crisis in Finance? (Jensen et al., 2023)
+                        </a>
+                    </li>
+                </ol>
+            </div>
         </article>
     </section>
 
@@ -708,44 +688,38 @@
             </div>
         </article>
 
-       
-<article class="session-card">
-    <div class="session-header">
-        <span class="session-date">
-            Thu • 02/26/2026
-            <span class="session-speaker">
-                • <a href="speakers/mykel-kochenderfer.html" target="_blank" rel="noopener noreferrer">Mykel J. Kochenderfer</a>
-                <span class="guest-tag">Guest</span>
-            </span>
-        </span>
-    </div>
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">
+                    Thu • 02/26/2026
+                    <span class="session-speaker">
+                        • <a href="speakers/mykel-kochenderfer.html" target="_blank" rel="noopener noreferrer">Mykel J. Kochenderfer</a>
+                        <span class="guest-tag">Guest</span>
+                    </span>
+                </span>
+            </div>
 
-    <div class="session-topic">Automated Decision Making for Safety-Critical Applications</div>
+            <div class="session-topic">Automated Decision Making for Safety-Critical Applications</div>
 
-    <div class="session-section">
-        <div class="section-label">Read</div>
-        <ol class="reading-list">
-            <li>
-                <a href="https://www.arxiv.org/pdf/2510.20916" target="_blank">
-                    Aircraft Collision Avoidance Systems (Katz et al., 2025)
-                </a>
-            </li>
-            <li>More than Marketing? … (Hardy et al., 2025)</li>
-            <li>
-                <a href="https://arxiv.org/pdf/2411.12990" target="_blank">
-                    Betterbench… (Reuel et al., 2024)
-                </a>
-            </li>
-        </ol>
-    </div>
-</article>
-</section>
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://www.arxiv.org/pdf/2510.20916" target="_blank">
+                            Aircraft Collision Avoidance Systems (Katz et al., 2025)
+                        </a>
+                    </li>
+                    <li>More than Marketing? … (Hardy et al., 2025)</li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2411.12990" target="_blank">
+                            Betterbench… (Reuel et al., 2024)
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </article>
+    </section>
 
-
-
-
-
-        
     <!-- WEEK 9 -->
     <section id="week9" class="week-block">
         <h3 class="week-title">Week 9</h3>
@@ -772,88 +746,77 @@
             </div>
         </article>
 
-  
+        <article class="session-card">
+            <div class="session-header">
+                <span class="session-date">
+                    Thu • 03/05/2026
+                    <span class="session-speaker">
+                        • <a href="speakers/sanmi-koyejo.html" target="_blank" rel="noopener noreferrer">Sanmi Koyejo</a>
+                        <span class="guest-tag">Guest</span>
+                    </span>
+                </span>
+            </div>
 
+            <div class="session-topic">AI Measurement Science</div>
 
-<article class="session-card">
-    <div class="session-header">
-        <span class="session-date">
-            Thu • 03/05/2026
-            <span class="session-speaker">
-                • <a href="speakers/sanmi-koyejo.html" target="_blank" rel="noopener noreferrer">Sanmi Koyejo</a>
-                <span class="guest-tag">Guest</span>
-            </span>
-        </span>
-    </div>
+            <div class="session-section">
+                <div class="section-label">Read</div>
+                <ol class="reading-list">
+                    <li>
+                        <a href="https://arxiv.org/pdf/2505.10573" target="_blank">
+                            Measurement to Meaning… (Salaudeen et al., 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2504.20879" target="_blank">
+                            The Leaderboard Illusion (Singh et al., 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2503.13335" target="_blank">
+                            Reliable and Efficient Amortized Evaluation (Truong et al., 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/html/2511.16842v1" target="_blank">
+                            Fantastic Bugs… (Truong et al., 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2304.15004" target="_blank">
+                            Are Emergent Abilities a Mirage? (Schaeffer et al., 2023)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2306.11698" target="_blank">
+                            DecodingTrust (Wang et al., 2023)
+                        </a>
+                    </li>
+                </ol>
+            </div>
 
-    <div class="session-topic">AI Measurement Science</div>
+            <div class="session-section">
+                <div class="section-label">Watch</div>
+                <ol class="activity-list">
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=__71ttgQagY" target="_blank">
+                            Reality Checks (Kyunghyun Cho, 2025)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=PkuoEJn6PlA" target="_blank">
+                            Optional – Beyond Benchmarks (Koyejo, 2025)
+                        </a>
+                    </li>
+                </ol>
+            </div>
 
-    <div class="session-section">
-        <div class="section-label">Read</div>
-        <ol class="reading-list">
-            <li>
-                <a href="https://arxiv.org/pdf/2505.10573" target="_blank">
-                    Measurement to Meaning… (Salaudeen et al., 2025)
-                </a>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2504.20879" target="_blank">
-                    The Leaderboard Illusion (Singh et al., 2025)
-                </a>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2503.13335" target="_blank">
-                    Reliable and Efficient Amortized Evaluation (Truong et al., 2025)
-                </a>
-            </li>
-            <li>
-                <a href="https://arxiv.org/html/2511.16842v1" target="_blank">
-                    Fantastic Bugs… (Truong et al., 2025)
-                </a>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2304.15004" target="_blank">
-                    Are Emergent Abilities a Mirage? (Schaeffer et al., 2023)
-                </a>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2306.11698" target="_blank">
-                    DecodingTrust (Wang et al., 2023)
-                </a>
-            </li>
-        </ol>
-    </div>
+            <div class="session-section">
+                <span class="assignment-pill">Assignment 5 Due</span>
+            </div>
+        </article>
+    </section>
 
-    <div class="session-section">
-        <div class="section-label">Watch</div>
-        <ol class="activity-list">
-            <li>
-                <a href="https://www.youtube.com/watch?v=__71ttgQagY" target="_blank">
-                    Reality Checks (Kyunghyun Cho, 2025)
-                </a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/watch?v=PkuoEJn6PlA" target="_blank">
-                    Optional – Beyond Benchmarks (Koyejo, 2025)
-                </a>
-            </li>
-        </ol>
-    </div>
-
-    <div class="session-section">
-        <span class="assignment-pill">Assignment 5 Due</span>
-    </div>
-</article>
-
-
-
-
-
-
-
-        
-
-    
     <!-- WEEK 10 -->
     <section id="week10" class="week-block">
         <h3 class="week-title">Week 10</h3>
