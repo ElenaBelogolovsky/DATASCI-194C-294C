@@ -4,21 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATASCI 194C/294C: Lecture Slides</title>
-    
-    <link rel="stylesheet" href="styles.css"> 
+
+    <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* Layout similar to schedule page */
-        main.container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
+        /* ✅ MATCH GRADING / OPTIMIZATION EXACTLY */
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
         }
 
-        .page-header {
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1rem; /* CRITICAL */
         }
+
+        .masthead .title h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #f5f5f5;
+        }
+
+        .topbar {
+            position: relative;
+            z-index: 10;
+            background: #8c1515;
+            color: #ffffff;
+            padding: 0.75rem 0 0.5rem 0;
+            border-bottom: 2px solid #5e0f0f;
+        }
+
+        .topbar h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav a.active-page {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Same “drop” as grading */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ----- Slides page styles ----- */
 
         .page-header h2 {
             margin: 0;
@@ -32,7 +90,6 @@
             font-size: 0.95rem;
         }
 
-        /* Simple week rows */
         .slides-weeks {
             list-style: none;
             padding: 0;
@@ -80,6 +137,10 @@
                 padding-right: 1.4rem;
             }
 
+            .grid {
+                display: block;
+            }
+
             .slides-week-row {
                 flex-direction: column;
                 align-items: flex-start;
@@ -89,42 +150,42 @@
                 min-width: auto;
             }
         }
-
-        @media (min-width: 768px) {
-            main.container {
-                padding: 0 0 2.5rem;
-            }
-        }
     </style>
 </head>
+
 <body>
-    
+
 <header class="topbar">
     <div class="container masthead">
         <div class="title">
-            <h1>DATASCI 194C/294C</h1>
-            <span class="subtitle">Driving Innovation: Benchmarks, Competitions, and Challenge Problems in ML and Beyond</span>
+            <h1>
+                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
+                <br>
+                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
+            </h1>
+            <span class="subtitle">Stanford University, Winter 2026</span>
         </div>
     </div>
 
     <div class="container">
         <nav class="nav">
             <a href="index.html">Course Description</a>
-            <a href="schedule.html">Schedule</a> 
-            <a href="slides.html" class="active-page">Lecture Slides</a> 
+            <a href="schedule.html">Schedule</a>
+            <a href="slides.html" class="active-page">Lecture Slides</a>
             <a href="grading.html">Grading</a>
-                <a href="optimization.html">Optimization Over Lunch</a>
+            <a href="optimization.html">Optimization Over Lunch</a>
         </nav>
     </div>
 </header>
 
-<main class="container">
-    <div class="page-header">
-        <h2>Lecture Slides</h2>
-        <p>Slides will be posted here weekly.</p>
-    </div>
+<div class="container grid">
+    <section>
+        <div class="page-header">
+            <h2>Lecture Slides</h2>
+            <p>Slides will be posted here weekly.</p>
+        </div>
 
-    <ul class="slides-weeks">
+          <ul class="slides-weeks">
         <!-- Week 1 -->
         <li class="slides-week-row">
             <span class="slides-week-label">Week 1</span>
