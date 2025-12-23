@@ -63,7 +63,6 @@
             margin-bottom: 2px;
         }
 
-        /* Mobile rule matching your Schedule page padding */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
@@ -102,7 +101,6 @@
 
     <!-- Bio-card -->
     <div class="speaker-card">
-        <!-- Replace with actual image file -->
         <img src="../steinhardt.jpg" alt="Jacob Steinhardt" class="speaker-photo">
 
         <div class="speaker-main">
@@ -125,10 +123,30 @@
     <!-- Talk details -->
     <section>
         <h3>Talk Title</h3>
-        <p><strong>TBD</strong></p>
+        <p><strong>Training Scalable End-to-End Interpretability Assistants</strong></p>
 
         <h3>Abstract</h3>
-        <p><em>TBD</em></p>
+        <p>
+            The neural representations of transformer models contain rich structure allowing us to debug,
+            control, and predict the behavior of AI systems. However, these representations are challenging
+            to decipher, owing to their massive scale and self-organized nature. Could we use this same scale
+            as a source of leverage, by training AI systems to decipher and explain the representations to us?
+        </p>
+
+        <p>
+            As a step in this direction, we introduce <em>Predictive Concept Decoders</em>. Given a target model
+            that we wish to understand, concept decoders are an auxiliary <em>explainer model</em> trained to
+            produce succinct summaries of representations in terms of a model-created token vocabulary.
+            To train the encoder, we design a differentiable surrogate loss that approximates how well an
+            experienced human could predict model behavior given the summary.
+        </p>
+
+        <p>
+            I will present our ongoing work constructing concept decoders and scaling them to 100M-token
+            pretraining corpora. By training an end-to-end architecture for explaining representations, we
+            learn an interpretable and expressive concept dictionary, and use this to introspect on
+            fine-grained information within neural representations.
+        </p>
 
         <h3>More Information</h3>
         <p>
@@ -143,4 +161,3 @@
 
 </body>
 </html>
-
