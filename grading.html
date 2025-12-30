@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Grading – Winter 2026</title>
+    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -21,7 +21,18 @@
             padding: 1rem;
         }
 
+        .masthead .title h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #f5f5f5;
+        }
+
         .topbar {
+            position: relative;
+            z-index: 10;
             background: #8c1515;
             color: #ffffff;
             padding: 0.75rem 0 0.5rem 0;
@@ -29,13 +40,12 @@
         }
 
         .topbar h1 {
-            margin: 0;
             color: #ffffff;
+            margin: 0;
         }
 
-        .subtitle {
-            font-size: 0.95rem;
-            color: #f5f5f5;
+        .topbar a {
+            color: #ffffff;
         }
 
         .nav {
@@ -51,9 +61,20 @@
             font-weight: 500;
         }
 
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
         .nav a.active-page {
             text-decoration: underline;
             font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         table {
@@ -74,7 +95,7 @@
 
         .track-title {
             color: #8c1515;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             margin-top: 2rem;
             margin-bottom: 0.25rem;
         }
@@ -97,13 +118,18 @@
 <body>
 
 <header class="topbar">
-    <div class="container">
-        <h1>
-            DATASCI 194C/294C: Driving Innovation<br>
-            <span class="subtitle">Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond</span>
-        </h1>
-        <span class="subtitle">Stanford University, Winter 2026</span>
+    <div class="container masthead">
+        <div class="title">
+            <h1>
+                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
+                <br>
+                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
+            </h1>
+            <span class="subtitle">Stanford University, Winter 2026</span>
+        </div>
+    </div>
 
+    <div class="container">
         <nav class="nav">
             <a href="index.html">Course Description</a>
             <a href="schedule.html">Schedule</a>
@@ -114,8 +140,9 @@
     </div>
 </header>
 
-<div class="container">
+<div class="container grid">
     <section>
+
         <h2>Grading</h2>
 
         <p>
