@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Driving Innovation – Winter 2026</title>
-    
+    <title>DATASCI 194C/294C: Grading – Winter 2026</title>
+
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -21,31 +21,21 @@
             padding: 1rem;
         }
 
-        .masthead .title h1 {
-            margin-bottom: 0.25rem;
-        }
-
-        .subtitle {
-            font-size: 0.95rem;
-            color: #f5f5f5;
-        }
-
         .topbar {
-            position: relative;
-            z-index: 10;
-            background: #8c1515;          /* Stanford red */
+            background: #8c1515;
             color: #ffffff;
             padding: 0.75rem 0 0.5rem 0;
             border-bottom: 2px solid #5e0f0f;
         }
 
         .topbar h1 {
-            color: #ffffff;
             margin: 0;
+            color: #ffffff;
         }
 
-        .topbar a {
-            color: #ffffff;
+        .subtitle {
+            font-size: 0.95rem;
+            color: #f5f5f5;
         }
 
         .nav {
@@ -61,134 +51,62 @@
             font-weight: 500;
         }
 
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
         .nav a.active-page {
             text-decoration: underline;
             font-weight: 600;
         }
 
-        /* Main layout: description + sidebar */
-        .grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0 1rem 0;
         }
 
-        .hero.inner {
-            background: #fff;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.45rem 0.6rem;
+            text-align: left;
         }
 
-        /* Make date/time/location more visible */
-        .course-meta {
-            margin-top: 1rem;
-            margin-bottom: 0.75rem;
-            padding: 0.75rem 1rem;
-            background-color: #f5f5f5;
-            border-left: 4px solid #8c1515; /* Stanford-ish red */
-            font-size: 0.95rem;
-            display: block;
+        th {
+            background: #f5f5f5;
         }
 
-        .course-meta span {
-            display: block;
-            white-space: normal;
+        .track-title {
+            color: #8c1515;
+            font-size: 1.7rem;
+            margin-top: 2rem;
             margin-bottom: 0.25rem;
         }
 
-        .course-meta a {
-            text-decoration: underline;
-        }
-
-        .meta .badge {
-            display: inline-block;
-            padding: 0.15rem 0.5rem;
-            background: #eee;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            color: #555;
-        }
-
-        aside .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #fafafa;
-        }
-
-        aside .card h3 {
-            margin-top: 0;
-        }
-
-        .btn.primary {
-            display: inline-block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 4px;
-            background: #8c1515;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .btn.primary:hover {
-            opacity: 0.9;
-        }
-
-        .instructor-photo {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
-        }
-
-        footer {
-            margin-top: 2rem;
-            padding: 1rem 0;
+        hr {
+            margin: 2rem 0;
+            border: none;
             border-top: 1px solid #ddd;
-            font-size: 0.85rem;
-            color: #666;
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
                 padding-right: 1.4rem;
             }
-
-            .grid {
-                display: block;
-            }
-
-            .course-meta {
-                padding: 0.75rem 0.75rem;
-            }
         }
     </style>
 </head>
+
 <body>
 
 <header class="topbar">
-    <div class="container masthead">
-        <div class="title">
-            <h1>
-                <span class="course-number">DATASCI 194C/294C: Driving Innovation</span>
-                <br>
-                Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond
-            </h1>
-            <span class="subtitle">Stanford University, Winter 2026</span>
-        </div>
-    </div>
-    
     <div class="container">
+        <h1>
+            DATASCI 194C/294C: Driving Innovation<br>
+            <span class="subtitle">Benchmarks, Competitions, and Challenge Problems in Machine Learning and Beyond</span>
+        </h1>
+        <span class="subtitle">Stanford University, Winter 2026</span>
+
         <nav class="nav">
             <a href="index.html">Course Description</a>
-            <a href="schedule.html">Schedule</a> 
+            <a href="schedule.html">Schedule</a>
             <a href="slides.html">Lecture Slides</a>
             <a href="grading.html" class="active-page">Grading</a>
             <a href="optimization.html">Optimization Over Lunch</a>
@@ -196,19 +114,22 @@
     </div>
 </header>
 
-<div class="container grid">
+<div class="container">
     <section>
         <h2>Grading</h2>
 
-        <p>This course offers <strong>two grading tracks</strong>. Students must select <strong>one track</strong> early in the quarter.</p>
+        <p>
+            This course offers two tracks.<br>
+            Students must select one track early in the quarter.
+        </p>
 
-        <h3>Track I: Capstone Track</h3>
+        <h3 class="track-title">Track I: Capstone Track</h3>
         <p><em>(For students who plan to complete a capstone project)</em></p>
 
         <h3>1. Attendance &amp; Participation — 15%</h3>
 
-        <h4>A. Attendance Evaluation</h4>
-        <p>Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
+        <p><strong>A. Attendance Evaluation</strong><br>
+        Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
 
         <table>
             <thead>
@@ -230,36 +151,38 @@
             </tbody>
         </table>
 
-        <h4>B. Class Participation</h4>
-        <p>A portion of this grade is based on active engagement in classroom discussions.</p>
+        <p><strong>B. Class Participation</strong><br>
+        A portion of this grade is based on active engagement in classroom discussions.</p>
 
-        <h4>C. Guest Speaker Lunch Participation (Required)</h4>
+        <p><strong>C. Guest Speaker Lunch Participation (Required)</strong></p>
         <ul>
-            <li>Each student must participate in at least <strong>four (4)</strong> lunches with guest speakers during the quarter.</li>
+            <li>Each student must participate in at least 4 lunches with guest speakers during the quarter.</li>
             <li>Students must arrive prepared with thoughtful questions and actively engage in discussion.</li>
         </ul>
 
         <h3>2. Assignments (5 total) — 45%</h3>
         <ul>
-            <li>Five assignments total</li>
-            <li>Each assignment contributes <strong>9%</strong> to the final grade</li>
+            <li>Each assignment = 9%</li>
         </ul>
 
         <h3>3. Capstone Project — 25%</h3>
-        <p>The capstone project synthesizes conceptual, technical, and applied elements of the course. Detailed guidelines and expectations will be provided separately.</p>
+        <p>
+            The capstone project synthesizes conceptual, technical, and applied elements of the course.<br>
+            Detailed guidelines and expectations will be provided separately.
+        </p>
 
         <h3>4. Final Presentation — 15%</h3>
-        <p>Students will give a short presentation during the final class session (“Leaderboard Day”), presenting their capstone work.</p>
+        <p>
+            Students will give a short presentation during the final class session (“Leaderboard Day”), presenting their capstone work.
+        </p>
 
         <hr>
 
-        <h3>Track II: Non-Capstone Track</h3>
+        <h3 class="track-title">Track II: Non-Capstone Track</h3>
         <p><em>(For students who do not plan to complete a capstone project)</em></p>
 
-        <h3>1. Attendance &amp; Participation — 15%</h3>
-
-        <h4>A. Attendance Evaluation</h4>
-        <p>Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
+        <p><strong>A. Attendance Evaluation</strong><br>
+        Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
 
         <table>
             <thead>
@@ -281,23 +204,24 @@
             </tbody>
         </table>
 
-        <h4>B. Class Participation</h4>
-        <p>A portion of this grade is based on active engagement in classroom discussions.</p>
+        <p><strong>B. Class Participation</strong><br>
+        A portion of this grade is based on active engagement in classroom discussions.</p>
 
-        <h4>C. Guest Speaker Lunch Participation (Required)</h4>
+        <p><strong>C. Guest Speaker Lunch Participation (Required)</strong></p>
         <ul>
-            <li>Each student must participate in at least <strong>four (4)</strong> lunches with guest speakers during the quarter.</li>
+            <li>Each student must participate in at least 4 lunches with guest speakers during the quarter.</li>
             <li>Students must arrive prepared with thoughtful questions and actively engage in discussion.</li>
         </ul>
 
         <h3>2. Assignments (5 total) — 70%</h3>
         <ul>
-            <li>Five assignments total</li>
-            <li>Each assignment contributes <strong>14%</strong> to the final grade</li>
+            <li>Each assignment = 14%</li>
         </ul>
 
         <h3>3. Final Presentation — 15%</h3>
-        <p>Students will give a short presentation during the final class session (“Leaderboard Day”).</p>
+        <p>
+            Students will give a short presentation during the final class session (“Leaderboard Day”).
+        </p>
 
     </section>
 </div>
