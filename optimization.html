@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATASCI 194C/294C: Optimization Over Lunch</title>
+    <title>DATASCI 194C/294C: Grading</title>
 
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* ✅ MATCH GRADING PAGE HEADER + LAYOUT EXACTLY */
-
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             margin: 0;
@@ -20,11 +18,7 @@
         .container {
             max-width: 960px;
             margin: 0 auto;
-            padding: 1rem; /* this is important */
-        }
-
-        .masthead .title h1 {
-            margin-bottom: 0.25rem;
+            padding: 1rem;
         }
 
         .subtitle {
@@ -37,7 +31,7 @@
             z-index: 10;
             background: #8c1515;
             color: #ffffff;
-            padding: 0.75rem 0 0.5rem 0;  /* exact grading */
+            padding: 0.75rem 0 0.5rem 0;
             border-bottom: 2px solid #5e0f0f;
         }
 
@@ -53,7 +47,7 @@
         .nav {
             display: flex;
             gap: 1rem;
-            margin-top: 0.5rem; /* exact grading */
+            margin-top: 0.5rem;
             flex-wrap: wrap;
         }
 
@@ -63,24 +57,17 @@
             font-weight: 500;
         }
 
-        .nav a:hover {
-            text-decoration: underline;
-        }
-
         .nav a.active-page {
             text-decoration: underline;
             font-weight: 600;
         }
 
-        /* ✅ Use the same “drop” as grading */
         .grid {
             display: grid;
-            grid-template-columns: 1fr; /* no sidebar here */
+            grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-top: 1.5rem; /* exact grading */
+            margin-top: 1.5rem;
         }
-
-        /* ----- Optimization page styles ----- */
 
         .page-header h2 {
             margin: 0;
@@ -88,112 +75,36 @@
             color: #8C1515;
         }
 
-        .page-header .subtitle-big {
-            margin-top: 0.4rem;
-            color: #555;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .intro-block {
-            margin-top: 1.2rem;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .intro-block p {
-            margin: 0.45rem 0;
-        }
-
-        .intro-block a {
-            color: #8C1515;
-            text-decoration: underline;
-        }
-
-        .intro-block ul {
-            margin: 0.3rem 0 0.6rem 1.2rem;
-            padding: 0;
-            font-size: 0.95rem;
-        }
-
-        .how-it-works {
-            margin-top: 1.5rem;
-            font-size: 0.96rem;
-        }
-
-        .how-it-works h3,
-        .sessions-header {
+        .track-title {
             margin-top: 1.8rem;
-            margin-bottom: 0.4rem;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .how-it-works ul {
-            margin: 0.3rem 0 0.6rem 1.2rem;
-            padding: 0;
-            font-size: 0.95rem;
-        }
-
-        .how-it-works li {
             margin-bottom: 0.2rem;
-        }
-
-        .sessions-meta {
-            font-size: 0.92rem;
-            color: #555;
-            margin-bottom: 0.6rem;
-        }
-
-        .sessions-meta a {
+            font-size: 1.35rem;
+            font-weight: 700;
             color: #8C1515;
-            text-decoration: underline;
         }
 
-        .lunch-list {
-            list-style: none;
-            padding: 0;
-            margin: 0.6rem 0 0;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.75rem 0 1rem 0;
         }
 
-        .lunch-item {
-            background: #f7f7f7;
-            border: 1px solid #e5e5e5;
-            border-radius: 10px;
-            margin-bottom: 0.55rem;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.45rem 0.6rem;
+            text-align: left;
         }
 
-        .lunch-item a {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            padding: 0.65rem 0.9rem;
-            text-decoration: none;
-            color: #333;
-            font-size: 0.95rem;
+        th {
+            background: #f5f5f5;
         }
 
-        .lunch-item a strong {
-            color: #333;
-            font-weight: 600;
-            margin-right: 0.2rem;
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid #ddd;
         }
 
-        .lunch-item a:hover {
-            background: #f0ecec;
-        }
-
-        .thumb {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        /* Mobile – match grading behavior */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1.4rem;
@@ -202,10 +113,6 @@
 
             .grid {
                 display: block;
-            }
-
-            .lunch-item a {
-                align-items: flex-start;
             }
         }
     </style>
@@ -230,167 +137,102 @@
             <a href="index.html">Course Description</a>
             <a href="schedule.html">Schedule</a>
             <a href="slides.html">Lecture Slides</a>
-            <a href="grading.html">Grading</a>
-            <a href="optimization.html" class="active-page">Optimization Over Lunch</a>
+            <a href="grading.html" class="active-page">Grading</a>
+            <a href="optimization.html">Optimization Over Lunch</a>
         </nav>
     </div>
 </header>
 
 <div class="container grid">
     <section>
+
         <div class="page-header">
-            <h2>Optimization Over Lunch</h2>
-            <p class="subtitle-big">Conversations that improve models — and minds.</p>
+            <h2>Grading</h2>
         </div>
 
-        <section class="intro-block">
-            <p>
-                This course offers a <strong>rare and exclusive learning experience</strong>:
-                lunch with our guest speakers at the
-                <a href="https://share.google/1Uk3SRUrIudu88OnW" target="_blank" rel="noopener noreferrer">
-                    Stanford Faculty Club,
-                </a>
-                where ideas unfold in small circles rather than lecture halls.
-            </p>
-            <p>Each lunch is:</p>
-            <ul>
-                <li>Free</li>
-                <li>Limited to <strong>3 students</strong></li>
-                <li>Designed for curiosity and dialogue</li>
-            </ul>
-            <p>
-                These lunches create space for thinking aloud, asking questions you can’t ask elsewhere,
-                and exploring how ideas evolve. Seats are few by design — to keep the conversation meaningful.
-            </p>
-        </section>
+        <p>
+            This course offers two tracks.<br>
+            Students must select one track early in the quarter.
+        </p>
 
-        <section class="how-it-works">
-            <h3>How It Works</h3>
-            <ul>
-                <li>Choose one or more lunches you’d like to attend.</li>
-                <li>Seats are filled <strong>first-come, first-served</strong>.</li>
-                <li>Preference may rotate so all interested students have a chance.</li>
-                <li>Bring questions, perspectives, and a willingness to think together.</li>
-            </ul>
-        </section>
+        <h3 class="track-title">Track I: Capstone Track</h3>
+        <p>(For students who plan to complete a capstone project)</p>
 
-        <section class="sessions">
-            <h3 class="sessions-header">Winter 2026 Lunches — Reserve Your Seat</h3>
-            <div class="sessions-meta">
-                <a href="https://share.google/1Uk3SRUrIudu88OnW" target="_blank" rel="noopener noreferrer">
-                    Stanford Faculty Club
-                </a>
-                • 11:30am–12:30pm
-            </div>
+        <p><strong>1. Attendance &amp; Participation — 15%</strong></p>
+        <p><strong>A. Attendance Evaluation</strong><br>
+        Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
 
- <ul class="lunch-list">
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="hardt.jpg" alt="Moritz Hardt" class="thumb">
-                    <span><strong>01/13 (Tue)</strong> Lunch with Dr. Moritz Hardt</span>
-                </a>
-            </li>
+        <table>
+            <tr><th>Classes Attended</th><th>Evaluation</th><th>Percentage Earned</th></tr>
+            <tr><td>18–20</td><td>Excellent</td><td>15%</td></tr>
+            <tr><td>16–17</td><td>Very Good</td><td>14%</td></tr>
+            <tr><td>14–15</td><td>Good</td><td>13%</td></tr>
+            <tr><td>12–13</td><td>Satisfactory</td><td>12%</td></tr>
+            <tr><td>10–11</td><td>Low Pass</td><td>11%</td></tr>
+            <tr><td>8–9</td><td>Poor</td><td>10%</td></tr>
+            <tr><td>6–7</td><td>Very Poor</td><td>9%</td></tr>
+            <tr><td>0–5</td><td>No Credit</td><td>0%</td></tr>
+        </table>
 
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="hardt.jpg" alt="Moritz Hardt" class="thumb">
-                    <span><strong>01/15 (Thu)</strong> Lunch with Dr. Moritz Hardt</span>
-                </a>
-            </li>
+        <p><strong>B. Class Participation</strong><br>
+        A portion of this grade is based on active engagement in classroom discussions.</p>
 
-     
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="liberman.jpg" alt="Mark Liberman" class="thumb">
-                    <span><strong>01/27 (Tue)</strong> Lunch with Dr. Mark Liberman</span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="brunton.jpg" alt="Steven L. Brunton" class="thumb">
-                    <span><strong>01/29 (Thu)</strong> Lunch with Dr. Steven L. Brunton</span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="stolovitzky.jpg" alt="Gustavo Stolovitzky" class="thumb">
-                    <span><strong>02/03 (Tue)</strong> Lunch with Dr. Gustavo Stolovitzky</span>
-                </a>
-            </li>
-
-        <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="saxon.jpg" alt="Michael Saxon" class="thumb">
-                    <span><strong>02/10 (Tue)</strong> Lunch with Dr. Michael Saxon</span>
-                </a>
-            </li>
-
-
-
-     
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="jensen.jpg" alt="Theis Ingerslev Jensen" class="thumb">
-                    <span><strong>02/12 (Thu)</strong> Lunch with Dr. Theis Ingerslev Jensen</span>
-                </a>
-            </li>
-
-        
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src=" glazer.jpg" alt=" Elliot Glazer" class="thumb">
-                    <span><strong>02/19 (Thu)</strong> Lunch with Dr.  Elliot Glazer </span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="obermeyer.jpg" alt="Ziad Obermeyer" class="thumb">
-                    <span><strong>02/24 (Tue)</strong> Lunch with Dr. Ziad Obermeyer</span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="kochenderfer.jpg" alt="Mykel Kochenderfer" class="thumb">
-                    <span><strong>02/26 (Thu)</strong> Lunch with Dr. Mykel Kochenderfer</span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="steinhardt.jpg" alt="Jacob Steinhardt" class="thumb">
-                    <span><strong>03/03 (Tue)</strong> Lunch with Dr. Jacob Steinhardt</span>
-                </a>
-            </li>
-
-            <li class="lunch-item">
-                <a href="https://www.signupgenius.com/go/10C0F45A4A829A1F9CF8-60916171-optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="koyejo.jpg" alt="Sanmi Koyejo" class="thumb">
-                    <span><strong>03/05 (Thu)</strong> Lunch with Dr. Sanmi Koyejo</span>
-                </a>
-            </li>
+        <p><strong>C. Guest Speaker Lunch Participation (Required)</strong></p>
+        <ul>
+            <li>Each student must participate in at least 4 lunches with guest speakers during the quarter.</li>
+            <li>Students must arrive prepared with thoughtful questions and actively engage in discussion.</li>
         </ul>
+
+        <p><strong>2. Assignments (5 total) — 45%</strong><br>
+        • Each assignment = 9%</p>
+
+        <p><strong>3. Capstone Project — 25%</strong><br>
+        The capstone project synthesizes conceptual, technical, and applied elements of the course.<br>
+        Detailed guidelines and expectations will be provided separately.</p>
+
+        <p><strong>4. Final Presentation — 15%</strong><br>
+        Students will give a short presentation during the final class session (“Leaderboard Day”), presenting their capstone work.</p>
+
+        <hr>
+
+        <h3 class="track-title">Track II: Non-Capstone Track</h3>
+        <p>(For students who do not plan to complete a capstone project)</p>
+
+        <p><strong>A. Attendance Evaluation</strong><br>
+        Attendance is based on the number of class sessions attended (out of 20 total classes) and is calculated according to the following scale:</p>
+
+        <table>
+            <tr><th>Classes Attended</th><th>Evaluation</th><th>Percentage Earned</th></tr>
+            <tr><td>18–20</td><td>Excellent</td><td>15%</td></tr>
+            <tr><td>16–17</td><td>Very Good</td><td>14%</td></tr>
+            <tr><td>14–15</td><td>Good</td><td>13%</td></tr>
+            <tr><td>12–13</td><td>Satisfactory</td><td>12%</td></tr>
+            <tr><td>10–11</td><td>Low Pass</td><td>11%</td></tr>
+            <tr><td>8–9</td><td>Poor</td><td>10%</td></tr>
+            <tr><td>6–7</td><td>Very Poor</td><td>9%</td></tr>
+            <tr><td>0–5</td><td>No Credit</td><td>0%</td></tr>
+        </table>
+
+        <p><strong>B. Class Participation</strong><br>
+        A portion of this grade is based on active engagement in classroom discussions.</p>
+
+        <p><strong>C. Guest Speaker Lunch Participation (Required)</strong></p>
+        <ul>
+            <li>Each student must participate in at least 4 lunches with guest speakers during the quarter.</li>
+            <li>Students must arrive prepared with thoughtful questions and actively engage in discussion.</li>
+        </ul>
+
+        <p><strong>2. Assignments (5 total) — 70%</strong><br>
+        • Each assignment = 14%</p>
+
+        <p><strong>3. Final Presentation — 15%</strong><br>
+        Students will give a short presentation during the final class session (“Leaderboard Day”).</p>
+
     </section>
-</main>
+</div>
 
 </body>
 </html>
+
 
 
