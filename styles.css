@@ -1,348 +1,352 @@
+/* =========================================================
+   DATASCI Course Site Styles (Stanford theme)
+   Copy/paste this whole file.
+   ========================================================= */
+
 /* --- CSS Variables: Defines Colors/Themes --- */
-:root{ 
-    --brand:#8c1515; /* Stanford Cardinal Red */
-    --brand-dark:#6b0f0f;
-    --accent:#fcd116; /* Stanford Gold/Yellow for highlights (still available if needed) */
-    --bg:#ffffff; 
-    --text:#222222; 
-    --muted:#666666; 
-    --card:#f7f7f7; 
-    --border:#e5e5e5; 
-    --link:#0645ad; 
-} 
+:root{
+  --brand:#8c1515;        /* Stanford Cardinal Red */
+  --brand-dark:#6b0f0f;
+  --accent:#fcd116;       /* Stanford Gold (available if needed) */
+  --bg:#ffffff;
+  --text:#222222;
+  --muted:#666666;
+  --card:#f7f7f7;
+  --border:#e5e5e5;
+  --link:#0645ad;
+
+  /* Zoom tag blues */
+  --zoom-blue:#1a73e8;
+  --zoom-blue-bg:rgba(26,115,232,0.08);
+  --zoom-blue-bg-hover:rgba(26,115,232,0.15);
+}
 
 /* --- Global Styles & Typography --- */
-*{box-sizing:border-box} 
+*{ box-sizing:border-box; }
+
 html,body{
-    margin:0; 
-    padding:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family: 'Inter', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji", sans-serif;
-    font-size:16px;
-    line-height:1.6;
-} 
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  font-size:16px;
+  line-height:1.6;
+}
 
 a{
-    color:var(--link);
-    text-decoration:none;
-    transition: color 0.2s, text-decoration 0.2s;
-} 
-
-a:hover{
-    text-decoration:underline;
+  color:var(--link);
+  text-decoration:none;
+  transition: color 0.2s, text-decoration 0.2s, opacity 0.2s;
 }
 
-/* Added margin to paragraphs for better reading flow */
-.hero p {
-    margin-bottom: 1.2em; 
-}
+a:hover{ text-decoration:underline; }
 
 /* --- Header / TOP BANNER --- */
 .topbar{
-    background:var(--brand); 
-    color:#fff;
-    padding: 10px 0; 
+  background:var(--brand);
+  color:#fff;
+  padding:10px 0;
 }
 
 .container{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 16px
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
 }
 
-/* 🎯 FIX: Remove alignment padding on masthead container to allow title centering */
+/* Masthead */
 .masthead{
-    display:block; 
-    padding:8px 0 18px; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-    padding-left: 0;
-    padding-right: 0;
+  display:block;
+  padding:8px 0 18px;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  padding-left:0;
+  padding-right:0;
 }
 
+/* Title block */
 .title{
-    display:flex;
-    flex-direction:column;
-    padding-bottom: 0; 
-    text-align: center; 
+  display:flex;
+  flex-direction:column;
+  padding-bottom:0;
+  text-align:center;
 }
 
 .title h1{
-    margin:0;
-    font-size:1.5rem;
-    letter-spacing:0.2px;
-    line-height: 1.2; 
+  margin:0;
+  font-size:1.5rem;
+  letter-spacing:0.2px;
+  line-height:1.2;
 }
 
-/* 🎯 NEW: Specific style for the course number line */
-.title h1 .course-number {
-    font-size: 1.25rem;
-    font-weight: 600;
+/* Course number line */
+.title h1 .course-number{
+  font-size:1.25rem;
+  font-weight:600;
 }
 
 .title .subtitle{
-    opacity:.9;
-    font-size:.95rem;
-    margin-top: 5px; 
+  opacity:0.9;
+  font-size:0.95rem;
+  margin-top:5px;
 }
 
 /* --- Navigation Menu (Tabs) --- */
 .nav{
-    display:flex;
-    gap:22px; 
-    font-weight:600;
-    padding-top: 15px; 
-    padding-bottom: 10px; 
+  display:flex;
+  gap:22px;
+  font-weight:600;
+  padding-top:15px;
+  padding-bottom:10px;
 }
 
-/* Base nav link style */
 .nav a{
-    color:#fff;
-    opacity:.95;
-    text-decoration:none;
-    text-decoration-color:#fff;
-    text-underline-offset:6px;
-    text-decoration-thickness:3px;
-    -webkit-tap-highlight-color:transparent;
-    transition: opacity 0.2s;
+  color:#fff;
+  opacity:0.95;
+  text-decoration:none;
+  text-decoration-color:#fff;
+  text-underline-offset:6px;
+  text-decoration-thickness:3px;
+  -webkit-tap-highlight-color:transparent;
+  transition: opacity 0.2s;
 }
 
-/* Hover: just brighten, no underline */
 .nav a:hover{
-    opacity:1;
-    text-decoration:none;
+  opacity:1;
+  text-decoration:none;
 }
 
-/* ACTIVE PAGE */
 .nav a.active-page{
-    opacity:1;
-    text-decoration:underline;
-    text-decoration-color:#fff;
-    text-underline-offset:6px;
-    text-decoration-thickness:3px;
+  opacity:1;
+  text-decoration:underline;
+  text-decoration-color:#fff;
+  text-underline-offset:6px;
+  text-decoration-thickness:3px;
 }
 
 /* --- Top Banner Image --- */
-.header-banner {
-    display: block; 
-    width: 100%; 
-    height: 150px;
-    object-fit: cover; 
-    object-position: center top; 
-    margin: 0; 
-    padding: 0;
-    border-bottom: 1px solid var(--border); 
+.header-banner{
+  display:block;
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  object-position:center top;
+  margin:0;
+  padding:0;
+  border-bottom:1px solid var(--border);
 }
 
 /* --- Hero Section --- */
 .hero{
-    background:linear-gradient(0deg,#fafafa,#fff);
-    border-bottom:1px solid var(--border)
+  background:linear-gradient(0deg,#fafafa,#fff);
+  border-bottom:1px solid var(--border);
 }
 
 .hero .inner{
-    padding:40px 0;
+  padding:40px 0;
 }
 
 .hero h2{
-    margin:0 0 16px; 
-    font-size:1.75rem;
-    color: var(--brand); 
+  margin:0 0 16px;
+  font-size:1.75rem;
+  color:var(--brand);
 }
 
+/* Better reading flow in hero */
+.hero p{
+  margin:0 0 1.2em;
+}
+
+/* Meta text */
 .meta{
-    color:var(--muted)
+  color:var(--muted);
 }
 
 /* --- Grid Layout --- */
 .grid{
-    display:grid;
-    grid-template-columns:1fr 320px;
-    gap:30px; 
-    padding:30px 0; 
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:30px;
+  padding:30px 0;
 }
 
-@media (max-width: 900px){
-    .grid{
-        grid-template-columns:1fr;
-        gap: 40px;
-    }
-    
-    aside .card:not(:last-child) {
-        margin-bottom: 20px;
-    }
+@media (max-width:900px){
+  .grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  aside .card:not(:last-child){
+    margin-bottom:20px;
+  }
 }
 
 /* --- Card Styling --- */
 .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:18px;
-    transition: box-shadow 0.3s ease; 
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:18px;
+  transition: box-shadow 0.3s ease;
 }
 
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+.card:hover{
+  box-shadow:0 4px 8px rgba(0,0,0,0.05);
 }
 
 .card h3{
-    margin-top:0;
+  margin-top:0;
 }
 
 /* --- Tables --- */
 table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:10px;
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
 }
 
 th,td{
-    padding:12px;
-    border-bottom:1px solid var(--border);
-    text-align:left;
-    vertical-align:top
+  padding:12px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  vertical-align:top;
 }
 
 thead th{
-    background:#fafafa;
-    font-weight:700
+  background:#fafafa;
+  font-weight:700;
 }
 
 tbody tr:hover{
-    background:#fff8f8
+  background:#fff8f8;
 }
 
 /* --- Utility Classes --- */
 .badge{
-    display:inline-block;
-    padding:4px 8px;
-    border-radius:999px;
-    background:#f0f0f0;
-    border:1px solid var(--border);
-    font-size:.8rem;
-    color:var(--muted)
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f0f0f0;
+  border:1px solid var(--border);
+  font-size:0.8rem;
+  color:var(--muted);
 }
 
-/* --- Session Status Tags --- */
-.zoom-tag {
-    display: inline-block;
-    margin-left: 6px;
-    padding: 2px 8px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--zoom-blue);
-    border: 1px solid var(--zoom-blue);
-    border-radius: 999px;
-    background: transparent;
-    vertical-align: middle;
+/* --- Zoom Session Tag (Blue) --- */
+.zoom-tag{
+  display:inline-block;
+  margin-left:6px;
+  padding:2px 8px;
+  font-size:0.7rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+
+  color:var(--zoom-blue);
+  border:1px solid var(--zoom-blue);
+  border-radius:999px;
+  background:var(--zoom-blue-bg);
+
+  vertical-align:middle;
 }
 
+.zoom-tag:hover{
+  background:var(--zoom-blue-bg-hover);
+}
 
+/* --- Buttons --- */
 .btn{
-    display:inline-block;
-    padding:10px 14px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    background:#fff;
-    font-weight:600;
-    margin-right: 10px;
-    transition: background 0.2s, transform 0.1s;
-    cursor: pointer;
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-weight:600;
+  margin-right:10px;
+  transition: background 0.2s, transform 0.1s, border-color 0.2s;
+  cursor:pointer;
 }
 
 .btn:hover{
-    border-color:#d4d4d4;
-    text-decoration: none;
-    transform: translateY(-1px); 
+  border-color:#d4d4d4;
+  text-decoration:none;
+  transform:translateY(-1px);
 }
 
 .btn.primary{
-    background:var(--brand); 
-    color:#fff;
-    border-color:var(--brand-dark);
+  background:var(--brand);
+  color:#fff;
+  border-color:var(--brand-dark);
 }
 
 .btn.primary:hover{
-    background:var(--brand-dark);
+  background:var(--brand-dark);
 }
 
 /* --- Footer --- */
 footer{
-    border-top: 1px solid var(--border); 
-    padding: 22px 0; 
-    margin-top:28px;
-    color:var(--muted);
-    font-size:.95rem;
-    text-align: center; 
+  border-top:1px solid var(--border);
+  padding:22px 0;
+  margin-top:28px;
+  color:var(--muted);
+  font-size:0.95rem;
+  text-align:center;
 }
 
 /* --- MOBILE STYLES --- */
-@media (max-width: 600px) {
-    .container {
-        padding: 0 10px;
-    }
-    
-    .title h1 {
-        font-size: 1.1rem;
-    }
+@media (max-width:600px){
+  .container{ padding:0 10px; }
 
-    .title h1 .course-number {
-        font-size: 1rem;
-    }
+  .title h1{ font-size:1.1rem; }
 
-    .title .subtitle {
-        font-size: 0.85rem; 
-    }
-    
-    .nav {
-        flex-direction: column; 
-        gap: 8px; 
-        padding-top: 5px;
-        padding-bottom: 5px;
-        align-items: center;
-    }
+  .title h1 .course-number{
+    font-size:1rem;
+  }
 
-    .nav a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 4px 0;
-    }
+  .title .subtitle{
+    font-size:0.85rem;
+  }
 
-    .nav a.active-page{
-        text-decoration:underline;
-        text-decoration-color:#fff;
-        text-underline-offset:6px;
-        text-decoration-thickness:3px;
-    }
-    
-    .header-banner {
-        height: 100px; 
-    }
-    
-    .hero .inner {
-        padding: 25px 0;
-    }
-    
-    .grid {
-        padding: 20px 0;
-    }
+  .nav{
+    flex-direction:column;
+    gap:8px;
+    padding-top:5px;
+    padding-bottom:5px;
+    align-items:center;
+  }
 
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border-radius: 0;
-    }
+  .nav a{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:4px 0;
+  }
 
-    th, td {
-        white-space: nowrap;
-        padding: 10px;
-    }
+  .nav a.active-page{
+    text-decoration:underline;
+    text-decoration-color:#fff;
+    text-underline-offset:6px;
+    text-decoration-thickness:3px;
+  }
+
+  .header-banner{ height:100px; }
+
+  .hero .inner{ padding:25px 0; }
+
+  .grid{ padding:20px 0; }
+
+  table{
+    display:block;
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:0;
+  }
+
+  th,td{
+    white-space:nowrap;
+    padding:10px;
+  }
 }
