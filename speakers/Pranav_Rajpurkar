@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pranav Rajpurkar – DATASCI 194C/294C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Speaker layout – conference-style */
+        .speaker-section {
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border: 1px solid var(--border, #e5e5e5);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-photo {
+            max-width: 220px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .speaker-main {
+            flex: 1 1 auto;
+        }
+
+        .speaker-name {
+            margin: 0 0 0.4rem;
+            font-size: 1.6rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 0.8rem;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-meta-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            color: var(--muted, #666);
+        }
+
+        .speaker-titles {
+            padding-left: 1rem;
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .speaker-titles li {
+            margin-bottom: 2px;
+        }
+
+        /* Mobile rule matching Schedule page padding */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+
+            .speaker-photo {
+                max-width: 180px;
+            }
+
+            h2, h3 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container speaker-section">
+
+    <!-- Bio-card -->
+    <div class="speaker-card">
+
+        <!-- Corrected image path -->
+        <img src="Rajpurkar.jpg" alt="Pranav Rajpurkar" class="speaker-photo">
+
+        <div class="speaker-main">
+            <h2 class="speaker-name">Pranav Rajpurkar</h2>
+
+            <p class="speaker-affiliation">
+                Associate Professor of Biomedical Informatics, Harvard University · Co-founder, a2z Radiology AI
+            </p>
+
+            <div>
+                <div class="speaker-meta-label">Background</div>
+                <ul class="speaker-titles">
+                    <li><strong>PhD, MS, BS in Computer Science, Stanford University</strong></li>
+                    <li>Leader of the Rajpurkar Lab at Harvard Medical School</li>
+                    <li>Research areas: medical AI, multimodal foundation models, clinical evaluation</li>
+                    <li>Co-founder of a2z Radiology AI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Talk details -->
+    <section>
+        <h3>Talk Title</h3>
+        <p><strong>Evaluating Medical AI: From Benchmarks to Bedside</strong></p>
+
+        <h3>Abstract</h3>
+        <p>
+            How do we know if a medical AI system actually works? In this talk, I will share lessons from a decade of
+            building evaluation frameworks for clinical AI—and the surprising gaps between benchmark performance and
+            real-world impact.
+            <br><br>
+            I will discuss CheXpert, a chest X-ray benchmark that forced the field to confront uncertainty: radiologists
+            often disagree, and we designed labels to capture this ambiguity rather than hide it. I will introduce
+            ReXrank, the first public leaderboard for AI-generated radiology reports, which tests whether models
+            generalize across 10,000 studies from diverse hospital systems. I will also present CRAFT-MD, which moves
+            beyond static test sets to evaluate large language models through simulated doctor–patient conversations—
+            revealing that models acing medical board exams often fail in realistic clinical dialogue.
+            <br><br>
+            The most surprising lesson came from studying what happens after the benchmark. In large-scale experiments
+            with over 140 radiologists, we found that AI assistance often fails to improve clinical decisions—not because
+            the AI is wrong, but because of systematic biases in how humans incorporate AI predictions. This has led us
+            to rethink the “AI assistant” paradigm entirely, proposing instead clear role separation where AI and
+            clinicians each own different parts of the workflow.
+            <br><br>
+            I will close with reflections on what makes a benchmark actually useful for driving progress in high-stakes
+            domains, and where evaluation needs to go next.
+        </p>
+
+        <h3>Bio</h3>
+        <p>
+            Pranav Rajpurkar is a computer scientist and Associate Professor of Biomedical Informatics at Harvard
+            University, and co-founder of a2z Radiology AI. He received his bachelor’s, master’s, and PhD degrees in
+            computer science from Stanford University, where he pioneered early methods for AI in medical imaging.
+            <br><br>
+            At Harvard, he leads the Rajpurkar Lab, developing “AI doctors”—generalist medical AI systems that integrate
+            multimodal data and reason across them like physicians. His research spans multimodal generative models,
+            medical foundation models, and multi-agent architectures for reliable clinical AI.
+            <br><br>
+            He has published over 160 papers with more than 46,000 citations, including work in Nature, Nature Medicine,
+            Cell, and The Lancet, and co-authored the New York Times essay “The Robot Doctor Will See You Now.” He has
+            been recognized by Forbes 30 Under 30, MIT Technology Review’s Innovators Under 35, and Nature Medicine’s
+            To Watch, and has taught over 84,000 students worldwide.
+        </p>
+    </section>
+</div>
+
+</body>
+</html>
 
