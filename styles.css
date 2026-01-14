@@ -235,12 +235,13 @@ tbody tr:hover{
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--brand);
-    border: 1px solid var(--brand);
+    color: var(--zoom-blue);
+    border: 1px solid var(--zoom-blue);
     border-radius: 999px;
     background: transparent;
     vertical-align: middle;
 }
+
 
 .btn{
     display:inline-block;
