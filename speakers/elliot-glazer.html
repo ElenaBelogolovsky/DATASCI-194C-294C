@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elliot Glazer – DATASCI 194C/294C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Speaker layout – conference-style */
+        .speaker-section {
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border: 1px solid var(--border, #e5e5e5);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-photo {
+            max-width: 220px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .speaker-main {
+            flex: 1 1 auto;
+        }
+
+        .speaker-name {
+            margin: 0 0 0.4rem;
+            font-size: 1.6rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 0.8rem;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-meta-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            color: var(--muted, #666);
+        }
+
+        .speaker-titles {
+            padding-left: 1rem;
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .speaker-titles li {
+            margin-bottom: 2px;
+        }
+
+        /* Mobile rule matching your Schedule page padding */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+
+            .speaker-photo {
+                max-width: 180px;
+            }
+
+            h2, h3 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container speaker-section">
+
+    <!-- Bio-card -->
+    <div class="speaker-card">
+        <!-- If you later add a headshot, place it here -->
+        <!-- <img src="../glazer.jpg" alt="Elliot Glazer" class="speaker-photo"> -->
+
+        <div class="speaker-main">
+            <h2 class="speaker-name">Elliot Glazer</h2>
+
+            <p class="speaker-affiliation">
+                Independent Researcher · Mathematics &amp; AI Evaluation
+            </p>
+
+            <div>
+                <div class="speaker-meta-label">Background</div>
+                <ul class="speaker-titles">
+                    <li><strong>PhD in Mathematics, Harvard University</strong></li>
+                    <li>Advisor: Hugh Woodin</li>
+                    <li>Research areas: set theory, formal systems, axiom of choice, proof assistants</li>
+                    <li>Developer of high-ceiling mathematical benchmarks and puzzles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Talk details -->
+    <section>
+        <h3>Talk Title</h3>
+        <p><strong>Benchmarking to Infinity</strong></p>
+
+        <h3>Abstract</h3>
+        <p>
+            I will discuss <em>FrontierMath</em>, a mathematical problem-solving benchmark I developed last year,
+            including its design philosophy, its limitations, and what we have learned from it about the current
+            trajectory of AI systems.
+            <br><br>
+            I will then look much further out and speculate about what a “perfectly efficient” mathematical
+            intelligence should be capable of. In doing so, I will argue that high-ceiling mathematical capability
+            metrics—rather than near-term task performance—are essential for illuminating the path toward such an
+            ideal.
+            <br><br>
+            This perspective reframes benchmarking not as a leaderboard exercise, but as a way to probe the
+            fundamental limits of reasoning, abstraction, and formal understanding in artificial systems.
+        </p>
+
+        <h3>About the Speaker</h3>
+        <p>
+            Dr. Elliot Glazer holds a PhD in Mathematics from Harvard University, where he studied under Hugh Woodin.
+            His research focuses on set theory and formal systems, with particular interest in paradoxes related to
+            the axiom of choice.
+            <br><br>
+            More recently, his work has explored the foundations of proof assistants and the design of mathematical
+            benchmarks that stress-test reasoning at extreme levels of abstraction. He also enjoys developing
+            mathematical puzzles in both finite and infinite settings.
+        </p>
+    </section>
+</div>
+
+</body>
+</html>
 
