@@ -1,7 +1,6 @@
-```css
 /* =========================================================
    DATASCI Course Site Styles (Stanford theme)
- 
+
    ========================================================= */
 
 /* --- CSS Variables: Defines Colors/Themes --- */
@@ -257,10 +256,23 @@ tbody tr:hover{
   background:var(--zoom-blue-bg);
 
   vertical-align:middle;
+  white-space:nowrap; /* ✅ prevent wrapping inside the pill */
 }
 
 .zoom-tag:hover{
   background:var(--zoom-blue-bg-hover);
+}
+
+/* =========================================================
+   ✅ Robustness Fix: Keep Zoom pill "bubble" in ALL contexts
+   (e.g., when nested inside .session-speaker in schedule.html)
+   ========================================================= */
+.session-speaker .zoom-tag,
+.session-date .zoom-tag{
+  display:inline-block;       /* ✅ prevents losing pill layout */
+  vertical-align:baseline;    /* ✅ matches text baseline in headers */
+  white-space:nowrap;         /* ✅ never breaks "Zoom Only" */
+  margin-left:0.35rem;        /* ✅ match Guest pill spacing */
 }
 
 /* --- Zoom-only Badge Override (forces the bubble to be blue) --- */
@@ -371,4 +383,3 @@ footer{
     padding:10px;
   }
 }
-```
