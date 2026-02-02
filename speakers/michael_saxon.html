@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Michael Saxon – DATASCI 194C/294C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Speaker layout – conference-style */
+        .speaker-section {
+            padding-top: 2rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .speaker-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--card, #f7f7f7);
+            border: 1px solid var(--border, #e5e5e5);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .speaker-photo {
+            max-width: 220px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            height: auto;
+            display: block;
+        }
+
+        .speaker-main {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .speaker-name {
+            margin: 0 0 0.4rem;
+            font-size: 1.6rem;
+        }
+
+        .speaker-affiliation {
+            margin: 0 0 0.8rem;
+            color: var(--muted, #666);
+            font-size: 0.95rem;
+        }
+
+        .speaker-roles {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.98rem;
+        }
+
+        .speaker-roles li {
+            margin: 0 0 0.3rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.4rem;
+                padding-right: 1.4rem;
+            }
+
+            .speaker-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+
+            .speaker-photo {
+                max-width: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="container masthead">
+        <div class="title">
+            <h1>DATASCI 194C/294C</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container speaker-section">
+
+    <!-- Speaker card -->
+    <div class="speaker-card">
+        <!-- Image stored in repo root (main branch) -->
+        <img
+            src="../michael-saxon.jpg"
+            alt="Michael Saxon"
+            class="speaker-photo"
+            width="220"
+            height="220"
+        >
+
+        <div class="speaker-main">
+            <h2 class="speaker-name">Michael Saxon</h2>
+            <p class="speaker-affiliation">University of Washington</p>
+
+            <ul class="speaker-roles">
+                <li>Siegel Postdoctoral Fellow</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Talk details -->
+    <section>
+        <h3>Talk Title</h3>
+        <p><strong>Noise, metrics, and construct validity in multimodal model benchmarking</strong></p>
+
+        <h3>Abstract</h3>
+        <p>
+            There are many overlooked problems in multimodal model evaluation; in this talk I will focus on three
+            interconnected problems: dataset noise, benchmark construct validity, and underspecified metrics.
+            Sample noise is one driver of the much recognized “saturation point”: a sub-100% performance number
+            that shapes the effective ceiling of a system’s performance on some benchmark.
+        </p>
+
+        <p>
+            However, noise does not just produce a ceiling—it introduces artifacts across the dynamic range.
+            Noise has multiple drivers, including sloppy annotations and poorly designed metrics. In the second
+            half of the talk, I will cover how to interrogate whether an evaluation metric actually captures the
+            phenomenon it purports to measure.
+        </p>
+
+        <p>
+            These ideas motivate broader questions about what is missing in modern evaluation, and what
+            philosophies should drive benchmark design.
+        </p>
+
+        <h3>More Information</h3>
+        <p>
+            Personal website:
+            <a href="https://saxon.me" target="_blank" rel="noopener noreferrer">
+                https://saxon.me
+            </a>
+        </p>
+    </section>
+
+</div>
+
+</body>
+</html>
 
