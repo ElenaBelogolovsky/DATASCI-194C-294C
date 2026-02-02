@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,104 +6,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DATASCI 194C/294C: Schedule</title>
 
+  <!-- Global site styles (includes blue .zoom-tag) -->
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* ✅ MATCH GRADING PAGE HEADER + LAYOUT EXACTLY */
+    /* ✅ Page-specific layout tweaks ONLY (do not override global tag styles) */
 
-    body {
+    body{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.5;
     }
 
-    .container {
+    .container{
       max-width: 960px;
       margin: 0 auto;
-      padding: 1rem; /* important: matches grading */
+      padding: 1rem; /* matches grading */
     }
 
-    .masthead .title h1 {
+    .masthead .title h1{
       margin-bottom: 0.25rem;
     }
 
-    .subtitle {
+    .subtitle{
       font-size: 0.95rem;
       color: #f5f5f5;
     }
 
-    .topbar {
+    .topbar{
       position: relative;
       z-index: 10;
       background: #8c1515; /* Stanford red */
       color: #ffffff;
-      padding: 0.75rem 0 0.5rem 0; /* exact grading */
+      padding: 0.75rem 0 0.5rem 0;
       border-bottom: 2px solid #5e0f0f;
     }
 
-    .topbar h1 {
+    .topbar h1{
       color: #ffffff;
       margin: 0;
     }
 
-    .topbar a {
+    .topbar a{
       color: #ffffff;
     }
 
-    .nav {
+    .nav{
       display: flex;
       gap: 1rem;
-      margin-top: 0.5rem; /* exact grading */
+      margin-top: 0.5rem;
       flex-wrap: wrap;
     }
 
-    .nav a {
+    .nav a{
       text-decoration: none;
       color: #ffffff;
       font-weight: 500;
     }
 
-    .nav a:hover {
+    .nav a:hover{
       text-decoration: underline;
     }
 
-    .nav a.active-page {
+    .nav a.active-page{
       text-decoration: underline;
       font-weight: 600;
     }
 
-    /* ✅ Use the same “drop” as grading */
-    .grid {
+    .grid{
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
-      margin-top: 1.5rem; /* exact grading */
+      margin-top: 1.5rem;
     }
 
     /* ---------------------------------------------------
        ✅ SCHEDULE STYLES
        --------------------------------------------------- */
 
-    .page-header {
-      margin-top: 0; /* inside .grid already has margin-top */
+    .page-header{
+      margin-top: 0;
       margin-bottom: 0.75rem;
     }
 
-    .page-header h2 {
+    .page-header h2{
       margin: 0;
       font-size: 1.8rem;
       color: #8C1515;
     }
 
-    .page-header p {
+    .page-header p{
       margin-top: 0.4rem;
       color: #555;
       font-size: 0.95rem;
     }
 
     /* Week anchor navigation */
-    .week-nav {
+    .week-nav{
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
@@ -110,7 +111,7 @@
       font-size: 0.9rem;
     }
 
-    .week-nav a {
+    .week-nav a{
       text-decoration: none;
       padding: 0.2rem 0.7rem;
       border-radius: 999px;
@@ -120,20 +121,20 @@
       white-space: nowrap;
     }
 
-    .week-nav a:hover {
+    .week-nav a:hover{
       background: #f3e7e7;
       border-color: #8C1515;
     }
 
-    /* ✅ Uniform spacing between weeks */
-    .week-block {
+    /* Uniform spacing between weeks */
+    .week-block{
       margin-bottom: 2.5rem;
     }
-    .week-block .session-card:last-child {
+    .week-block .session-card:last-child{
       margin-bottom: 0;
     }
 
-    .week-title {
+    .week-title{
       font-size: 1.25rem;
       font-weight: 700;
       color: #8C1515;
@@ -143,16 +144,16 @@
     }
 
     /* Session cards */
-    .session-card {
+    .session-card{
       background: #fff;
       border-radius: 10px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       padding: 0.85rem 1rem;
       margin-bottom: 0.75rem;
     }
 
-    .session-header {
+    .session-header{
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -160,34 +161,34 @@
       margin-bottom: 0.35rem;
     }
 
-    .session-date {
+    .session-date{
       font-size: 0.9rem;
       font-weight: 600;
       color: #555;
     }
 
-    .session-speaker {
+    .session-speaker{
       font-weight: 500;
     }
 
-    .session-speaker a {
+    .session-speaker a{
       color: #8C1515;
       text-decoration: none;
       font-weight: 600;
     }
 
-    .session-speaker a:hover {
+    .session-speaker a:hover{
       text-decoration: underline;
     }
 
-    .session-topic {
+    .session-topic{
       margin-top: 0.2rem;
       font-weight: 600;
       font-size: 1rem;
       color: #222;
     }
 
-    .guest-tag {
+    .guest-tag{
       display: inline-block;
       margin-left: 0.35rem;
       padding: 0.05rem 0.45rem;
@@ -202,28 +203,16 @@
       white-space: nowrap;
     }
 
-    /* Zoom tag */
-    .zoom-tag {
-      display: inline-block;
-      margin-left: 0.35rem;
-      padding: 0.05rem 0.45rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border-radius: 999px;
-      border: 1px solid #8C1515;
-      color: #8C1515;
-      background: #FFEBEE;
-      font-weight: 800;
-      vertical-align: baseline;
-      white-space: nowrap;
-    }
+    /* ✅ IMPORTANT FIX:
+       DO NOT define .zoom-tag here.
+       It is defined globally in styles.css as BLUE.
+    */
 
-    .session-section {
+    .session-section{
       margin-top: 0.45rem;
     }
 
-    .section-label {
+    .section-label{
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -233,40 +222,40 @@
     }
 
     .reading-list,
-    .activity-list {
+    .activity-list{
       margin: 0;
       padding-left: 1.25rem;
     }
 
     .reading-list li,
-    .activity-list li {
+    .activity-list li{
       margin-bottom: 0.2rem;
       font-size: 0.92rem;
     }
 
     .reading-list a,
-    .activity-list a {
+    .activity-list a{
       color: #8C1515;
       text-decoration: none;
     }
 
     .reading-list a:hover,
-    .activity-list a:hover {
+    .activity-list a:hover{
       text-decoration: underline;
     }
 
-    .reading-details {
+    .reading-details{
       color: #666;
       font-size: 0.9em;
     }
 
-    .reading-notes {
+    .reading-notes{
       margin-top: 0.35rem;
       color: #666;
       font-size: 0.9rem;
     }
 
-    .assignment-pill {
+    .assignment-pill{
       display: inline-block;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
@@ -279,8 +268,8 @@
       white-space: nowrap;
     }
 
-    /* ✅ NEW: Capstone pill (outline only, no fill) */
-    .capstone-pill {
+    /* Capstone pill (outline only, no fill) */
+    .capstone-pill{
       display: inline-block;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
@@ -288,23 +277,18 @@
       color: #8C1515;
       font-size: 0.8rem;
       font-weight: 600;
-      background: transparent; /* outline only */
+      background: transparent;
       margin-top: 0.4rem;
       white-space: nowrap;
     }
 
-    @media (min-width: 768px) {
-      .session-card {
-        padding: 1rem 1.1rem;
-      }
-
-      .week-title {
-        font-size: 1.35rem;
-      }
+    @media (min-width: 768px){
+      .session-card{ padding: 1rem 1.1rem; }
+      .week-title{ font-size: 1.35rem; }
     }
 
     /* Floating "Back to top" button */
-    .back-to-top-floating {
+    .back-to-top-floating{
       position: fixed;
       bottom: 1rem;
       right: 1rem;
@@ -315,24 +299,21 @@
       font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       z-index: 50;
     }
 
-    .back-to-top-floating:hover {
+    .back-to-top-floating:hover{
       background: #a71c1c;
     }
 
-    /* Mobile – match grading behavior */
-    @media (max-width: 768px) {
-      .container {
+    /* Mobile */
+    @media (max-width: 768px){
+      .container{
         padding-left: 1.4rem;
         padding-right: 1.4rem;
       }
-
-      .grid {
-        display: block;
-      }
+      .grid{ display: block; }
     }
   </style>
 </head>
@@ -368,7 +349,6 @@
         <h2>Tentative Course Schedule</h2>
       </div>
 
-      <!-- Week anchor nav -->
       <nav class="week-nav" aria-label="Jump to week">
         <a href="#week1">Week 1</a>
         <a href="#week2">Week 2</a>
@@ -665,7 +645,6 @@
             </ol>
           </div>
 
-          <!-- ✅ NEW: Capstone pill (outline only) -->
           <div class="session-section">
             <span class="capstone-pill">Capstone - Part 1</span>
           </div>
@@ -720,7 +699,7 @@
             </span>
           </div>
 
-          <div class="session-topic">Topic TBA</div>
+          <div class="session-topic">Benchmarking AI and the role of technical standards in growing AI markets</div>
 
           <div class="session-section">
             <span class="assignment-pill">Assignment 3 Due</span>
@@ -739,6 +718,7 @@
               <span class="session-speaker">
                 • <a href="speakers/michael_saxon.html" target="_blank" rel="noopener noreferrer">Michael Saxon</a>
                 <span class="guest-tag">Guest</span>
+                  <span class="zoom-tag">Zoom Only</span>
               </span>
             </span>
           </div>
@@ -780,86 +760,39 @@
       <section id="week7" class="week-block">
         <h3 class="week-title">Week 7</h3>
 
-        <!-- ✅ MOVED: Sanmi Koyejo content here -->
-<article class="session-card">
-  <div class="session-header">
-    <span class="session-date">
-      Tue • 02/17/2026
-      <span class="session-speaker">
-        • <a href="speakers/sanmi-koyejo.html" target="_blank" rel="noopener noreferrer">
-          Sanmi Koyejo
-        </a>
-        <span class="guest-tag">Guest</span>
-      </span>
-    </span>
-  </div>
+        <article class="session-card">
+          <div class="session-header">
+            <span class="session-date">
+              Tue • 02/17/2026
+              <span class="session-speaker">
+                • <a href="speakers/sanmi-koyejo.html" target="_blank" rel="noopener noreferrer">Sanmi Koyejo</a>
+                <span class="guest-tag">Guest</span>
+              </span>
+            </span>
+          </div>
 
-  <div class="session-topic">AI Measurement Science</div>
+          <div class="session-topic">AI Measurement Science</div>
 
-  <div class="session-section">
-    <div class="section-label">Read</div>
-    <ol class="reading-list">
-      <li>
-        <a href="https://arxiv.org/pdf/2505.10573"
-           target="_blank" rel="noopener noreferrer">
-          Measurement to Meaning… (Salaudeen et al., 2025)
-        </a>
-      </li>
-      <li>
-        <a href="https://arxiv.org/pdf/2504.20879"
-           target="_blank" rel="noopener noreferrer">
-          The Leaderboard Illusion (Singh et al., 2025)
-        </a>
-      </li>
-      <li>
-        <a href="https://arxiv.org/pdf/2503.13335"
-           target="_blank" rel="noopener noreferrer">
-          Reliable and Efficient Amortized Evaluation (Truong et al., 2025)
-        </a>
-      </li>
-      <li>
-        <a href="https://arxiv.org/html/2511.16842v1"
-           target="_blank" rel="noopener noreferrer">
-          Fantastic Bugs… (Truong et al., 2025)
-        </a>
-      </li>
-      <li>
-        <a href="https://arxiv.org/pdf/2304.15004"
-           target="_blank" rel="noopener noreferrer">
-          Are Emergent Abilities a Mirage? (Schaeffer et al., 2023)
-        </a>
-      </li>
-      <li>
-        <a href="https://arxiv.org/pdf/2306.11698"
-           target="_blank" rel="noopener noreferrer">
-          DecodingTrust (Wang et al., 2023)
-        </a>
-      </li>
-    </ol>
-  </div>
+          <div class="session-section">
+            <div class="section-label">Read</div>
+            <ol class="reading-list">
+              <li><a href="https://arxiv.org/pdf/2505.10573" target="_blank" rel="noopener noreferrer">Measurement to Meaning… (Salaudeen et al., 2025)</a></li>
+              <li><a href="https://arxiv.org/pdf/2504.20879" target="_blank" rel="noopener noreferrer">The Leaderboard Illusion (Singh et al., 2025)</a></li>
+              <li><a href="https://arxiv.org/pdf/2503.13335" target="_blank" rel="noopener noreferrer">Reliable and Efficient Amortized Evaluation (Truong et al., 2025)</a></li>
+              <li><a href="https://arxiv.org/html/2511.16842v1" target="_blank" rel="noopener noreferrer">Fantastic Bugs… (Truong et al., 2025)</a></li>
+              <li><a href="https://arxiv.org/pdf/2304.15004" target="_blank" rel="noopener noreferrer">Are Emergent Abilities a Mirage? (Schaeffer et al., 2023)</a></li>
+              <li><a href="https://arxiv.org/pdf/2306.11698" target="_blank" rel="noopener noreferrer">DecodingTrust (Wang et al., 2023)</a></li>
+            </ol>
+          </div>
 
-  <div class="session-section">
-    <div class="section-label">Watch</div>
-    <ol class="activity-list">
-      <li>
-        <a href="https://www.youtube.com/watch?v=__71ttgQagY"
-           target="_blank" rel="noopener noreferrer">
-          Reality Checks (Kyunghyun Cho, 2025)
-        </a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/watch?v=PkuoEJn6PlA"
-           target="_blank" rel="noopener noreferrer">
-          Optional – Beyond Benchmarks (Koyejo, 2025)
-        </a>
-      </li>
-    </ol>
-  </div>
-</article>
-
-
-
-        
+          <div class="session-section">
+            <div class="section-label">Watch</div>
+            <ol class="activity-list">
+              <li><a href="https://www.youtube.com/watch?v=__71ttgQagY" target="_blank" rel="noopener noreferrer">Reality Checks (Kyunghyun Cho, 2025)</a></li>
+              <li><a href="https://www.youtube.com/watch?v=PkuoEJn6PlA" target="_blank" rel="noopener noreferrer">Optional – Beyond Benchmarks (Koyejo, 2025)</a></li>
+            </ol>
+          </div>
+        </article>
 
         <article class="session-card">
           <div class="session-header">
@@ -879,11 +812,7 @@
             <ol class="reading-list">
               <li><a href="https://arxiv.org/pdf/2411.04872" target="_blank" rel="noopener noreferrer">FrontierMath… (Glazer et al., 2025)</a></li>
               <li><a href="https://imobench.github.io" target="_blank" rel="noopener noreferrer">Towards Robust Mathematical Reasoning (Luong et al., 2025)</a></li>
-              <li>
-                <a href="https://github.com/ByteDance-Seed/Seed-Prover/blob/main/SeedProver-1.5/SeedProver-1.5.pdf" target="_blank" rel="noopener noreferrer">
-                  SeedProver 1.5
-                </a>
-              </li>
+              <li><a href="https://github.com/ByteDance-Seed/Seed-Prover/blob/main/SeedProver-1.5/SeedProver-1.5.pdf" target="_blank" rel="noopener noreferrer">SeedProver 1.5</a></li>
             </ol>
           </div>
 
@@ -986,7 +915,6 @@
           </div>
         </article>
 
-        <!-- ✅ CHANGED: Thu 03/05 speaker to Ozanan Meireles -->
         <article class="session-card">
           <div class="session-header">
             <span class="session-date">
@@ -1049,3 +977,4 @@
 
 </body>
 </html>
+```
