@@ -687,24 +687,71 @@
           </div>
         </article>
 
-        <article class="session-card">
-          <div class="session-header">
-            <span class="session-date">
-              Thu • 02/05/2026
-              <span class="session-speaker">
-                • <a href="speakers/peter-mattson.html" target="_blank" rel="noopener noreferrer">Peter Mattson</a>
-                <span class="guest-tag">Guest</span>
-                <span class="zoom-tag">Zoom Only</span>
-              </span>
-            </span>
-          </div>
+        Here’s the **drop-in replacement** for your **Thu • 02/05/2026** session card with the readings added in the **exact same “Read / <ol class='reading-list'>” format** used elsewhere (same link attributes, same styling hooks). I also added the **MLCommons homepage** as the last reading item.
 
-          <div class="session-topic">Benchmarking AI and the role of technical standards in growing AI markets</div>
+Just replace your current **02/05/2026** `<article class="session-card"> ... </article>` block with this:
 
-          <div class="session-section">
-            <span class="assignment-pill">Assignment 3 Due</span>
-          </div>
-        </article>
+```html
+<article class="session-card">
+  <div class="session-header">
+    <span class="session-date">
+      Thu • 02/05/2026
+      <span class="session-speaker">
+        • <a href="speakers/peter-mattson.html" target="_blank" rel="noopener noreferrer">Peter Mattson</a>
+        <span class="guest-tag">Guest</span>
+        <span class="zoom-tag">Zoom Only</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="session-topic">Benchmarking AI and the role of technical standards in growing AI markets</div>
+
+  <div class="session-section">
+    <div class="section-label">Read</div>
+    <ol class="reading-list">
+      <li>
+        <a href="https://arxiv.org/abs/1911.02549" target="_blank" rel="noopener noreferrer">
+          MLPerf Inference (Reddi et al., 2020)
+        </a>
+      </li>
+      <li>
+        <a href="https://arxiv.org/pdf/1910.01500" target="_blank" rel="noopener noreferrer">
+          MLPerf Training (Mattson et al., 2020)
+        </a>
+      </li>
+      <li>
+        <a href="https://arxiv.org/abs/2503.05731" target="_blank" rel="noopener noreferrer">
+          AILuminate safety (Ghosh et al., 2025)
+        </a>
+      </li>
+      <li>
+        <a href="https://mlcommons.org/wp-content/uploads/2025/10/MLCommons___Security___Jailbreak_0_5_Paper-5.pdf" target="_blank" rel="noopener noreferrer">
+          AILuminate jailbreak (Goel et al., 2025)
+        </a>
+      </li>
+      <li>
+        <a href="https://www.nature.com/articles/s42256-023-00652-2" target="_blank" rel="noopener noreferrer">
+          MedPerf (Karargyris et al., 2023)
+        </a>
+      </li>
+      <li>
+        <a href="https://arxiv.org/abs/2403.19546" target="_blank" rel="noopener noreferrer">
+          Croissant (Akhtar et al., 2024)
+        </a>
+      </li>
+      <li>
+        <a href="https://mlcommons.org/" target="_blank" rel="noopener noreferrer">
+          MLCommons
+        </a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="session-section">
+    <span class="assignment-pill">Assignment 3 Due</span>
+  </div>
+</article>
+
       </section>
 
       <!-- WEEK 6 -->
