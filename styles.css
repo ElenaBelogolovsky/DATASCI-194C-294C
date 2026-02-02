@@ -1,6 +1,7 @@
+```css
 /* =========================================================
    DATASCI Course Site Styles (Stanford theme)
-   Copy/paste this whole file.
+ 
    ========================================================= */
 
 /* --- CSS Variables: Defines Colors/Themes --- */
@@ -205,6 +206,7 @@ table{
   background:#fff;
   border:1px solid var(--border);
   border-radius:10px;
+  overflow:hidden; /* ensures rounded corners render cleanly */
 }
 
 th,td{
@@ -235,6 +237,11 @@ tbody tr:hover{
 }
 
 /* --- Zoom Session Tag (Blue) --- */
+/* Use either:
+   1) <span class="zoom-tag">Zoom only</span>
+   OR
+   2) <span class="badge zoom-only">Zoom only</span>
+*/
 .zoom-tag{
   display:inline-block;
   margin-left:6px;
@@ -253,6 +260,20 @@ tbody tr:hover{
 }
 
 .zoom-tag:hover{
+  background:var(--zoom-blue-bg-hover);
+}
+
+/* --- Zoom-only Badge Override (forces the bubble to be blue) --- */
+.badge.zoom-only{
+  color:var(--zoom-blue);
+  border-color:var(--zoom-blue);
+  background:var(--zoom-blue-bg);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+.badge.zoom-only:hover{
   background:var(--zoom-blue-bg-hover);
 }
 
@@ -350,3 +371,4 @@ footer{
     padding:10px;
   }
 }
+```
