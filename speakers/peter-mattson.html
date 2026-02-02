@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +29,13 @@
             max-width: 220px;
             border-radius: 10px;
             flex-shrink: 0;
+            height: auto;
+            display: block;
         }
 
         .speaker-main {
             flex: 1 1 auto;
+            min-width: 0;
         }
 
         .speaker-name {
@@ -45,22 +49,15 @@
             font-size: 0.95rem;
         }
 
-        .speaker-meta-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.25rem;
-            color: var(--muted, #666);
+        .speaker-roles {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.98rem;
         }
 
-        .speaker-titles {
-            padding-left: 1rem;
-            margin: 0 0 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .speaker-titles li {
-            margin-bottom: 2px;
+        .speaker-roles li {
+            margin: 0 0 0.3rem;
         }
 
         /* Mobile adjustments */
@@ -95,34 +92,32 @@
 
 <div class="container speaker-section">
 
-    <!-- Bio-card -->
+    <!-- Speaker card -->
     <div class="speaker-card">
-        <!-- Replace src with your actual image path/file -->
-        <img src="../peter-mattson.jpg" alt="Peter Mattson" class="speaker-photo">
+        <!-- Assumes image is in the same folder as this HTML file -->
+        <img
+            src="peter-mattson.jpg"
+            alt="Peter Mattson"
+            class="speaker-photo"
+            width="220"
+            height="220"
+        >
 
         <div class="speaker-main">
             <h2 class="speaker-name">Peter Mattson</h2>
             <p class="speaker-affiliation">Google • MLCommons</p>
 
-            <div>
-                <div class="speaker-meta-label">Bio</div>
-                <ul class="speaker-titles">
-                    <li><strong>Senior Staff Engineer</strong>, Google</li>
-                    <li><strong>Founder &amp; President</strong>, MLCommons</li>
-                    <li><strong>Founder</strong> and former <strong>General Chair</strong>, MLPerf</li>
-                    <li>Founded Programming Systems and Applications Group, NVIDIA Research</li>
-                    <li>Former VP, Software Infrastructure, Stream Processors Inc. (SPI)</li>
-                    <li>Former Managing Engineer, Reservoir Labs</li>
-                    <li>Research: quantitative metrics and analysis for ML models and data</li>
-                    <li>PhD &amp; MS, Stanford University; BS, University of Washington</li>
-                </ul>
-            </div>
+            <ul class="speaker-roles">
+                <li>Senior Staff Engineer, Google</li>
+                <li>Founder &amp; President, MLCommons</li>
+                <li>Founder and former General Chair, MLPerf</li>
+            </ul>
         </div>
     </div>
 
     <!-- Talk details -->
     <section>
-        <h3>Talk Title</h3>
+        <h3>Title</h3>
         <p><strong>Benchmarking AI and the role of technical standards in growing AI markets</strong></p>
 
         <h3>Abstract</h3>
@@ -139,6 +134,19 @@
             industry deployments, and startups.
         </p>
 
+        <h3>Bio</h3>
+        <p>
+            Peter Mattson is a senior staff engineer at Google. He founded and is President of MLCommons, and founded
+            and was General Chair of the MLPerf consortium that preceded it. Previously, he founded the Programming
+            Systems and Applications Group at NVIDIA Research, was Vice President of software infrastructure for
+            Stream Processors Inc. (SPI), and was a managing engineer at Reservoir Labs.
+        </p>
+
+        <p>
+            His research focuses on understanding machine learning models and data through quantitative metrics and
+            analysis. Peter holds a PhD and MS from Stanford University and a BS from the University of Washington.
+        </p>
+
         <h3>More Information</h3>
         <p>
             MLCommons:
@@ -152,5 +160,4 @@
 
 </body>
 </html>
-
-
+```
