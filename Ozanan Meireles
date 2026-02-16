@@ -103,7 +103,7 @@
     <!-- Bio-card -->
     <div class="speaker-card">
         <!-- Replace filename/path as needed -->
-        <img src="../meireles.jpg" alt="Ozanan Meireles" class="speaker-photo">
+        <img src="../Ozanan Meireles.jpg" alt="Ozanan Meireles" class="speaker-photo">
 
         <div class="speaker-main">
             <h2 class="speaker-name">Ozanan Meireles, M.D.</h2>
@@ -149,7 +149,12 @@
             safety-critical applications of AI.
         </p>
 
-    
+        <h3>More Information</h3>
+        <p>
+            (Optional) Add a faculty profile, lab page, or relevant links here.
+        </p>
+    </section>
+</div>
 
 </body>
 </html>
